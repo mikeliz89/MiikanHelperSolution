@@ -37,11 +37,19 @@
       this.outputCountRowsButton = new System.Windows.Forms.Button();
       this.inputGetUserIDsButton = new System.Windows.Forms.Button();
       this.inputAddCommasButton = new System.Windows.Forms.Button();
+      this.inputAddTextTextBox = new System.Windows.Forms.TextBox();
+      this.inputAddTextButton = new System.Windows.Forms.Button();
+      this.groupBox1 = new System.Windows.Forms.GroupBox();
+      this.groupBox2 = new System.Windows.Forms.GroupBox();
+      this.inputStartRadioButton = new System.Windows.Forms.RadioButton();
+      this.inputEndRadioButton = new System.Windows.Forms.RadioButton();
+      this.groupBox1.SuspendLayout();
+      this.groupBox2.SuspendLayout();
       this.SuspendLayout();
       // 
       // inputToOutputButton
       // 
-      this.inputToOutputButton.Location = new System.Drawing.Point(68, 181);
+      this.inputToOutputButton.Location = new System.Drawing.Point(7, 19);
       this.inputToOutputButton.Name = "inputToOutputButton";
       this.inputToOutputButton.Size = new System.Drawing.Size(154, 23);
       this.inputToOutputButton.TabIndex = 0;
@@ -52,6 +60,7 @@
       // inputTextBox
       // 
       this.inputTextBox.Location = new System.Drawing.Point(68, 46);
+      this.inputTextBox.MaxLength = 132767;
       this.inputTextBox.Multiline = true;
       this.inputTextBox.Name = "inputTextBox";
       this.inputTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
@@ -61,6 +70,7 @@
       // outputTextBox
       // 
       this.outputTextBox.Location = new System.Drawing.Point(555, 46);
+      this.outputTextBox.MaxLength = 132767;
       this.outputTextBox.Multiline = true;
       this.outputTextBox.Name = "outputTextBox";
       this.outputTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
@@ -153,7 +163,7 @@
       // 
       // inputGetUserIDsButton
       // 
-      this.inputGetUserIDsButton.Location = new System.Drawing.Point(68, 239);
+      this.inputGetUserIDsButton.Location = new System.Drawing.Point(7, 77);
       this.inputGetUserIDsButton.Name = "inputGetUserIDsButton";
       this.inputGetUserIDsButton.Size = new System.Drawing.Size(125, 23);
       this.inputGetUserIDsButton.TabIndex = 12;
@@ -163,7 +173,7 @@
       // 
       // inputAddCommasButton
       // 
-      this.inputAddCommasButton.Location = new System.Drawing.Point(68, 210);
+      this.inputAddCommasButton.Location = new System.Drawing.Point(7, 48);
       this.inputAddCommasButton.Name = "inputAddCommasButton";
       this.inputAddCommasButton.Size = new System.Drawing.Size(99, 23);
       this.inputAddCommasButton.TabIndex = 13;
@@ -171,13 +181,79 @@
       this.inputAddCommasButton.UseVisualStyleBackColor = true;
       this.inputAddCommasButton.Click += new System.EventHandler(this.inputAddCommasButton_Click);
       // 
+      // inputAddTextTextBox
+      // 
+      this.inputAddTextTextBox.Location = new System.Drawing.Point(6, 19);
+      this.inputAddTextTextBox.Name = "inputAddTextTextBox";
+      this.inputAddTextTextBox.Size = new System.Drawing.Size(231, 20);
+      this.inputAddTextTextBox.TabIndex = 14;
+      // 
+      // inputAddTextButton
+      // 
+      this.inputAddTextButton.Location = new System.Drawing.Point(7, 45);
+      this.inputAddTextButton.Name = "inputAddTextButton";
+      this.inputAddTextButton.Size = new System.Drawing.Size(118, 23);
+      this.inputAddTextButton.TabIndex = 15;
+      this.inputAddTextButton.Text = "Lisää annettu teksti";
+      this.inputAddTextButton.UseVisualStyleBackColor = true;
+      this.inputAddTextButton.Click += new System.EventHandler(this.inputAddTextButton_Click);
+      // 
+      // groupBox1
+      // 
+      this.groupBox1.Controls.Add(this.inputEndRadioButton);
+      this.groupBox1.Controls.Add(this.inputStartRadioButton);
+      this.groupBox1.Controls.Add(this.inputAddTextTextBox);
+      this.groupBox1.Controls.Add(this.inputAddTextButton);
+      this.groupBox1.Location = new System.Drawing.Point(68, 181);
+      this.groupBox1.Name = "groupBox1";
+      this.groupBox1.Size = new System.Drawing.Size(268, 113);
+      this.groupBox1.TabIndex = 16;
+      this.groupBox1.TabStop = false;
+      this.groupBox1.Text = "Lisää annettu teksti";
+      // 
+      // groupBox2
+      // 
+      this.groupBox2.Controls.Add(this.inputToOutputButton);
+      this.groupBox2.Controls.Add(this.inputAddCommasButton);
+      this.groupBox2.Controls.Add(this.inputGetUserIDsButton);
+      this.groupBox2.Location = new System.Drawing.Point(68, 309);
+      this.groupBox2.Name = "groupBox2";
+      this.groupBox2.Size = new System.Drawing.Size(268, 111);
+      this.groupBox2.TabIndex = 17;
+      this.groupBox2.TabStop = false;
+      this.groupBox2.Text = "Lisää pilkkuja, heittomerkkejä";
+      // 
+      // inputStartRadioButton
+      // 
+      this.inputStartRadioButton.AutoSize = true;
+      this.inputStartRadioButton.Checked = true;
+      this.inputStartRadioButton.Location = new System.Drawing.Point(7, 75);
+      this.inputStartRadioButton.Name = "inputStartRadioButton";
+      this.inputStartRadioButton.Size = new System.Drawing.Size(57, 17);
+      this.inputStartRadioButton.TabIndex = 16;
+      this.inputStartRadioButton.TabStop = true;
+      this.inputStartRadioButton.Text = "alkuun";
+      this.inputStartRadioButton.UseVisualStyleBackColor = true;
+      this.inputStartRadioButton.CheckedChanged += new System.EventHandler(this.radioButtonCheckedChanged);
+      // 
+      // inputEndRadioButton
+      // 
+      this.inputEndRadioButton.AutoSize = true;
+      this.inputEndRadioButton.Location = new System.Drawing.Point(69, 74);
+      this.inputEndRadioButton.Name = "inputEndRadioButton";
+      this.inputEndRadioButton.Size = new System.Drawing.Size(63, 17);
+      this.inputEndRadioButton.TabIndex = 17;
+      this.inputEndRadioButton.Text = "loppuun";
+      this.inputEndRadioButton.UseVisualStyleBackColor = true;
+      this.inputEndRadioButton.CheckedChanged += new System.EventHandler(this.radioButtonCheckedChanged);
+      // 
       // MyForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1512, 761);
-      this.Controls.Add(this.inputAddCommasButton);
-      this.Controls.Add(this.inputGetUserIDsButton);
+      this.Controls.Add(this.groupBox2);
+      this.Controls.Add(this.groupBox1);
       this.Controls.Add(this.outputCountRowsButton);
       this.Controls.Add(this.inputCountRowsButton);
       this.Controls.Add(this.outputCombineEveryEachOtherRowButton);
@@ -189,9 +265,11 @@
       this.Controls.Add(this.label1);
       this.Controls.Add(this.outputTextBox);
       this.Controls.Add(this.inputTextBox);
-      this.Controls.Add(this.inputToOutputButton);
       this.Name = "MyForm";
       this.Text = "Form1";
+      this.groupBox1.ResumeLayout(false);
+      this.groupBox1.PerformLayout();
+      this.groupBox2.ResumeLayout(false);
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -213,6 +291,12 @@
     private System.Windows.Forms.Button outputCountRowsButton;
     private System.Windows.Forms.Button inputGetUserIDsButton;
     private System.Windows.Forms.Button inputAddCommasButton;
+    private System.Windows.Forms.TextBox inputAddTextTextBox;
+    private System.Windows.Forms.Button inputAddTextButton;
+    private System.Windows.Forms.GroupBox groupBox1;
+    private System.Windows.Forms.RadioButton inputEndRadioButton;
+    private System.Windows.Forms.RadioButton inputStartRadioButton;
+    private System.Windows.Forms.GroupBox groupBox2;
   }
 }
 

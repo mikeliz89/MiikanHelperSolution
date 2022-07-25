@@ -2,12 +2,17 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Text;
 using System.Windows.Forms;
 
 namespace MiikanHelperSolution {
   public partial class MyForm : Form {
+
+    private RadioButton selectedRadioButton;
+
     public MyForm() {
       InitializeComponent();
+      selectedRadioButton = inputStartRadioButton;
     }
 
     //input to output and add commas and single quotes
@@ -20,14 +25,28 @@ namespace MiikanHelperSolution {
       resultsTextBox.Text = $"Muutettu {list.Count} riviä";
     }
 
-    private static List<string> GetOutputList(List<string> list, string characterToAdd) {
+    private static List<string> GetOutputList(List<string> list, string charactersToAdd,
+      bool addToStart = true,
+      bool addToEnd = true,
+      bool addCommas = true) {
       var outputList = new List<string>();
       for(int i = 0; i < list.Count; i++) {
+        var newItem = new StringBuilder();
+        if(addToStart) {
+          newItem.Append(charactersToAdd);
+        }
+        newItem.Append(list[i]);
+        if(addToEnd) {
+          newItem.Append(charactersToAdd);
+        }
         if(i == list.Count - 1) {
           Console.WriteLine("Last item : " + list[i]);
-          outputList.Add(characterToAdd + list[i] + characterToAdd);
+          outputList.Add(newItem.ToString());
         } else {
-          outputList.Add(characterToAdd + list[i] + characterToAdd + ", ");
+          if(addCommas) {
+            newItem.Append(",");
+          }
+          outputList.Add(newItem.ToString());
         }
       }
 
@@ -122,5 +141,30 @@ namespace MiikanHelperSolution {
       outputRowCountLabel.Text = listOfSubStrings.Count + "";
     }
 
+    private void inputAddTextButton_Click(object sender, EventArgs e) {
+      var list = GetRowsAsList(inputTextBox);
+
+      var outputList = GetOutputList(list, inputAddTextTextBox.Text,
+        inputStartRadioButton.Checked, inputEndRadioButton.Checked, false);
+      outputTextBox.Text = String.Join("\r\n", outputList);
+      outputRowCountLabel.Text = outputList.Count + "";
+      //results
+      resultsTextBox.Text = $"Muutettu {list.Count} riviä";
+    }
+
+    private void radioButtonCheckedChanged(object sender, EventArgs e) {
+      var rb = sender as RadioButton;
+
+      if(rb == null) {
+        MessageBox.Show("Sender is not a RadioButton");
+        return;
+      }
+
+      if(rb.Checked) {
+        // Keep track of the selected RadioButton by saving a reference
+        // to it.
+        selectedRadioButton = rb;
+      }
+    }
   }
 }
