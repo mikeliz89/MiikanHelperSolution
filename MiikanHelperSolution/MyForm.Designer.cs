@@ -35,11 +35,13 @@
       this.outputCombineEveryEachOtherRowButton = new System.Windows.Forms.Button();
       this.inputCountRowsButton = new System.Windows.Forms.Button();
       this.outputCountRowsButton = new System.Windows.Forms.Button();
+      this.inputGetUserIDsButton = new System.Windows.Forms.Button();
+      this.inputAddCommasButton = new System.Windows.Forms.Button();
       this.SuspendLayout();
       // 
       // inputToOutputButton
       // 
-      this.inputToOutputButton.Location = new System.Drawing.Point(195, 181);
+      this.inputToOutputButton.Location = new System.Drawing.Point(68, 181);
       this.inputToOutputButton.Name = "inputToOutputButton";
       this.inputToOutputButton.Size = new System.Drawing.Size(154, 23);
       this.inputToOutputButton.TabIndex = 0;
@@ -121,7 +123,7 @@
       // 
       // outputCombineEveryEachOtherRowButton
       // 
-      this.outputCombineEveryEachOtherRowButton.Location = new System.Drawing.Point(669, 181);
+      this.outputCombineEveryEachOtherRowButton.Location = new System.Drawing.Point(555, 210);
       this.outputCombineEveryEachOtherRowButton.Name = "outputCombineEveryEachOtherRowButton";
       this.outputCombineEveryEachOtherRowButton.Size = new System.Drawing.Size(129, 23);
       this.outputCombineEveryEachOtherRowButton.TabIndex = 9;
@@ -141,7 +143,7 @@
       // 
       // outputCountRowsButton
       // 
-      this.outputCountRowsButton.Location = new System.Drawing.Point(804, 181);
+      this.outputCountRowsButton.Location = new System.Drawing.Point(842, 181);
       this.outputCountRowsButton.Name = "outputCountRowsButton";
       this.outputCountRowsButton.Size = new System.Drawing.Size(93, 23);
       this.outputCountRowsButton.TabIndex = 11;
@@ -149,11 +151,33 @@
       this.outputCountRowsButton.UseVisualStyleBackColor = true;
       this.outputCountRowsButton.Click += new System.EventHandler(this.outputCountRowsButton_Click);
       // 
+      // inputGetUserIDsButton
+      // 
+      this.inputGetUserIDsButton.Location = new System.Drawing.Point(68, 239);
+      this.inputGetUserIDsButton.Name = "inputGetUserIDsButton";
+      this.inputGetUserIDsButton.Size = new System.Drawing.Size(125, 23);
+      this.inputGetUserIDsButton.TabIndex = 12;
+      this.inputGetUserIDsButton.Text = "Hanki riveiltä userID";
+      this.inputGetUserIDsButton.UseVisualStyleBackColor = true;
+      this.inputGetUserIDsButton.Click += new System.EventHandler(this.inputGetUserIDsButton_Click);
+      // 
+      // inputAddCommasButton
+      // 
+      this.inputAddCommasButton.Location = new System.Drawing.Point(68, 210);
+      this.inputAddCommasButton.Name = "inputAddCommasButton";
+      this.inputAddCommasButton.Size = new System.Drawing.Size(99, 23);
+      this.inputAddCommasButton.TabIndex = 13;
+      this.inputAddCommasButton.Text = "Lisää pilkut";
+      this.inputAddCommasButton.UseVisualStyleBackColor = true;
+      this.inputAddCommasButton.Click += new System.EventHandler(this.inputAddCommasButton_Click);
+      // 
       // MyForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1512, 761);
+      this.Controls.Add(this.inputAddCommasButton);
+      this.Controls.Add(this.inputGetUserIDsButton);
       this.Controls.Add(this.outputCountRowsButton);
       this.Controls.Add(this.inputCountRowsButton);
       this.Controls.Add(this.outputCombineEveryEachOtherRowButton);
@@ -187,6 +211,8 @@
     private System.Windows.Forms.Button outputCombineEveryEachOtherRowButton;
     private System.Windows.Forms.Button inputCountRowsButton;
     private System.Windows.Forms.Button outputCountRowsButton;
+    private System.Windows.Forms.Button inputGetUserIDsButton;
+    private System.Windows.Forms.Button inputAddCommasButton;
   }
 }
 

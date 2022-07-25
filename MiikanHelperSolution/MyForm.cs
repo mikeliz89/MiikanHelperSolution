@@ -13,16 +13,31 @@ namespace MiikanHelperSolution {
     //input to output and add commas and single quotes
     private void inputToOutputButton_Click(object sender, EventArgs e) {
       var list = GetRowsAsList(inputTextBox);
+      var outputList = GetOutputList(list, "'");
+      outputTextBox.Text = String.Join("\r\n", outputList);
+      outputRowCountLabel.Text = outputList.Count + "";
+      //results
+      resultsTextBox.Text = $"Muutettu {list.Count} riviä";
+    }
 
+    private static List<string> GetOutputList(List<string> list, string characterToAdd) {
       var outputList = new List<string>();
       for(int i = 0; i < list.Count; i++) {
         if(i == list.Count - 1) {
           Console.WriteLine("Last item : " + list[i]);
-          outputList.Add("'" + list[i] + "'");
+          outputList.Add(characterToAdd + list[i] + characterToAdd);
         } else {
-          outputList.Add("'" + list[i] + "', ");
+          outputList.Add(characterToAdd + list[i] + characterToAdd + ", ");
         }
       }
+
+      return outputList;
+    }
+
+    //add commas
+    private void inputAddCommasButton_Click(object sender, EventArgs e) {
+      var list = GetRowsAsList(inputTextBox);
+      var outputList = GetOutputList(list, "");
       outputTextBox.Text = String.Join("\r\n", outputList);
       outputRowCountLabel.Text = outputList.Count + "";
       //results
@@ -88,5 +103,24 @@ namespace MiikanHelperSolution {
       var list = GetRowsAsList(outputTextBox);
       resultsTextBox.Text = $"Output list count {list.Count}";
     }
+
+    private void inputGetUserIDsButton_Click(object sender, EventArgs e) {
+      var list = GetRowsAsList(inputTextBox);
+      var listOfSubStrings = new List<string>();
+
+      foreach(var listItem in list) {
+        var indexOfSpace = listItem.IndexOf(' ');
+        var indexOfColon = listItem.IndexOf(':');
+        var characterCountBetweenSpaceAndColon = indexOfSpace - indexOfColon;
+        if(characterCountBetweenSpaceAndColon > 0) {
+          var subString = listItem.Substring(indexOfColon + 1, characterCountBetweenSpaceAndColon - 1);
+          listOfSubStrings.Add(subString);
+        }
+      }
+      //output
+      outputTextBox.Text = String.Join("\r\n", listOfSubStrings);
+      outputRowCountLabel.Text = listOfSubStrings.Count + "";
+    }
+
   }
 }
