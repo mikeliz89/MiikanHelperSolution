@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace MiikanHelperSolution {
   public static class ListHelper {
@@ -24,6 +26,36 @@ namespace MiikanHelperSolution {
         }
       } else if(list.Count == 1) {
         outputList.Add(list[0]);
+      }
+
+      return outputList;
+    }
+
+    public static List<string> GetOutputList(List<string> list,
+      string charactersToAdd,
+      bool addToStart = true,
+      bool addToEnd = true,
+      bool addCommas = true) {
+
+      var outputList = new List<string>();
+      for(int i = 0; i < list.Count; i++) {
+        var newItem = new StringBuilder();
+        if(addToStart) {
+          newItem.Append(charactersToAdd);
+        }
+        newItem.Append(list[i]);
+        if(addToEnd) {
+          newItem.Append(charactersToAdd);
+        }
+        if(i == list.Count - 1) {
+          Console.WriteLine("Last item : " + list[i]);
+          outputList.Add(newItem.ToString());
+        } else {
+          if(addCommas) {
+            newItem.Append(",");
+          }
+          outputList.Add(newItem.ToString());
+        }
       }
 
       return outputList;

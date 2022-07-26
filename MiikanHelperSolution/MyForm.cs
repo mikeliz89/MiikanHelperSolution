@@ -18,45 +18,17 @@ namespace MiikanHelperSolution {
     //input to output and add commas and single quotes
     private void inputToOutputButton_Click(object sender, EventArgs e) {
       var list = GetRowsAsList(inputTextBox);
-      var outputList = GetOutputList(list, "'");
+      var outputList = ListHelper.GetOutputList(list, "'");
       outputTextBox.Text = String.Join("\r\n", outputList);
       outputRowCountLabel.Text = outputList.Count + "";
       //results
       resultsTextBox.Text = $"Muutettu {list.Count} riviä";
     }
 
-    private static List<string> GetOutputList(List<string> list, string charactersToAdd,
-      bool addToStart = true,
-      bool addToEnd = true,
-      bool addCommas = true) {
-      var outputList = new List<string>();
-      for(int i = 0; i < list.Count; i++) {
-        var newItem = new StringBuilder();
-        if(addToStart) {
-          newItem.Append(charactersToAdd);
-        }
-        newItem.Append(list[i]);
-        if(addToEnd) {
-          newItem.Append(charactersToAdd);
-        }
-        if(i == list.Count - 1) {
-          Console.WriteLine("Last item : " + list[i]);
-          outputList.Add(newItem.ToString());
-        } else {
-          if(addCommas) {
-            newItem.Append(",");
-          }
-          outputList.Add(newItem.ToString());
-        }
-      }
-
-      return outputList;
-    }
-
     //add commas
     private void inputAddCommasButton_Click(object sender, EventArgs e) {
       var list = GetRowsAsList(inputTextBox);
-      var outputList = GetOutputList(list, "");
+      var outputList = ListHelper.GetOutputList(list, "");
       outputTextBox.Text = String.Join("\r\n", outputList);
       outputRowCountLabel.Text = outputList.Count + "";
       //results
@@ -132,7 +104,7 @@ namespace MiikanHelperSolution {
     private void inputAddTextButton_Click(object sender, EventArgs e) {
       var list = GetRowsAsList(inputTextBox);
 
-      var outputList = GetOutputList(list, inputAddTextTextBox.Text,
+      var outputList = ListHelper.GetOutputList(list, inputAddTextTextBox.Text,
         inputStartRadioButton.Checked, inputEndRadioButton.Checked, false);
       outputTextBox.Text = String.Join("\r\n", outputList);
       outputRowCountLabel.Text = outputList.Count + "";
