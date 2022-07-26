@@ -40,9 +40,9 @@
       this.inputAddTextTextBox = new System.Windows.Forms.TextBox();
       this.inputAddTextButton = new System.Windows.Forms.Button();
       this.groupBox1 = new System.Windows.Forms.GroupBox();
-      this.groupBox2 = new System.Windows.Forms.GroupBox();
-      this.inputStartRadioButton = new System.Windows.Forms.RadioButton();
       this.inputEndRadioButton = new System.Windows.Forms.RadioButton();
+      this.inputStartRadioButton = new System.Windows.Forms.RadioButton();
+      this.groupBox2 = new System.Windows.Forms.GroupBox();
       this.groupBox1.SuspendLayout();
       this.groupBox2.SuspendLayout();
       this.SuspendLayout();
@@ -206,10 +206,34 @@
       this.groupBox1.Controls.Add(this.inputAddTextButton);
       this.groupBox1.Location = new System.Drawing.Point(68, 181);
       this.groupBox1.Name = "groupBox1";
-      this.groupBox1.Size = new System.Drawing.Size(268, 113);
+      this.groupBox1.Size = new System.Drawing.Size(268, 106);
       this.groupBox1.TabIndex = 16;
       this.groupBox1.TabStop = false;
       this.groupBox1.Text = "Lisää annettu teksti";
+      // 
+      // inputEndRadioButton
+      // 
+      this.inputEndRadioButton.AutoSize = true;
+      this.inputEndRadioButton.Location = new System.Drawing.Point(98, 75);
+      this.inputEndRadioButton.Name = "inputEndRadioButton";
+      this.inputEndRadioButton.Size = new System.Drawing.Size(91, 17);
+      this.inputEndRadioButton.TabIndex = 17;
+      this.inputEndRadioButton.Text = "rivien loppuun";
+      this.inputEndRadioButton.UseVisualStyleBackColor = true;
+      this.inputEndRadioButton.CheckedChanged += new System.EventHandler(this.radioButtonCheckedChanged);
+      // 
+      // inputStartRadioButton
+      // 
+      this.inputStartRadioButton.AutoSize = true;
+      this.inputStartRadioButton.Checked = true;
+      this.inputStartRadioButton.Location = new System.Drawing.Point(7, 75);
+      this.inputStartRadioButton.Name = "inputStartRadioButton";
+      this.inputStartRadioButton.Size = new System.Drawing.Size(85, 17);
+      this.inputStartRadioButton.TabIndex = 16;
+      this.inputStartRadioButton.TabStop = true;
+      this.inputStartRadioButton.Text = "rivien alkuun";
+      this.inputStartRadioButton.UseVisualStyleBackColor = true;
+      this.inputStartRadioButton.CheckedChanged += new System.EventHandler(this.radioButtonCheckedChanged);
       // 
       // groupBox2
       // 
@@ -222,30 +246,6 @@
       this.groupBox2.TabIndex = 17;
       this.groupBox2.TabStop = false;
       this.groupBox2.Text = "Lisää pilkkuja, heittomerkkejä";
-      // 
-      // inputStartRadioButton
-      // 
-      this.inputStartRadioButton.AutoSize = true;
-      this.inputStartRadioButton.Checked = true;
-      this.inputStartRadioButton.Location = new System.Drawing.Point(7, 75);
-      this.inputStartRadioButton.Name = "inputStartRadioButton";
-      this.inputStartRadioButton.Size = new System.Drawing.Size(57, 17);
-      this.inputStartRadioButton.TabIndex = 16;
-      this.inputStartRadioButton.TabStop = true;
-      this.inputStartRadioButton.Text = "alkuun";
-      this.inputStartRadioButton.UseVisualStyleBackColor = true;
-      this.inputStartRadioButton.CheckedChanged += new System.EventHandler(this.radioButtonCheckedChanged);
-      // 
-      // inputEndRadioButton
-      // 
-      this.inputEndRadioButton.AutoSize = true;
-      this.inputEndRadioButton.Location = new System.Drawing.Point(69, 74);
-      this.inputEndRadioButton.Name = "inputEndRadioButton";
-      this.inputEndRadioButton.Size = new System.Drawing.Size(63, 17);
-      this.inputEndRadioButton.TabIndex = 17;
-      this.inputEndRadioButton.Text = "loppuun";
-      this.inputEndRadioButton.UseVisualStyleBackColor = true;
-      this.inputEndRadioButton.CheckedChanged += new System.EventHandler(this.radioButtonCheckedChanged);
       // 
       // MyForm
       // 
