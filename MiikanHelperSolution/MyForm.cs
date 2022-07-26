@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace MiikanHelperSolution {
@@ -85,17 +84,7 @@ namespace MiikanHelperSolution {
 
     private void inputGetUserIDsButton_Click(object sender, EventArgs e) {
       var list = GetRowsAsList(inputTextBox);
-      var listOfSubStrings = new List<string>();
-
-      foreach(var listItem in list) {
-        var indexOfSpace = listItem.IndexOf(' ');
-        var indexOfColon = listItem.IndexOf(':');
-        var characterCountBetweenSpaceAndColon = indexOfSpace - indexOfColon;
-        if(characterCountBetweenSpaceAndColon > 0) {
-          var subString = listItem.Substring(indexOfColon + 1, characterCountBetweenSpaceAndColon - 1);
-          listOfSubStrings.Add(subString);
-        }
-      }
+      var listOfSubStrings = ListHelper.GetListOfSubstrings(list);
       //output
       outputTextBox.Text = String.Join("\r\n", listOfSubStrings);
       outputRowCountLabel.Text = listOfSubStrings.Count + "";

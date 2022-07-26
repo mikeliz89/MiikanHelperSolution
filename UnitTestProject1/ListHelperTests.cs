@@ -93,5 +93,30 @@ namespace UnitTestProject1 {
       Assert.AreEqual("'Test',", output2[0]);
       Assert.AreEqual("'Test2'", output2[1]);
     }
+
+    [TestMethod]
+    public void GetListOfSubstrings_EmptyInputList() {
+      var input = new List<string>();
+      var output = ListHelper.GetListOfSubstrings(input);
+      Assert.AreEqual(0, output.Count);
+    }
+
+    [TestMethod]
+    public void GetListOfSubstrings_OneItemInInputList() {
+      var input = new List<string>();
+      input.Add("User:1234 testing");
+      var output = ListHelper.GetListOfSubstrings(input);
+      Assert.AreEqual(1, output.Count);
+      Assert.AreEqual("1234", output[0]);
+    }
+
+    [TestMethod]
+    public void GetListOfSubstrings_OneItemInInputList_IncorrectSpaces() {
+      var input = new List<string>();
+      input.Add("User: 1234 testing");
+      var output = ListHelper.GetListOfSubstrings(input);
+      Assert.AreEqual(1, output.Count);
+      Assert.AreEqual("", output[0]);
+    }
   }
 }

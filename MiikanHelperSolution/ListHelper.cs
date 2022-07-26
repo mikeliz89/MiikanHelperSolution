@@ -60,5 +60,21 @@ namespace MiikanHelperSolution {
 
       return outputList;
     }
+
+    public static List<string> GetListOfSubstrings(List<string> list) {
+      var listOfSubStrings = new List<string>();
+
+      foreach(var listItem in list) {
+        var indexOfSpace = listItem.IndexOf(' ');
+        var indexOfColon = listItem.IndexOf(':');
+        var characterCountBetweenSpaceAndColon = indexOfSpace - indexOfColon;
+        if(characterCountBetweenSpaceAndColon > 0) {
+          var subString = listItem.Substring(indexOfColon + 1, characterCountBetweenSpaceAndColon - 1);
+          listOfSubStrings.Add(subString);
+        }
+      }
+
+      return listOfSubStrings;
+    }
   }
 }
