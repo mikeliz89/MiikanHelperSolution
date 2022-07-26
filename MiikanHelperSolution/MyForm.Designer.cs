@@ -64,12 +64,12 @@
       this.inputTextBox.Multiline = true;
       this.inputTextBox.Name = "inputTextBox";
       this.inputTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-      this.inputTextBox.Size = new System.Drawing.Size(380, 120);
+      this.inputTextBox.Size = new System.Drawing.Size(856, 120);
       this.inputTextBox.TabIndex = 1;
       // 
       // outputTextBox
       // 
-      this.outputTextBox.Location = new System.Drawing.Point(555, 46);
+      this.outputTextBox.Location = new System.Drawing.Point(579, 330);
       this.outputTextBox.MaxLength = 132767;
       this.outputTextBox.Multiline = true;
       this.outputTextBox.Name = "outputTextBox";
@@ -89,7 +89,7 @@
       // label2
       // 
       this.label2.AutoSize = true;
-      this.label2.Location = new System.Drawing.Point(552, 24);
+      this.label2.Location = new System.Drawing.Point(576, 308);
       this.label2.Name = "label2";
       this.label2.Size = new System.Drawing.Size(60, 13);
       this.label2.TabIndex = 4;
@@ -97,7 +97,7 @@
       // 
       // outputRemoveDuplicatesButton
       // 
-      this.outputRemoveDuplicatesButton.Location = new System.Drawing.Point(555, 181);
+      this.outputRemoveDuplicatesButton.Location = new System.Drawing.Point(579, 465);
       this.outputRemoveDuplicatesButton.Name = "outputRemoveDuplicatesButton";
       this.outputRemoveDuplicatesButton.Size = new System.Drawing.Size(108, 23);
       this.outputRemoveDuplicatesButton.TabIndex = 5;
@@ -107,7 +107,7 @@
       // 
       // resultsTextBox
       // 
-      this.resultsTextBox.Location = new System.Drawing.Point(1024, 46);
+      this.resultsTextBox.Location = new System.Drawing.Point(1023, 328);
       this.resultsTextBox.Multiline = true;
       this.resultsTextBox.Name = "resultsTextBox";
       this.resultsTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
@@ -117,7 +117,7 @@
       // label3
       // 
       this.label3.AutoSize = true;
-      this.label3.Location = new System.Drawing.Point(1021, 24);
+      this.label3.Location = new System.Drawing.Point(1020, 306);
       this.label3.Name = "label3";
       this.label3.Size = new System.Drawing.Size(42, 13);
       this.label3.TabIndex = 7;
@@ -126,14 +126,14 @@
       // outputRowCountLabel
       // 
       this.outputRowCountLabel.AutoSize = true;
-      this.outputRowCountLabel.Location = new System.Drawing.Point(900, 24);
+      this.outputRowCountLabel.Location = new System.Drawing.Point(924, 308);
       this.outputRowCountLabel.Name = "outputRowCountLabel";
       this.outputRowCountLabel.Size = new System.Drawing.Size(0, 13);
       this.outputRowCountLabel.TabIndex = 8;
       // 
       // outputCombineEveryEachOtherRowButton
       // 
-      this.outputCombineEveryEachOtherRowButton.Location = new System.Drawing.Point(555, 210);
+      this.outputCombineEveryEachOtherRowButton.Location = new System.Drawing.Point(579, 494);
       this.outputCombineEveryEachOtherRowButton.Name = "outputCombineEveryEachOtherRowButton";
       this.outputCombineEveryEachOtherRowButton.Size = new System.Drawing.Size(129, 23);
       this.outputCombineEveryEachOtherRowButton.TabIndex = 9;
@@ -153,7 +153,7 @@
       // 
       // outputCountRowsButton
       // 
-      this.outputCountRowsButton.Location = new System.Drawing.Point(842, 181);
+      this.outputCountRowsButton.Location = new System.Drawing.Point(866, 465);
       this.outputCountRowsButton.Name = "outputCountRowsButton";
       this.outputCountRowsButton.Size = new System.Drawing.Size(93, 23);
       this.outputCountRowsButton.TabIndex = 11;

@@ -93,19 +93,7 @@ namespace MiikanHelperSolution {
     //ouput combine every each row 
     private void outputCombineEveryEachRowButton_Click(object sender, EventArgs e) {
       var list = GetRowsAsList(outputTextBox);
-
-      var outputList = new List<string>();
-      string value = "";
-      if(list.Count > 1) {
-        for(int i = 1; i < list.Count + 1; i++) {
-          if(i % 2 == 0) {
-            value += list[i - 1];
-            outputList.Add(value);
-          } else { value = list[i - 1] + " "; }
-        }
-      } else if(list.Count == 1) {
-        outputList.Add(list[0]);
-      }
+      var outputList = ListHelper.CombineEveryEachRow(list);
       //output
       outputTextBox.Text = String.Join("\r\n", outputList);
       outputRowCountLabel.Text = outputList.Count + "";
