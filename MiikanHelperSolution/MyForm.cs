@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -11,6 +12,7 @@ namespace MiikanHelperSolution {
 
     public MyForm() {
       InitializeComponent();
+      outputRowCountLabel.Text = "";
       selectedRadioButton = inputStartRadioButton;
     }
 
@@ -114,6 +116,39 @@ namespace MiikanHelperSolution {
         // to it.
         selectedRadioButton = rb;
       }
+    }
+
+    private void inputSearchFromFilePath_Click(object sender, EventArgs e) {
+
+      resultsTextBox.Text = "";
+
+      var filePath = inputFilePath.Text;
+
+      //guards
+      if(string.IsNullOrEmpty(filePath)) {
+        resultsTextBox.Text = "Filepath cannot be null or empty";
+        return;
+      }
+      if(!File.Exists(filePath)) {
+        resultsTextBox.Text = "File does not exist";
+        return;
+      }
+
+      var filesLines = File.ReadAllLines(filePath);
+
+      resultsTextBox.Text += $"Found {filesLines.Length} lines from file";
+
+      var list = GetRowsAsList(inputTextBox);
+
+      var outputList = ListHelper.GetListContainingOtherList(list, filesLines.ToList());
+
+      //output
+      outputTextBox.Text = String.Join("\r\n", outputList);
+      outputRowCountLabel.Text = outputList.Count + "";
+
+      //results
+      var list2 = GetRowsAsList(outputTextBox);
+      resultsTextBox.Text += $"{Environment.NewLine}Output list count {list2.Count}";
     }
   }
 }

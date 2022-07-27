@@ -76,5 +76,17 @@ namespace MiikanHelperSolution {
 
       return listOfSubStrings;
     }
-  }
+
+    public static List<string> GetListContainingOtherList(List<string> list, List<string> list2) {
+      var outputList = new List<string>();
+      foreach(var row in list) {
+        foreach(var row2 in list2) {
+          if(row2.Contains(row)) {
+            outputList.Add(row);
+          }
+        }
+      }
+      return outputList;
+    }
+   }
 }
