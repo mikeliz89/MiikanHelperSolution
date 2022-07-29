@@ -150,5 +150,27 @@ namespace MiikanHelperSolution {
       var list2 = GetRowsAsList(outputTextBox);
       resultsTextBox.Text += $"{Environment.NewLine}Output list count {list2.Count}";
     }
+
+    private void inputToUpper_Click(object sender, EventArgs e) {
+      var list = GetRowsAsList(inputTextBox);
+      var outputList = new List<string>();
+      foreach(var row in list) {
+        outputList.Add(row.ToUpper().ToString());
+      }
+      //output
+      outputTextBox.Text = String.Join("\r\n", outputList);
+      outputRowCountLabel.Text = outputList.Count + "";
+    }
+
+    private void inputToLower_Click(object sender, EventArgs e) {
+      var list = GetRowsAsList(inputTextBox);
+      var outputList = new List<string>();
+      foreach(var row in list) {
+        outputList.Add(row.ToLower().ToString());
+      }
+      //output
+      outputTextBox.Text = String.Join("\r\n", outputList);
+      outputRowCountLabel.Text = outputList.Count + "";
+    }
   }
 }

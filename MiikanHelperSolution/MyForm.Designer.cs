@@ -44,12 +44,16 @@
       this.inputStartRadioButton = new System.Windows.Forms.RadioButton();
       this.groupBox2 = new System.Windows.Forms.GroupBox();
       this.groupBox3 = new System.Windows.Forms.GroupBox();
-      this.inputFilePath = new System.Windows.Forms.TextBox();
-      this.label4 = new System.Windows.Forms.Label();
       this.inputSearchFromFilePath = new System.Windows.Forms.Button();
+      this.label4 = new System.Windows.Forms.Label();
+      this.inputFilePath = new System.Windows.Forms.TextBox();
+      this.groupBox4 = new System.Windows.Forms.GroupBox();
+      this.inputToUpper = new System.Windows.Forms.Button();
+      this.inputToLower = new System.Windows.Forms.Button();
       this.groupBox1.SuspendLayout();
       this.groupBox2.SuspendLayout();
       this.groupBox3.SuspendLayout();
+      this.groupBox4.SuspendLayout();
       this.SuspendLayout();
       // 
       // inputToOutputButton
@@ -210,7 +214,7 @@
       this.groupBox1.Controls.Add(this.inputStartRadioButton);
       this.groupBox1.Controls.Add(this.inputAddTextTextBox);
       this.groupBox1.Controls.Add(this.inputAddTextButton);
-      this.groupBox1.Location = new System.Drawing.Point(68, 306);
+      this.groupBox1.Location = new System.Drawing.Point(68, 293);
       this.groupBox1.Name = "groupBox1";
       this.groupBox1.Size = new System.Drawing.Size(268, 106);
       this.groupBox1.TabIndex = 16;
@@ -246,7 +250,7 @@
       this.groupBox2.Controls.Add(this.inputToOutputButton);
       this.groupBox2.Controls.Add(this.inputAddCommasButton);
       this.groupBox2.Controls.Add(this.inputGetUserIDsButton);
-      this.groupBox2.Location = new System.Drawing.Point(68, 425);
+      this.groupBox2.Location = new System.Drawing.Point(68, 411);
       this.groupBox2.Name = "groupBox2";
       this.groupBox2.Size = new System.Drawing.Size(268, 106);
       this.groupBox2.TabIndex = 17;
@@ -265,22 +269,6 @@
       this.groupBox3.TabStop = false;
       this.groupBox3.Text = "Etsi tiedostosta";
       // 
-      // inputFilePath
-      // 
-      this.inputFilePath.Location = new System.Drawing.Point(6, 38);
-      this.inputFilePath.Name = "inputFilePath";
-      this.inputFilePath.Size = new System.Drawing.Size(395, 20);
-      this.inputFilePath.TabIndex = 18;
-      // 
-      // label4
-      // 
-      this.label4.AutoSize = true;
-      this.label4.Location = new System.Drawing.Point(4, 22);
-      this.label4.Name = "label4";
-      this.label4.Size = new System.Drawing.Size(74, 13);
-      this.label4.TabIndex = 19;
-      this.label4.Text = "Tiedostopolku";
-      // 
       // inputSearchFromFilePath
       // 
       this.inputSearchFromFilePath.Location = new System.Drawing.Point(6, 64);
@@ -291,11 +279,59 @@
       this.inputSearchFromFilePath.UseVisualStyleBackColor = true;
       this.inputSearchFromFilePath.Click += new System.EventHandler(this.inputSearchFromFilePath_Click);
       // 
+      // label4
+      // 
+      this.label4.AutoSize = true;
+      this.label4.Location = new System.Drawing.Point(4, 22);
+      this.label4.Name = "label4";
+      this.label4.Size = new System.Drawing.Size(74, 13);
+      this.label4.TabIndex = 19;
+      this.label4.Text = "Tiedostopolku";
+      // 
+      // inputFilePath
+      // 
+      this.inputFilePath.Location = new System.Drawing.Point(6, 38);
+      this.inputFilePath.Name = "inputFilePath";
+      this.inputFilePath.Size = new System.Drawing.Size(395, 20);
+      this.inputFilePath.TabIndex = 18;
+      // 
+      // groupBox4
+      // 
+      this.groupBox4.Controls.Add(this.inputToLower);
+      this.groupBox4.Controls.Add(this.inputToUpper);
+      this.groupBox4.Location = new System.Drawing.Point(68, 549);
+      this.groupBox4.Name = "groupBox4";
+      this.groupBox4.Size = new System.Drawing.Size(268, 106);
+      this.groupBox4.TabIndex = 19;
+      this.groupBox4.TabStop = false;
+      this.groupBox4.Text = "Muuta tekstiä";
+      // 
+      // inputToUpper
+      // 
+      this.inputToUpper.Location = new System.Drawing.Point(7, 20);
+      this.inputToUpper.Name = "inputToUpper";
+      this.inputToUpper.Size = new System.Drawing.Size(72, 25);
+      this.inputToUpper.TabIndex = 0;
+      this.inputToUpper.Text = "ToUpper";
+      this.inputToUpper.UseVisualStyleBackColor = true;
+      this.inputToUpper.Click += new System.EventHandler(this.inputToUpper_Click);
+      // 
+      // inputToLower
+      // 
+      this.inputToLower.Location = new System.Drawing.Point(85, 19);
+      this.inputToLower.Name = "inputToLower";
+      this.inputToLower.Size = new System.Drawing.Size(72, 25);
+      this.inputToLower.TabIndex = 1;
+      this.inputToLower.Text = "ToLower";
+      this.inputToLower.UseVisualStyleBackColor = true;
+      this.inputToLower.Click += new System.EventHandler(this.inputToLower_Click);
+      // 
       // MyForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1512, 761);
+      this.Controls.Add(this.groupBox4);
       this.Controls.Add(this.groupBox3);
       this.Controls.Add(this.groupBox2);
       this.Controls.Add(this.groupBox1);
@@ -317,6 +353,7 @@
       this.groupBox2.ResumeLayout(false);
       this.groupBox3.ResumeLayout(false);
       this.groupBox3.PerformLayout();
+      this.groupBox4.ResumeLayout(false);
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -348,6 +385,9 @@
     private System.Windows.Forms.Button inputSearchFromFilePath;
     private System.Windows.Forms.Label label4;
     private System.Windows.Forms.TextBox inputFilePath;
+    private System.Windows.Forms.GroupBox groupBox4;
+    private System.Windows.Forms.Button inputToUpper;
+    private System.Windows.Forms.Button inputToLower;
   }
 }
 
