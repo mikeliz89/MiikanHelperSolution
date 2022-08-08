@@ -48,12 +48,17 @@
       this.label4 = new System.Windows.Forms.Label();
       this.inputFilePath = new System.Windows.Forms.TextBox();
       this.groupBox4 = new System.Windows.Forms.GroupBox();
-      this.inputToUpper = new System.Windows.Forms.Button();
       this.inputToLower = new System.Windows.Forms.Button();
+      this.inputToUpper = new System.Windows.Forms.Button();
+      this.groupBox5 = new System.Windows.Forms.GroupBox();
+      this.label5 = new System.Windows.Forms.Label();
+      this.inputSplitCsv = new System.Windows.Forms.TextBox();
+      this.inputSplitCsvBtn = new System.Windows.Forms.Button();
       this.groupBox1.SuspendLayout();
       this.groupBox2.SuspendLayout();
       this.groupBox3.SuspendLayout();
       this.groupBox4.SuspendLayout();
+      this.groupBox5.SuspendLayout();
       this.SuspendLayout();
       // 
       // inputToOutputButton
@@ -299,22 +304,12 @@
       // 
       this.groupBox4.Controls.Add(this.inputToLower);
       this.groupBox4.Controls.Add(this.inputToUpper);
-      this.groupBox4.Location = new System.Drawing.Point(68, 549);
+      this.groupBox4.Location = new System.Drawing.Point(68, 534);
       this.groupBox4.Name = "groupBox4";
-      this.groupBox4.Size = new System.Drawing.Size(268, 106);
+      this.groupBox4.Size = new System.Drawing.Size(268, 60);
       this.groupBox4.TabIndex = 19;
       this.groupBox4.TabStop = false;
       this.groupBox4.Text = "Muuta tekstiä";
-      // 
-      // inputToUpper
-      // 
-      this.inputToUpper.Location = new System.Drawing.Point(7, 20);
-      this.inputToUpper.Name = "inputToUpper";
-      this.inputToUpper.Size = new System.Drawing.Size(72, 25);
-      this.inputToUpper.TabIndex = 0;
-      this.inputToUpper.Text = "ToUpper";
-      this.inputToUpper.UseVisualStyleBackColor = true;
-      this.inputToUpper.Click += new System.EventHandler(this.inputToUpper_Click);
       // 
       // inputToLower
       // 
@@ -326,11 +321,60 @@
       this.inputToLower.UseVisualStyleBackColor = true;
       this.inputToLower.Click += new System.EventHandler(this.inputToLower_Click);
       // 
+      // inputToUpper
+      // 
+      this.inputToUpper.Location = new System.Drawing.Point(7, 20);
+      this.inputToUpper.Name = "inputToUpper";
+      this.inputToUpper.Size = new System.Drawing.Size(72, 25);
+      this.inputToUpper.TabIndex = 0;
+      this.inputToUpper.Text = "ToUpper";
+      this.inputToUpper.UseVisualStyleBackColor = true;
+      this.inputToUpper.Click += new System.EventHandler(this.inputToUpper_Click);
+      // 
+      // groupBox5
+      // 
+      this.groupBox5.Controls.Add(this.label5);
+      this.groupBox5.Controls.Add(this.inputSplitCsv);
+      this.groupBox5.Controls.Add(this.inputSplitCsvBtn);
+      this.groupBox5.Location = new System.Drawing.Point(68, 609);
+      this.groupBox5.Name = "groupBox5";
+      this.groupBox5.Size = new System.Drawing.Size(268, 106);
+      this.groupBox5.TabIndex = 20;
+      this.groupBox5.TabStop = false;
+      this.groupBox5.Text = "Erottele pilkkulista";
+      // 
+      // label5
+      // 
+      this.label5.AutoSize = true;
+      this.label5.Location = new System.Drawing.Point(4, 24);
+      this.label5.Name = "label5";
+      this.label5.Size = new System.Drawing.Size(65, 13);
+      this.label5.TabIndex = 20;
+      this.label5.Text = "Erotinmerkki";
+      // 
+      // inputSplitCsv
+      // 
+      this.inputSplitCsv.Location = new System.Drawing.Point(7, 40);
+      this.inputSplitCsv.Name = "inputSplitCsv";
+      this.inputSplitCsv.Size = new System.Drawing.Size(154, 20);
+      this.inputSplitCsv.TabIndex = 18;
+      // 
+      // inputSplitCsvBtn
+      // 
+      this.inputSplitCsvBtn.Location = new System.Drawing.Point(6, 66);
+      this.inputSplitCsvBtn.Name = "inputSplitCsvBtn";
+      this.inputSplitCsvBtn.Size = new System.Drawing.Size(72, 25);
+      this.inputSplitCsvBtn.TabIndex = 2;
+      this.inputSplitCsvBtn.Text = "Erottele";
+      this.inputSplitCsvBtn.UseVisualStyleBackColor = true;
+      this.inputSplitCsvBtn.Click += new System.EventHandler(this.inputSplitCsvBtn_Click);
+      // 
       // MyForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1512, 761);
+      this.Controls.Add(this.groupBox5);
       this.Controls.Add(this.groupBox4);
       this.Controls.Add(this.groupBox3);
       this.Controls.Add(this.groupBox2);
@@ -354,6 +398,8 @@
       this.groupBox3.ResumeLayout(false);
       this.groupBox3.PerformLayout();
       this.groupBox4.ResumeLayout(false);
+      this.groupBox5.ResumeLayout(false);
+      this.groupBox5.PerformLayout();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -388,6 +434,10 @@
     private System.Windows.Forms.GroupBox groupBox4;
     private System.Windows.Forms.Button inputToUpper;
     private System.Windows.Forms.Button inputToLower;
+    private System.Windows.Forms.GroupBox groupBox5;
+    private System.Windows.Forms.Label label5;
+    private System.Windows.Forms.TextBox inputSplitCsv;
+    private System.Windows.Forms.Button inputSplitCsvBtn;
   }
 }
 

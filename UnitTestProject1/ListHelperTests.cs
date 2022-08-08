@@ -118,5 +118,64 @@ namespace UnitTestProject1 {
       Assert.AreEqual(1, output.Count);
       Assert.AreEqual("", output[0]);
     }
+
+    [TestMethod]
+    public void Split_TwoCommaSeparatedItemsInInputList() {
+      var input = new List<string>();
+      input.Add("a,b");
+      input.Add("c,d");
+      var output = ListHelper.Split(input, ",");
+      Assert.AreEqual(4, output.Count);
+      Assert.AreEqual("a", output[0]);
+      Assert.AreEqual("b", output[1]);
+      Assert.AreEqual("c", output[2]);
+      Assert.AreEqual("d", output[3]);
+    }
+
+    [TestMethod]
+    public void Split_TwoCommaSeparatedItemsInInputList_WrongSeparator() {
+      var input = new List<string>();
+      input.Add("a,b");
+      input.Add("c,d");
+      var output = ListHelper.Split(input, ";");
+      Assert.AreEqual(2, output.Count);
+      Assert.AreEqual("a,b", output[0]);
+      Assert.AreEqual("c,d", output[1]);
+    }
+
+    [TestMethod]
+    public void Split_OneItemContainingMultipleCommas() {
+      var input = new List<string>();
+      input.Add("a,b,c,d,e");
+      var output = ListHelper.Split(input, ",");
+      Assert.AreEqual(5, output.Count);
+      Assert.AreEqual("a", output[0]);
+      Assert.AreEqual("b", output[1]);
+      Assert.AreEqual("c", output[2]);
+      Assert.AreEqual("d", output[3]);
+      Assert.AreEqual("e", output[4]);
+    }
+
+    [TestMethod]
+    public void ToUpper() {
+      var input = new List<string>();
+      input.Add("a,b");
+      input.Add("c,d");
+      var output = ListHelper.ListToUpper(input);
+      Assert.AreEqual(2, output.Count);
+      Assert.AreEqual("A,B", output[0]);
+      Assert.AreEqual("C,D", output[1]);
+    }
+
+    [TestMethod]
+    public void ToLower() {
+      var input = new List<string>();
+      input.Add("a,b");
+      input.Add("c,d");
+      var output = ListHelper.ListToLower(input);
+      Assert.AreEqual(2, output.Count);
+      Assert.AreEqual("a,b", output[0]);
+      Assert.AreEqual("c,d", output[1]);
+    }
   }
 }

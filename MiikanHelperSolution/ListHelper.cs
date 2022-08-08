@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace MiikanHelperSolution {
@@ -88,5 +89,37 @@ namespace MiikanHelperSolution {
       }
       return outputList;
     }
-   }
+
+    public static List<string> Split(List<string> list, string separator) {
+      var outputList = new List<string>();
+      foreach(var row in list) {
+        var rowList = row.Split(separator.ToCharArray());
+        foreach(var listItem in rowList) {
+          outputList.Add(listItem.TrimStart().TrimEnd());
+        }
+      }
+      return outputList;
+    }
+
+    public static List<string> ListToUpper(List<string> list) {
+      var outputList = new List<string>();
+      foreach(var row in list) {
+        outputList.Add(row.ToUpper().ToString());
+      }
+      return outputList;
+    }
+
+    public static List<string> ListToLower(List<string> list) {
+      var outputList = new List<string>();
+      foreach(var row in list) {
+        outputList.Add(row.ToLower().ToString());
+      }
+      return outputList;
+    }
+
+    public static List<string> RemoveDuplicates(List<string> list) {
+      var outputList = list.Distinct().ToList();
+      return outputList;
+    }
+  }
 }
