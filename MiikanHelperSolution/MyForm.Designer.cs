@@ -133,6 +133,7 @@
       // resultsTextBox
       // 
       this.resultsTextBox.Location = new System.Drawing.Point(861, 504);
+      this.resultsTextBox.MaxLength = 132767;
       this.resultsTextBox.Multiline = true;
       this.resultsTextBox.Name = "resultsTextBox";
       this.resultsTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
