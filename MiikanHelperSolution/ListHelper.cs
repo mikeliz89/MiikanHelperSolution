@@ -64,7 +64,6 @@ namespace MiikanHelperSolution {
 
     public static List<string> GetListOfSubstrings(List<string> list) {
       var listOfSubStrings = new List<string>();
-
       foreach(var listItem in list) {
         var indexOfSpace = listItem.IndexOf(' ');
         var indexOfColon = listItem.IndexOf(':');
@@ -74,7 +73,6 @@ namespace MiikanHelperSolution {
           listOfSubStrings.Add(subString);
         }
       }
-
       return listOfSubStrings;
     }
 
@@ -90,17 +88,31 @@ namespace MiikanHelperSolution {
       return outputList;
     }
 
+    /// <summary>
+    /// Muuta erotinmerkin mukaan listaksi
+    /// </summary>
+    /// <param name="list"></param>
+    /// <param name="separator"></param>
+    /// <returns></returns>
     public static List<string> Split(List<string> list, string separator) {
       var outputList = new List<string>();
       foreach(var row in list) {
         var rowList = row.Split(separator.ToCharArray());
         foreach(var listItem in rowList) {
-          outputList.Add(listItem.TrimStart().TrimEnd());
+          var item = listItem.TrimStart().TrimEnd();
+          if(!string.IsNullOrEmpty(item)) {
+            outputList.Add(item);
+          }
         }
       }
       return outputList;
     }
 
+    /// <summary>
+    /// Muuta listan kaikki rivit toUpper() stringeiksi eli isoille kirjaimille
+    /// </summary>
+    /// <param name="list"></param>
+    /// <returns></returns>
     public static List<string> ListToUpper(List<string> list) {
       var outputList = new List<string>();
       foreach(var row in list) {
@@ -109,6 +121,11 @@ namespace MiikanHelperSolution {
       return outputList;
     }
 
+    /// <summary>
+    /// Muuta listan kaikki rivit toLower() stringeiksi eli pienille kirjaimille
+    /// </summary>
+    /// <param name="list"></param>
+    /// <returns></returns>
     public static List<string> ListToLower(List<string> list) {
       var outputList = new List<string>();
       foreach(var row in list) {
@@ -117,6 +134,11 @@ namespace MiikanHelperSolution {
       return outputList;
     }
 
+    /// <summary>
+    /// Poista listasta duplikaatit
+    /// </summary>
+    /// <param name="list"></param>
+    /// <returns></returns>
     public static List<string> RemoveDuplicates(List<string> list) {
       var outputList = list.Distinct().ToList();
       return outputList;

@@ -79,6 +79,19 @@ namespace UnitTestProject1 {
     }
 
     [TestMethod]
+    public void GetOutputList_OneItemInInputList_AddToStartAndEndFalse() {
+      var input = new List<string>();
+      input.Add("Test");
+      var output = ListHelper.GetOutputList(input, "'", addToStart: false, addToEnd: false, addCommas: false);
+      Assert.AreEqual(1, output.Count);
+      Assert.AreEqual("Test", output[0]);
+
+      var output2 = ListHelper.GetOutputList(input, "'", addToStart: false, addToEnd: false, addCommas: true);
+      Assert.AreEqual(1, output2.Count);
+      Assert.AreEqual("Test", output2[0]);
+    }
+
+    [TestMethod]
     public void GetOutputList_TwoItemsInInputList() {
       var input = new List<string>();
       input.Add("Test");

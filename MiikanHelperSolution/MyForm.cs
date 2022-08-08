@@ -100,12 +100,36 @@ namespace MiikanHelperSolution {
       var list = GetRowsAsList(inputTextBox);
 
       var outputList = ListHelper.GetOutputList(list, inputAddTextTextBox.Text,
-        inputStartRadioButton.Checked, inputEndRadioButton.Checked, false);
+        addToStart: GetAddToStart(),
+        addToEnd: GetAddToEnd(),
+        addCommas: false);
 
       ShowAsOutput(outputList);
 
       //results
       resultsTextBox.Text = $"Muutettu {list.Count} riviä";
+    }
+
+    private bool GetAddToEnd() {
+      if(inputStartRadioButton.Checked) {
+        return false;
+      } else if(inputEndRadioButton.Checked) {
+        return true;
+      } else if(inputStartAndEndRadioButton.Checked) {
+        return true;
+      }
+      return false;
+    }
+
+    private bool GetAddToStart() {
+      if(inputStartRadioButton.Checked) {
+        return true;
+      } else if(inputEndRadioButton.Checked) {
+        return false;
+      } else if(inputStartAndEndRadioButton.Checked) {
+        return true;
+      }
+      return false;
     }
 
     private void radioButtonCheckedChanged(object sender, EventArgs e) {
