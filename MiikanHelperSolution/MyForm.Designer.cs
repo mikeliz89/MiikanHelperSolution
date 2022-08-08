@@ -40,9 +40,11 @@
       this.inputAddTextTextBox = new System.Windows.Forms.TextBox();
       this.inputAddTextButton = new System.Windows.Forms.Button();
       this.groupBox1 = new System.Windows.Forms.GroupBox();
+      this.inputStartAndEndRadioButton = new System.Windows.Forms.RadioButton();
       this.inputEndRadioButton = new System.Windows.Forms.RadioButton();
       this.inputStartRadioButton = new System.Windows.Forms.RadioButton();
       this.groupBox2 = new System.Windows.Forms.GroupBox();
+      this.inputAddSingleQuotes = new System.Windows.Forms.Button();
       this.groupBox3 = new System.Windows.Forms.GroupBox();
       this.inputSearchFromFilePath = new System.Windows.Forms.Button();
       this.label4 = new System.Windows.Forms.Label();
@@ -54,19 +56,25 @@
       this.label5 = new System.Windows.Forms.Label();
       this.inputSplitCsv = new System.Windows.Forms.TextBox();
       this.inputSplitCsvBtn = new System.Windows.Forms.Button();
-      this.inputStartAndEndRadioButton = new System.Windows.Forms.RadioButton();
       this.groupBox6 = new System.Windows.Forms.GroupBox();
+      this.groupBox7 = new System.Windows.Forms.GroupBox();
+      this.outputShowDuplicates = new System.Windows.Forms.Button();
+      this.groupBox8 = new System.Windows.Forms.GroupBox();
+      this.inputRemoveDuplicates = new System.Windows.Forms.Button();
+      this.inputShowDuplicates = new System.Windows.Forms.Button();
       this.groupBox1.SuspendLayout();
       this.groupBox2.SuspendLayout();
       this.groupBox3.SuspendLayout();
       this.groupBox4.SuspendLayout();
       this.groupBox5.SuspendLayout();
       this.groupBox6.SuspendLayout();
+      this.groupBox7.SuspendLayout();
+      this.groupBox8.SuspendLayout();
       this.SuspendLayout();
       // 
       // inputToOutputButton
       // 
-      this.inputToOutputButton.Location = new System.Drawing.Point(7, 19);
+      this.inputToOutputButton.Location = new System.Drawing.Point(7, 77);
       this.inputToOutputButton.Name = "inputToOutputButton";
       this.inputToOutputButton.Size = new System.Drawing.Size(154, 23);
       this.inputToOutputButton.TabIndex = 0;
@@ -76,28 +84,28 @@
       // 
       // inputTextBox
       // 
-      this.inputTextBox.Location = new System.Drawing.Point(68, 46);
+      this.inputTextBox.Location = new System.Drawing.Point(50, 46);
       this.inputTextBox.MaxLength = 132767;
       this.inputTextBox.Multiline = true;
       this.inputTextBox.Name = "inputTextBox";
       this.inputTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-      this.inputTextBox.Size = new System.Drawing.Size(856, 120);
+      this.inputTextBox.Size = new System.Drawing.Size(732, 200);
       this.inputTextBox.TabIndex = 1;
       // 
       // outputTextBox
       // 
-      this.outputTextBox.Location = new System.Drawing.Point(579, 330);
+      this.outputTextBox.Location = new System.Drawing.Point(855, 46);
       this.outputTextBox.MaxLength = 132767;
       this.outputTextBox.Multiline = true;
       this.outputTextBox.Name = "outputTextBox";
       this.outputTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-      this.outputTextBox.Size = new System.Drawing.Size(380, 200);
+      this.outputTextBox.Size = new System.Drawing.Size(698, 200);
       this.outputTextBox.TabIndex = 2;
       // 
       // label1
       // 
       this.label1.AutoSize = true;
-      this.label1.Location = new System.Drawing.Point(65, 24);
+      this.label1.Location = new System.Drawing.Point(47, 24);
       this.label1.Name = "label1";
       this.label1.Size = new System.Drawing.Size(52, 13);
       this.label1.TabIndex = 3;
@@ -106,7 +114,7 @@
       // label2
       // 
       this.label2.AutoSize = true;
-      this.label2.Location = new System.Drawing.Point(576, 308);
+      this.label2.Location = new System.Drawing.Point(852, 24);
       this.label2.Name = "label2";
       this.label2.Size = new System.Drawing.Size(60, 13);
       this.label2.TabIndex = 4;
@@ -114,7 +122,7 @@
       // 
       // outputRemoveDuplicatesButton
       // 
-      this.outputRemoveDuplicatesButton.Location = new System.Drawing.Point(6, 19);
+      this.outputRemoveDuplicatesButton.Location = new System.Drawing.Point(6, 48);
       this.outputRemoveDuplicatesButton.Name = "outputRemoveDuplicatesButton";
       this.outputRemoveDuplicatesButton.Size = new System.Drawing.Size(108, 23);
       this.outputRemoveDuplicatesButton.TabIndex = 5;
@@ -124,17 +132,17 @@
       // 
       // resultsTextBox
       // 
-      this.resultsTextBox.Location = new System.Drawing.Point(1023, 328);
+      this.resultsTextBox.Location = new System.Drawing.Point(861, 504);
       this.resultsTextBox.Multiline = true;
       this.resultsTextBox.Name = "resultsTextBox";
       this.resultsTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-      this.resultsTextBox.Size = new System.Drawing.Size(393, 202);
+      this.resultsTextBox.Size = new System.Drawing.Size(692, 202);
       this.resultsTextBox.TabIndex = 6;
       // 
       // label3
       // 
       this.label3.AutoSize = true;
-      this.label3.Location = new System.Drawing.Point(1020, 306);
+      this.label3.Location = new System.Drawing.Point(858, 482);
       this.label3.Name = "label3";
       this.label3.Size = new System.Drawing.Size(42, 13);
       this.label3.TabIndex = 7;
@@ -143,7 +151,7 @@
       // outputRowCountLabel
       // 
       this.outputRowCountLabel.AutoSize = true;
-      this.outputRowCountLabel.Location = new System.Drawing.Point(897, 309);
+      this.outputRowCountLabel.Location = new System.Drawing.Point(1173, 25);
       this.outputRowCountLabel.Name = "outputRowCountLabel";
       this.outputRowCountLabel.Size = new System.Drawing.Size(62, 13);
       this.outputRowCountLabel.TabIndex = 8;
@@ -151,7 +159,7 @@
       // 
       // outputCombineEveryEachOtherRowButton
       // 
-      this.outputCombineEveryEachOtherRowButton.Location = new System.Drawing.Point(6, 48);
+      this.outputCombineEveryEachOtherRowButton.Location = new System.Drawing.Point(6, 19);
       this.outputCombineEveryEachOtherRowButton.Name = "outputCombineEveryEachOtherRowButton";
       this.outputCombineEveryEachOtherRowButton.Size = new System.Drawing.Size(129, 23);
       this.outputCombineEveryEachOtherRowButton.TabIndex = 9;
@@ -161,7 +169,7 @@
       // 
       // inputCountRowsButton
       // 
-      this.inputCountRowsButton.Location = new System.Drawing.Point(831, 181);
+      this.inputCountRowsButton.Location = new System.Drawing.Point(689, 264);
       this.inputCountRowsButton.Name = "inputCountRowsButton";
       this.inputCountRowsButton.Size = new System.Drawing.Size(93, 23);
       this.inputCountRowsButton.TabIndex = 10;
@@ -171,7 +179,7 @@
       // 
       // outputCountRowsButton
       // 
-      this.outputCountRowsButton.Location = new System.Drawing.Point(281, 19);
+      this.outputCountRowsButton.Location = new System.Drawing.Point(1460, 264);
       this.outputCountRowsButton.Name = "outputCountRowsButton";
       this.outputCountRowsButton.Size = new System.Drawing.Size(93, 23);
       this.outputCountRowsButton.TabIndex = 11;
@@ -181,7 +189,7 @@
       // 
       // inputGetUserIDsButton
       // 
-      this.inputGetUserIDsButton.Location = new System.Drawing.Point(7, 77);
+      this.inputGetUserIDsButton.Location = new System.Drawing.Point(7, 109);
       this.inputGetUserIDsButton.Name = "inputGetUserIDsButton";
       this.inputGetUserIDsButton.Size = new System.Drawing.Size(213, 23);
       this.inputGetUserIDsButton.TabIndex = 12;
@@ -223,12 +231,22 @@
       this.groupBox1.Controls.Add(this.inputStartRadioButton);
       this.groupBox1.Controls.Add(this.inputAddTextTextBox);
       this.groupBox1.Controls.Add(this.inputAddTextButton);
-      this.groupBox1.Location = new System.Drawing.Point(68, 293);
+      this.groupBox1.Location = new System.Drawing.Point(50, 476);
       this.groupBox1.Name = "groupBox1";
       this.groupBox1.Size = new System.Drawing.Size(431, 112);
       this.groupBox1.TabIndex = 16;
       this.groupBox1.TabStop = false;
       this.groupBox1.Text = "Lisää annettu teksti";
+      // 
+      // inputStartAndEndRadioButton
+      // 
+      this.inputStartAndEndRadioButton.AutoSize = true;
+      this.inputStartAndEndRadioButton.Location = new System.Drawing.Point(195, 75);
+      this.inputStartAndEndRadioButton.Name = "inputStartAndEndRadioButton";
+      this.inputStartAndEndRadioButton.Size = new System.Drawing.Size(137, 17);
+      this.inputStartAndEndRadioButton.TabIndex = 18;
+      this.inputStartAndEndRadioButton.Text = "rivien alkuun ja loppuun";
+      this.inputStartAndEndRadioButton.UseVisualStyleBackColor = true;
       // 
       // inputEndRadioButton
       // 
@@ -256,22 +274,33 @@
       // 
       // groupBox2
       // 
+      this.groupBox2.Controls.Add(this.inputAddSingleQuotes);
       this.groupBox2.Controls.Add(this.inputToOutputButton);
       this.groupBox2.Controls.Add(this.inputAddCommasButton);
       this.groupBox2.Controls.Add(this.inputGetUserIDsButton);
-      this.groupBox2.Location = new System.Drawing.Point(68, 411);
+      this.groupBox2.Location = new System.Drawing.Point(50, 594);
       this.groupBox2.Name = "groupBox2";
-      this.groupBox2.Size = new System.Drawing.Size(268, 106);
+      this.groupBox2.Size = new System.Drawing.Size(431, 138);
       this.groupBox2.TabIndex = 17;
       this.groupBox2.TabStop = false;
       this.groupBox2.Text = "Lisää pilkkuja, heittomerkkejä";
+      // 
+      // inputAddSingleQuotes
+      // 
+      this.inputAddSingleQuotes.Location = new System.Drawing.Point(7, 19);
+      this.inputAddSingleQuotes.Name = "inputAddSingleQuotes";
+      this.inputAddSingleQuotes.Size = new System.Drawing.Size(125, 23);
+      this.inputAddSingleQuotes.TabIndex = 14;
+      this.inputAddSingleQuotes.Text = "Lisää heittomerkit";
+      this.inputAddSingleQuotes.UseVisualStyleBackColor = true;
+      this.inputAddSingleQuotes.Click += new System.EventHandler(this.inputAddSingleQuotes_Click);
       // 
       // groupBox3
       // 
       this.groupBox3.Controls.Add(this.inputSearchFromFilePath);
       this.groupBox3.Controls.Add(this.label4);
       this.groupBox3.Controls.Add(this.inputFilePath);
-      this.groupBox3.Location = new System.Drawing.Point(68, 181);
+      this.groupBox3.Location = new System.Drawing.Point(50, 364);
       this.groupBox3.Name = "groupBox3";
       this.groupBox3.Size = new System.Drawing.Size(431, 106);
       this.groupBox3.TabIndex = 18;
@@ -308,9 +337,9 @@
       // 
       this.groupBox4.Controls.Add(this.inputToLower);
       this.groupBox4.Controls.Add(this.inputToUpper);
-      this.groupBox4.Location = new System.Drawing.Point(68, 534);
+      this.groupBox4.Location = new System.Drawing.Point(514, 485);
       this.groupBox4.Name = "groupBox4";
-      this.groupBox4.Size = new System.Drawing.Size(268, 60);
+      this.groupBox4.Size = new System.Drawing.Size(268, 103);
       this.groupBox4.TabIndex = 19;
       this.groupBox4.TabStop = false;
       this.groupBox4.Text = "Muuta tekstiä";
@@ -340,9 +369,9 @@
       this.groupBox5.Controls.Add(this.label5);
       this.groupBox5.Controls.Add(this.inputSplitCsv);
       this.groupBox5.Controls.Add(this.inputSplitCsvBtn);
-      this.groupBox5.Location = new System.Drawing.Point(68, 609);
+      this.groupBox5.Location = new System.Drawing.Point(514, 603);
       this.groupBox5.Name = "groupBox5";
-      this.groupBox5.Size = new System.Drawing.Size(268, 106);
+      this.groupBox5.Size = new System.Drawing.Size(268, 129);
       this.groupBox5.TabIndex = 20;
       this.groupBox5.TabStop = false;
       this.groupBox5.Text = "Erottele pilkkulista";
@@ -373,34 +402,78 @@
       this.inputSplitCsvBtn.UseVisualStyleBackColor = true;
       this.inputSplitCsvBtn.Click += new System.EventHandler(this.inputSplitCsvBtn_Click);
       // 
-      // inputStartAndEndRadioButton
-      // 
-      this.inputStartAndEndRadioButton.AutoSize = true;
-      this.inputStartAndEndRadioButton.Location = new System.Drawing.Point(195, 75);
-      this.inputStartAndEndRadioButton.Name = "inputStartAndEndRadioButton";
-      this.inputStartAndEndRadioButton.Size = new System.Drawing.Size(137, 17);
-      this.inputStartAndEndRadioButton.TabIndex = 18;
-      this.inputStartAndEndRadioButton.Text = "rivien alkuun ja loppuun";
-      this.inputStartAndEndRadioButton.UseVisualStyleBackColor = true;
-      // 
       // groupBox6
       // 
-      this.groupBox6.Controls.Add(this.outputRemoveDuplicatesButton);
       this.groupBox6.Controls.Add(this.outputCombineEveryEachOtherRowButton);
-      this.groupBox6.Controls.Add(this.outputCountRowsButton);
-      this.groupBox6.Location = new System.Drawing.Point(579, 536);
+      this.groupBox6.Location = new System.Drawing.Point(855, 364);
       this.groupBox6.Name = "groupBox6";
-      this.groupBox6.Size = new System.Drawing.Size(380, 80);
+      this.groupBox6.Size = new System.Drawing.Size(491, 58);
       this.groupBox6.TabIndex = 21;
       this.groupBox6.TabStop = false;
+      this.groupBox6.Text = "Yleiset";
+      // 
+      // groupBox7
+      // 
+      this.groupBox7.Controls.Add(this.outputRemoveDuplicatesButton);
+      this.groupBox7.Controls.Add(this.outputShowDuplicates);
+      this.groupBox7.Location = new System.Drawing.Point(855, 252);
+      this.groupBox7.Name = "groupBox7";
+      this.groupBox7.Size = new System.Drawing.Size(380, 87);
+      this.groupBox7.TabIndex = 22;
+      this.groupBox7.TabStop = false;
+      this.groupBox7.Text = "Duplikaatit";
+      // 
+      // outputShowDuplicates
+      // 
+      this.outputShowDuplicates.Location = new System.Drawing.Point(6, 19);
+      this.outputShowDuplicates.Name = "outputShowDuplicates";
+      this.outputShowDuplicates.Size = new System.Drawing.Size(108, 23);
+      this.outputShowDuplicates.TabIndex = 5;
+      this.outputShowDuplicates.Text = "Näytä duplikaatit";
+      this.outputShowDuplicates.UseVisualStyleBackColor = true;
+      this.outputShowDuplicates.Click += new System.EventHandler(this.outputShowDuplicates_Click);
+      // 
+      // groupBox8
+      // 
+      this.groupBox8.Controls.Add(this.inputRemoveDuplicates);
+      this.groupBox8.Controls.Add(this.inputShowDuplicates);
+      this.groupBox8.Location = new System.Drawing.Point(50, 264);
+      this.groupBox8.Name = "groupBox8";
+      this.groupBox8.Size = new System.Drawing.Size(380, 87);
+      this.groupBox8.TabIndex = 23;
+      this.groupBox8.TabStop = false;
+      this.groupBox8.Text = "Duplikaatit";
+      // 
+      // inputRemoveDuplicates
+      // 
+      this.inputRemoveDuplicates.Location = new System.Drawing.Point(6, 48);
+      this.inputRemoveDuplicates.Name = "inputRemoveDuplicates";
+      this.inputRemoveDuplicates.Size = new System.Drawing.Size(108, 23);
+      this.inputRemoveDuplicates.TabIndex = 5;
+      this.inputRemoveDuplicates.Text = "Poista duplikaatit";
+      this.inputRemoveDuplicates.UseVisualStyleBackColor = true;
+      this.inputRemoveDuplicates.Click += new System.EventHandler(this.inputRemoveDuplicates_Click);
+      // 
+      // inputShowDuplicates
+      // 
+      this.inputShowDuplicates.Location = new System.Drawing.Point(6, 19);
+      this.inputShowDuplicates.Name = "inputShowDuplicates";
+      this.inputShowDuplicates.Size = new System.Drawing.Size(108, 23);
+      this.inputShowDuplicates.TabIndex = 5;
+      this.inputShowDuplicates.Text = "Näytä duplikaatit";
+      this.inputShowDuplicates.UseVisualStyleBackColor = true;
+      this.inputShowDuplicates.Click += new System.EventHandler(this.inputShowDuplicates_Click);
       // 
       // MyForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(1512, 761);
+      this.ClientSize = new System.Drawing.Size(1631, 826);
+      this.Controls.Add(this.groupBox8);
+      this.Controls.Add(this.groupBox7);
       this.Controls.Add(this.groupBox6);
       this.Controls.Add(this.groupBox5);
+      this.Controls.Add(this.outputCountRowsButton);
       this.Controls.Add(this.groupBox4);
       this.Controls.Add(this.groupBox3);
       this.Controls.Add(this.groupBox2);
@@ -424,6 +497,8 @@
       this.groupBox5.ResumeLayout(false);
       this.groupBox5.PerformLayout();
       this.groupBox6.ResumeLayout(false);
+      this.groupBox7.ResumeLayout(false);
+      this.groupBox8.ResumeLayout(false);
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -464,6 +539,12 @@
     private System.Windows.Forms.Button inputSplitCsvBtn;
     private System.Windows.Forms.RadioButton inputStartAndEndRadioButton;
     private System.Windows.Forms.GroupBox groupBox6;
+    private System.Windows.Forms.Button inputAddSingleQuotes;
+    private System.Windows.Forms.GroupBox groupBox7;
+    private System.Windows.Forms.Button outputShowDuplicates;
+    private System.Windows.Forms.GroupBox groupBox8;
+    private System.Windows.Forms.Button inputRemoveDuplicates;
+    private System.Windows.Forms.Button inputShowDuplicates;
   }
 }
 
