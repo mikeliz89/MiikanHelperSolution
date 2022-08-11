@@ -190,5 +190,21 @@ namespace UnitTestProject1 {
       Assert.AreEqual("a,b", output[0]);
       Assert.AreEqual("c,d", output[1]);
     }
+
+    [TestMethod]
+    public void CompareTwoLists() {
+      var list1 = new List<string>();
+      list1.Add("1");
+      list1.Add("2");
+
+      var list2 = new List<string>();
+      list2.Add("1");
+      list2.Add("3");
+
+      var output = ListHelper.CompareTwoLists(list1, list2);
+      Assert.AreEqual(2, output.Count);
+      Assert.AreEqual("2", output[0]);
+      Assert.AreEqual("3", output[1]);
+    }
   }
 }

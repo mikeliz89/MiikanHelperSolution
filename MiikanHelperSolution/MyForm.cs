@@ -13,6 +13,7 @@ namespace MiikanHelperSolution {
     public MyForm() {
       InitializeComponent();
       outputRowCountLabel.Text = "";
+      resultsRowCountLabel.Text = "";
       selectedRadioButton = inputStartRadioButton;
     }
 
@@ -306,6 +307,18 @@ namespace MiikanHelperSolution {
 
       var outputList = ListHelper.RemoveDuplicates(list);
       ShowAsOutput(outputList);
+    }
+
+    private void compareBtn_Click(object sender, EventArgs e) {
+      var list1 = GetRowsAsList(inputTextBox);
+      var list2 = GetRowsAsList(outputTextBox);
+
+      resultsTextBox.Text = "Ladataan";
+
+      var outputList = ListHelper.CompareTwoLists(list1, list2);
+
+      resultsTextBox.Text = string.Join(Environment.NewLine, outputList);
+      resultsRowCountLabel.Text = outputList.Count + "";
     }
   }
 }

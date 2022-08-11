@@ -143,5 +143,24 @@ namespace MiikanHelperSolution {
       var outputList = list.Distinct().ToList();
       return outputList;
     }
+
+    public static List<string> CompareTwoLists(List<string> list1, List<string> list2) {
+      var outputList = new List<string>();
+      foreach(var item in list1) {
+        if(!list2.Contains(item)) {
+          if(!outputList.Contains(item)) {
+            outputList.Add(item);
+          }
+        }
+      }
+      foreach(var item in list2) {
+        if(!list1.Contains(item)) {
+          if(!outputList.Contains(item)) {
+            outputList.Add(item);
+          }
+        }
+      }
+      return outputList;
+    }
   }
 }

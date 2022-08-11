@@ -62,6 +62,8 @@
       this.groupBox8 = new System.Windows.Forms.GroupBox();
       this.inputRemoveDuplicates = new System.Windows.Forms.Button();
       this.inputShowDuplicates = new System.Windows.Forms.Button();
+      this.compareBtn = new System.Windows.Forms.Button();
+      this.resultsRowCountLabel = new System.Windows.Forms.Label();
       this.groupBox1.SuspendLayout();
       this.groupBox2.SuspendLayout();
       this.groupBox3.SuspendLayout();
@@ -85,21 +87,21 @@
       // inputTextBox
       // 
       this.inputTextBox.Location = new System.Drawing.Point(50, 46);
-      this.inputTextBox.MaxLength = 132767;
+      this.inputTextBox.MaxLength = 1327670;
       this.inputTextBox.Multiline = true;
       this.inputTextBox.Name = "inputTextBox";
       this.inputTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-      this.inputTextBox.Size = new System.Drawing.Size(732, 200);
+      this.inputTextBox.Size = new System.Drawing.Size(680, 200);
       this.inputTextBox.TabIndex = 1;
       // 
       // outputTextBox
       // 
       this.outputTextBox.Location = new System.Drawing.Point(855, 46);
-      this.outputTextBox.MaxLength = 132767;
+      this.outputTextBox.MaxLength = 1327670;
       this.outputTextBox.Multiline = true;
       this.outputTextBox.Name = "outputTextBox";
       this.outputTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-      this.outputTextBox.Size = new System.Drawing.Size(698, 200);
+      this.outputTextBox.Size = new System.Drawing.Size(680, 200);
       this.outputTextBox.TabIndex = 2;
       // 
       // label1
@@ -133,11 +135,11 @@
       // resultsTextBox
       // 
       this.resultsTextBox.Location = new System.Drawing.Point(861, 504);
-      this.resultsTextBox.MaxLength = 132767;
+      this.resultsTextBox.MaxLength = 1327670;
       this.resultsTextBox.Multiline = true;
       this.resultsTextBox.Name = "resultsTextBox";
       this.resultsTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-      this.resultsTextBox.Size = new System.Drawing.Size(692, 202);
+      this.resultsTextBox.Size = new System.Drawing.Size(680, 200);
       this.resultsTextBox.TabIndex = 6;
       // 
       // label3
@@ -170,7 +172,7 @@
       // 
       // inputCountRowsButton
       // 
-      this.inputCountRowsButton.Location = new System.Drawing.Point(689, 264);
+      this.inputCountRowsButton.Location = new System.Drawing.Point(634, 264);
       this.inputCountRowsButton.Name = "inputCountRowsButton";
       this.inputCountRowsButton.Size = new System.Drawing.Size(93, 23);
       this.inputCountRowsButton.TabIndex = 10;
@@ -180,7 +182,7 @@
       // 
       // outputCountRowsButton
       // 
-      this.outputCountRowsButton.Location = new System.Drawing.Point(1460, 264);
+      this.outputCountRowsButton.Location = new System.Drawing.Point(1442, 264);
       this.outputCountRowsButton.Name = "outputCountRowsButton";
       this.outputCountRowsButton.Size = new System.Drawing.Size(93, 23);
       this.outputCountRowsButton.TabIndex = 11;
@@ -465,11 +467,32 @@
       this.inputShowDuplicates.UseVisualStyleBackColor = true;
       this.inputShowDuplicates.Click += new System.EventHandler(this.inputShowDuplicates_Click);
       // 
+      // compareBtn
+      // 
+      this.compareBtn.Location = new System.Drawing.Point(745, 135);
+      this.compareBtn.Name = "compareBtn";
+      this.compareBtn.Size = new System.Drawing.Size(93, 23);
+      this.compareBtn.TabIndex = 24;
+      this.compareBtn.Text = "Vertaa";
+      this.compareBtn.UseVisualStyleBackColor = true;
+      this.compareBtn.Click += new System.EventHandler(this.compareBtn_Click);
+      // 
+      // resultsRowCountLabel
+      // 
+      this.resultsRowCountLabel.AutoSize = true;
+      this.resultsRowCountLabel.Location = new System.Drawing.Point(1173, 485);
+      this.resultsRowCountLabel.Name = "resultsRowCountLabel";
+      this.resultsRowCountLabel.Size = new System.Drawing.Size(62, 13);
+      this.resultsRowCountLabel.TabIndex = 25;
+      this.resultsRowCountLabel.Text = "placeholder";
+      // 
       // MyForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1631, 826);
+      this.Controls.Add(this.resultsRowCountLabel);
+      this.Controls.Add(this.compareBtn);
       this.Controls.Add(this.groupBox8);
       this.Controls.Add(this.groupBox7);
       this.Controls.Add(this.groupBox6);
@@ -546,6 +569,8 @@
     private System.Windows.Forms.GroupBox groupBox8;
     private System.Windows.Forms.Button inputRemoveDuplicates;
     private System.Windows.Forms.Button inputShowDuplicates;
+    private System.Windows.Forms.Button compareBtn;
+    private System.Windows.Forms.Label resultsRowCountLabel;
   }
 }
 
