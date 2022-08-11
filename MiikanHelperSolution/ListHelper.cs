@@ -146,6 +146,12 @@ namespace MiikanHelperSolution {
 
     public static List<string> CompareTwoLists(List<string> list1, List<string> list2) {
       var outputList = new List<string>();
+      SetListDifferenceItemsToOutputList(list1, list2, outputList);
+      SetListDifferenceItemsToOutputList(list2, list1, outputList);
+      return outputList;
+    }
+
+    private static void SetListDifferenceItemsToOutputList(List<string> list1, List<string> list2, List<string> outputList) {
       foreach(var item in list1) {
         if(!list2.Contains(item)) {
           if(!outputList.Contains(item)) {
@@ -153,14 +159,6 @@ namespace MiikanHelperSolution {
           }
         }
       }
-      foreach(var item in list2) {
-        if(!list1.Contains(item)) {
-          if(!outputList.Contains(item)) {
-            outputList.Add(item);
-          }
-        }
-      }
-      return outputList;
     }
   }
 }

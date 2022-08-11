@@ -192,9 +192,25 @@ namespace UnitTestProject1 {
     }
 
     [TestMethod]
+    public void RemoveDuplicates() {
+      var input = new List<string>();
+      input.Add("a");
+      input.Add("a");
+      input.Add("b");
+      input.Add("c");
+
+      var output = ListHelper.RemoveDuplicates(input);
+      Assert.AreEqual(3, output.Count);
+      Assert.AreEqual("a", output[0]);
+      Assert.AreEqual("b", output[1]);
+      Assert.AreEqual("c", output[2]);
+    }
+
+    [TestMethod]
     public void CompareTwoLists() {
       var list1 = new List<string>();
       list1.Add("1");
+      list1.Add("2");
       list1.Add("2");
 
       var list2 = new List<string>();
@@ -205,6 +221,22 @@ namespace UnitTestProject1 {
       Assert.AreEqual(2, output.Count);
       Assert.AreEqual("2", output[0]);
       Assert.AreEqual("3", output[1]);
+    }
+
+    [TestMethod]
+    public void GetListContainingOtherList() {
+      var list1 = new List<string>();
+      list1.Add("1");
+      list1.Add("2");
+      list1.Add("2");
+
+      var list2 = new List<string>();
+      list2.Add("1");
+      list2.Add("3");
+
+      var output = ListHelper.GetListContainingOtherList(list1, list2);
+      Assert.AreEqual(1, output.Count);
+      Assert.AreEqual("1", output[0]);
     }
   }
 }
