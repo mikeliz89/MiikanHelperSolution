@@ -76,11 +76,44 @@ namespace MiikanHelperSolution {
       return listOfSubStrings;
     }
 
+    /// <summary>
+    /// Etsi listan 1 asioita listalta 2
+    /// </summary>
+    /// <param name="list"></param>
+    /// <param name="list2"></param>
+    /// <returns></returns>
     public static List<string> GetListContainingOtherList(List<string> list, List<string> list2) {
       var outputList = new List<string>();
       foreach(var row in list) {
         foreach(var row2 in list2) {
           if(row2.Contains(row)) {
+            //älä laita useita kertoja
+            if(!outputList.Contains(row)) {
+              outputList.Add(row);
+            }
+          }
+        }
+      }
+      return outputList;
+    }
+
+    /// <summary>
+    /// Palauta lista niistä listan 1 asioista joita ei löydy listalta 2
+    /// </summary>
+    /// <param name="list"></param>
+    /// <param name="list2"></param>
+    /// <returns></returns>
+    public static List<string> GetListNotContainingOtherList(List<string> list, List<string> list2) {
+      var outputList = new List<string>();
+      foreach(var row in list) {
+        var found = false;
+        foreach(var row2 in list2) {
+          if(row2.Contains(row)) {
+            found = true;
+          }
+        }
+        if(found == false) {
+          if(!outputList.Contains(row)) {
             outputList.Add(row);
           }
         }
@@ -144,6 +177,12 @@ namespace MiikanHelperSolution {
       return outputList;
     }
 
+    /// <summary>
+    /// Palauta uusi lista listan 1 ja listan 2 eroista
+    /// </summary>
+    /// <param name="list1"></param>
+    /// <param name="list2"></param>
+    /// <returns></returns>
     public static List<string> CompareTwoLists(List<string> list1, List<string> list2) {
       var outputList = new List<string>();
       SetListDifferenceItemsToOutputList(list1, list2, outputList);

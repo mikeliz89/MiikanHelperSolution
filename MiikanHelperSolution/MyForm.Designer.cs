@@ -46,6 +46,7 @@
       this.groupBox2 = new System.Windows.Forms.GroupBox();
       this.inputAddSingleQuotes = new System.Windows.Forms.Button();
       this.groupBox3 = new System.Windows.Forms.GroupBox();
+      this.inputSearchFromFilePathNotContainsBtn = new System.Windows.Forms.Button();
       this.inputSearchFromFilePath = new System.Windows.Forms.Button();
       this.label4 = new System.Windows.Forms.Label();
       this.inputFilePath = new System.Windows.Forms.TextBox();
@@ -64,6 +65,10 @@
       this.inputShowDuplicates = new System.Windows.Forms.Button();
       this.compareBtn = new System.Windows.Forms.Button();
       this.resultsRowCountLabel = new System.Windows.Forms.Label();
+      this.btnFindList1ItemsInList2 = new System.Windows.Forms.Button();
+      this.btnFindList1ItemsNotInList2 = new System.Windows.Forms.Button();
+      this.flipInputWithOutputBtn = new System.Windows.Forms.Button();
+      this.inputRowCountLabel = new System.Windows.Forms.Label();
       this.groupBox1.SuspendLayout();
       this.groupBox2.SuspendLayout();
       this.groupBox3.SuspendLayout();
@@ -87,7 +92,7 @@
       // inputTextBox
       // 
       this.inputTextBox.Location = new System.Drawing.Point(50, 46);
-      this.inputTextBox.MaxLength = 1327670;
+      this.inputTextBox.MaxLength = 13276700;
       this.inputTextBox.Multiline = true;
       this.inputTextBox.Name = "inputTextBox";
       this.inputTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
@@ -96,8 +101,8 @@
       // 
       // outputTextBox
       // 
-      this.outputTextBox.Location = new System.Drawing.Point(855, 46);
-      this.outputTextBox.MaxLength = 1327670;
+      this.outputTextBox.Location = new System.Drawing.Point(881, 46);
+      this.outputTextBox.MaxLength = 13276700;
       this.outputTextBox.Multiline = true;
       this.outputTextBox.Name = "outputTextBox";
       this.outputTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
@@ -116,7 +121,7 @@
       // label2
       // 
       this.label2.AutoSize = true;
-      this.label2.Location = new System.Drawing.Point(852, 24);
+      this.label2.Location = new System.Drawing.Point(878, 24);
       this.label2.Name = "label2";
       this.label2.Size = new System.Drawing.Size(60, 13);
       this.label2.TabIndex = 4;
@@ -134,7 +139,7 @@
       // 
       // resultsTextBox
       // 
-      this.resultsTextBox.Location = new System.Drawing.Point(861, 504);
+      this.resultsTextBox.Location = new System.Drawing.Point(887, 504);
       this.resultsTextBox.MaxLength = 1327670;
       this.resultsTextBox.Multiline = true;
       this.resultsTextBox.Name = "resultsTextBox";
@@ -145,7 +150,7 @@
       // label3
       // 
       this.label3.AutoSize = true;
-      this.label3.Location = new System.Drawing.Point(858, 482);
+      this.label3.Location = new System.Drawing.Point(884, 482);
       this.label3.Name = "label3";
       this.label3.Size = new System.Drawing.Size(42, 13);
       this.label3.TabIndex = 7;
@@ -154,7 +159,7 @@
       // outputRowCountLabel
       // 
       this.outputRowCountLabel.AutoSize = true;
-      this.outputRowCountLabel.Location = new System.Drawing.Point(1173, 25);
+      this.outputRowCountLabel.Location = new System.Drawing.Point(1199, 25);
       this.outputRowCountLabel.Name = "outputRowCountLabel";
       this.outputRowCountLabel.Size = new System.Drawing.Size(62, 13);
       this.outputRowCountLabel.TabIndex = 8;
@@ -182,7 +187,7 @@
       // 
       // outputCountRowsButton
       // 
-      this.outputCountRowsButton.Location = new System.Drawing.Point(1442, 264);
+      this.outputCountRowsButton.Location = new System.Drawing.Point(1468, 264);
       this.outputCountRowsButton.Name = "outputCountRowsButton";
       this.outputCountRowsButton.Size = new System.Drawing.Size(93, 23);
       this.outputCountRowsButton.TabIndex = 11;
@@ -300,6 +305,7 @@
       // 
       // groupBox3
       // 
+      this.groupBox3.Controls.Add(this.inputSearchFromFilePathNotContainsBtn);
       this.groupBox3.Controls.Add(this.inputSearchFromFilePath);
       this.groupBox3.Controls.Add(this.label4);
       this.groupBox3.Controls.Add(this.inputFilePath);
@@ -310,13 +316,23 @@
       this.groupBox3.TabStop = false;
       this.groupBox3.Text = "Etsi tiedostosta";
       // 
+      // inputSearchFromFilePathNotContainsBtn
+      // 
+      this.inputSearchFromFilePathNotContainsBtn.Location = new System.Drawing.Point(130, 64);
+      this.inputSearchFromFilePathNotContainsBtn.Name = "inputSearchFromFilePathNotContainsBtn";
+      this.inputSearchFromFilePathNotContainsBtn.Size = new System.Drawing.Size(138, 23);
+      this.inputSearchFromFilePathNotContainsBtn.TabIndex = 20;
+      this.inputSearchFromFilePathNotContainsBtn.Text = "Etsi ne joita ei löydy";
+      this.inputSearchFromFilePathNotContainsBtn.UseVisualStyleBackColor = true;
+      this.inputSearchFromFilePathNotContainsBtn.Click += new System.EventHandler(this.inputSearchFromFilePathNotContainsBtn_Click);
+      // 
       // inputSearchFromFilePath
       // 
       this.inputSearchFromFilePath.Location = new System.Drawing.Point(6, 64);
       this.inputSearchFromFilePath.Name = "inputSearchFromFilePath";
-      this.inputSearchFromFilePath.Size = new System.Drawing.Size(73, 23);
+      this.inputSearchFromFilePath.Size = new System.Drawing.Size(118, 23);
       this.inputSearchFromFilePath.TabIndex = 18;
-      this.inputSearchFromFilePath.Text = "Etsi";
+      this.inputSearchFromFilePath.Text = "Etsi ne jotka löytyy";
       this.inputSearchFromFilePath.UseVisualStyleBackColor = true;
       this.inputSearchFromFilePath.Click += new System.EventHandler(this.inputSearchFromFilePath_Click);
       // 
@@ -408,9 +424,9 @@
       // groupBox6
       // 
       this.groupBox6.Controls.Add(this.outputCombineEveryEachOtherRowButton);
-      this.groupBox6.Location = new System.Drawing.Point(855, 364);
+      this.groupBox6.Location = new System.Drawing.Point(881, 364);
       this.groupBox6.Name = "groupBox6";
-      this.groupBox6.Size = new System.Drawing.Size(491, 58);
+      this.groupBox6.Size = new System.Drawing.Size(147, 58);
       this.groupBox6.TabIndex = 21;
       this.groupBox6.TabStop = false;
       this.groupBox6.Text = "Yleiset";
@@ -419,9 +435,9 @@
       // 
       this.groupBox7.Controls.Add(this.outputRemoveDuplicatesButton);
       this.groupBox7.Controls.Add(this.outputShowDuplicates);
-      this.groupBox7.Location = new System.Drawing.Point(855, 252);
+      this.groupBox7.Location = new System.Drawing.Point(881, 252);
       this.groupBox7.Name = "groupBox7";
-      this.groupBox7.Size = new System.Drawing.Size(380, 87);
+      this.groupBox7.Size = new System.Drawing.Size(135, 87);
       this.groupBox7.TabIndex = 22;
       this.groupBox7.TabStop = false;
       this.groupBox7.Text = "Duplikaatit";
@@ -442,7 +458,7 @@
       this.groupBox8.Controls.Add(this.inputShowDuplicates);
       this.groupBox8.Location = new System.Drawing.Point(50, 264);
       this.groupBox8.Name = "groupBox8";
-      this.groupBox8.Size = new System.Drawing.Size(380, 87);
+      this.groupBox8.Size = new System.Drawing.Size(124, 87);
       this.groupBox8.TabIndex = 23;
       this.groupBox8.TabStop = false;
       this.groupBox8.Text = "Duplikaatit";
@@ -469,7 +485,7 @@
       // 
       // compareBtn
       // 
-      this.compareBtn.Location = new System.Drawing.Point(745, 135);
+      this.compareBtn.Location = new System.Drawing.Point(755, 135);
       this.compareBtn.Name = "compareBtn";
       this.compareBtn.Size = new System.Drawing.Size(93, 23);
       this.compareBtn.TabIndex = 24;
@@ -480,17 +496,61 @@
       // resultsRowCountLabel
       // 
       this.resultsRowCountLabel.AutoSize = true;
-      this.resultsRowCountLabel.Location = new System.Drawing.Point(1173, 485);
+      this.resultsRowCountLabel.Location = new System.Drawing.Point(1199, 485);
       this.resultsRowCountLabel.Name = "resultsRowCountLabel";
       this.resultsRowCountLabel.Size = new System.Drawing.Size(62, 13);
       this.resultsRowCountLabel.TabIndex = 25;
       this.resultsRowCountLabel.Text = "placeholder";
+      // 
+      // btnFindList1ItemsInList2
+      // 
+      this.btnFindList1ItemsInList2.Location = new System.Drawing.Point(745, 164);
+      this.btnFindList1ItemsInList2.Name = "btnFindList1ItemsInList2";
+      this.btnFindList1ItemsInList2.Size = new System.Drawing.Size(118, 23);
+      this.btnFindList1ItemsInList2.TabIndex = 21;
+      this.btnFindList1ItemsInList2.Text = "Etsi ne jotka löytyy";
+      this.btnFindList1ItemsInList2.UseVisualStyleBackColor = true;
+      this.btnFindList1ItemsInList2.Click += new System.EventHandler(this.btnFindList1ItemsInList2_Click);
+      // 
+      // btnFindList1ItemsNotInList2
+      // 
+      this.btnFindList1ItemsNotInList2.Location = new System.Drawing.Point(736, 193);
+      this.btnFindList1ItemsNotInList2.Name = "btnFindList1ItemsNotInList2";
+      this.btnFindList1ItemsNotInList2.Size = new System.Drawing.Size(138, 23);
+      this.btnFindList1ItemsNotInList2.TabIndex = 21;
+      this.btnFindList1ItemsNotInList2.Text = "Etsi ne joita ei löydy";
+      this.btnFindList1ItemsNotInList2.UseVisualStyleBackColor = true;
+      this.btnFindList1ItemsNotInList2.Click += new System.EventHandler(this.btnFindList1ItemsNotInList2_Click);
+      // 
+      // flipInputWithOutputBtn
+      // 
+      this.flipInputWithOutputBtn.FlatStyle = System.Windows.Forms.FlatStyle.System;
+      this.flipInputWithOutputBtn.Location = new System.Drawing.Point(755, 106);
+      this.flipInputWithOutputBtn.Name = "flipInputWithOutputBtn";
+      this.flipInputWithOutputBtn.Size = new System.Drawing.Size(93, 23);
+      this.flipInputWithOutputBtn.TabIndex = 26;
+      this.flipInputWithOutputBtn.Text = "Flippaa";
+      this.flipInputWithOutputBtn.UseVisualStyleBackColor = true;
+      this.flipInputWithOutputBtn.Click += new System.EventHandler(this.flipInputWithOutputBtn_Click);
+      // 
+      // inputRowCountLabel
+      // 
+      this.inputRowCountLabel.AutoSize = true;
+      this.inputRowCountLabel.Location = new System.Drawing.Point(484, 24);
+      this.inputRowCountLabel.Name = "inputRowCountLabel";
+      this.inputRowCountLabel.Size = new System.Drawing.Size(62, 13);
+      this.inputRowCountLabel.TabIndex = 27;
+      this.inputRowCountLabel.Text = "placeholder";
       // 
       // MyForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1631, 826);
+      this.Controls.Add(this.inputRowCountLabel);
+      this.Controls.Add(this.flipInputWithOutputBtn);
+      this.Controls.Add(this.btnFindList1ItemsNotInList2);
+      this.Controls.Add(this.btnFindList1ItemsInList2);
       this.Controls.Add(this.resultsRowCountLabel);
       this.Controls.Add(this.compareBtn);
       this.Controls.Add(this.groupBox8);
@@ -571,6 +631,11 @@
     private System.Windows.Forms.Button inputShowDuplicates;
     private System.Windows.Forms.Button compareBtn;
     private System.Windows.Forms.Label resultsRowCountLabel;
+    private System.Windows.Forms.Button inputSearchFromFilePathNotContainsBtn;
+    private System.Windows.Forms.Button btnFindList1ItemsInList2;
+    private System.Windows.Forms.Button btnFindList1ItemsNotInList2;
+    private System.Windows.Forms.Button flipInputWithOutputBtn;
+    private System.Windows.Forms.Label inputRowCountLabel;
   }
 }
 

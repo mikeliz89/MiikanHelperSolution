@@ -12,6 +12,7 @@ namespace MiikanHelperSolution {
 
     public MyForm() {
       InitializeComponent();
+      inputRowCountLabel.Text = "";
       outputRowCountLabel.Text = "";
       resultsRowCountLabel.Text = "";
       selectedRadioButton = inputStartRadioButton;
@@ -269,6 +270,18 @@ namespace MiikanHelperSolution {
       outputRowCountLabel.Text = outputList.Count + "";
     }
 
+    private void ShowAsInput(List<string> inputList) {
+      //input
+      inputTextBox.Text = string.Join(Environment.NewLine, inputList);
+      inputRowCountLabel.Text = inputList.Count + "";
+    }
+
+    private void ShowAsResult(List<string> resultList) {
+      //result
+      resultsTextBox.Text = string.Join(Environment.NewLine, resultList);
+      resultsRowCountLabel.Text = resultList.Count + "";
+    }
+
     /// <summary>
     /// Lisää heittomerkit
     /// </summary>
@@ -309,7 +322,13 @@ namespace MiikanHelperSolution {
       ShowAsOutput(outputList);
     }
 
+    /// <summary>
+    /// Vertaa input- ja output listoja keskenään. Eroavaisuudet resulttiin
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     private void compareBtn_Click(object sender, EventArgs e) {
+
       var list1 = GetRowsAsList(inputTextBox);
       var list2 = GetRowsAsList(outputTextBox);
 
@@ -317,8 +336,87 @@ namespace MiikanHelperSolution {
 
       var outputList = ListHelper.CompareTwoLists(list1, list2);
 
-      resultsTextBox.Text = string.Join(Environment.NewLine, outputList);
-      resultsRowCountLabel.Text = outputList.Count + "";
+      ShowAsResult(outputList);
+    }
+
+    /// <summary>
+    /// Etsi sellaisia input -tekstejä tiedostosta joita ei löydy
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void inputSearchFromFilePathNotContainsBtn_Click(object sender, EventArgs e) {
+      resultsTextBox.Text = "";
+
+      var filePath = inputFilePath.Text;
+
+      //guards
+      if(string.IsNullOrEmpty(filePath)) {
+        resultsTextBox.Text = "Filepath cannot be null or empty";
+        return;
+      }
+      if(!File.Exists(filePath)) {
+        resultsTextBox.Text = "File does not exist";
+        return;
+      }
+
+      var filesLines = File.ReadAllLines(filePath);
+
+      resultsTextBox.Text += $"Found {filesLines.Length} lines from file";
+
+      var list = GetRowsAsList(inputTextBox);
+
+      var outputList = ListHelper.GetListNotContainingOtherList(list, filesLines.ToList());
+
+      ShowAsOutput(outputList);
+
+      //results
+      var list2 = GetRowsAsList(outputTextBox);
+      resultsTextBox.Text += $"{Environment.NewLine}Output list count {list2.Count}";
+    }
+
+    /// <summary>
+    /// Etsi input-listan asioita output-listalta ja näytä results-listalla sellaiset mitkä löytyivät listalta 2
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void btnFindList1ItemsInList2_Click(object sender, EventArgs e) {
+      resultsTextBox.Text = "";
+
+      var list1 = GetRowsAsList(inputTextBox);
+      var list2 = GetRowsAsList(outputTextBox);
+
+      var outputList = ListHelper.GetListContainingOtherList(list1, list2);
+
+      ShowAsResult(outputList);
+    }
+
+    /// <summary>
+    /// Etsi input-listan asioita ouput-listalta ja näytä results-listalla sellaiset mitä ei löytynyt listalta 2
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void btnFindList1ItemsNotInList2_Click(object sender, EventArgs e) {
+      resultsTextBox.Text = "";
+
+      var list1 = GetRowsAsList(inputTextBox);
+      var list2 = GetRowsAsList(outputTextBox);
+
+      var outputList = ListHelper.GetListNotContainingOtherList(list1, list2);
+
+      ShowAsResult(outputList);
+    }
+
+    /// <summary>
+    /// Flippaa input- ja output-listat keskenään
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void flipInputWithOutputBtn_Click(object sender, EventArgs e) {
+      var list1 = GetRowsAsList(inputTextBox);
+      var list2 = GetRowsAsList(outputTextBox);
+
+      ShowAsOutput(list1);
+      ShowAsInput(list2);
     }
   }
 }

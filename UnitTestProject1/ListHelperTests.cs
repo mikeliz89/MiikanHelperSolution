@@ -238,5 +238,85 @@ namespace UnitTestProject1 {
       Assert.AreEqual(1, output.Count);
       Assert.AreEqual("1", output[0]);
     }
+
+    [TestMethod]
+    public void GetListContainingOtherList_Test2() {
+      var list1 = new List<string>();
+      list1.Add("1");
+      list1.Add("2");
+      list1.Add("2");
+
+      var list2 = new List<string>();
+      list2.Add("1");
+      list2.Add("3");
+      list2.Add("2");
+
+      var output = ListHelper.GetListContainingOtherList(list1, list2);
+      Assert.AreEqual(2, output.Count);
+      Assert.AreEqual("1", output[0]);
+      Assert.AreEqual("2", output[1]);
+    }
+
+    [TestMethod]
+    public void GetListContainingOtherList_List2Empty() {
+      var list1 = new List<string>();
+      list1.Add("1");
+      list1.Add("2");
+      list1.Add("2");
+
+      var list2 = new List<string>();
+
+      var output = ListHelper.GetListContainingOtherList(list1, list2);
+      Assert.AreEqual(0, output.Count);
+    }
+
+    [TestMethod]
+    public void GetListNotContainingOtherList() {
+      var list1 = new List<string>();
+      list1.Add("1");
+      list1.Add("2");
+      list1.Add("2");
+
+      var list2 = new List<string>();
+      list2.Add("1");
+      list2.Add("3");
+
+      var output = ListHelper.GetListNotContainingOtherList(list1, list2);
+      Assert.AreEqual(1, output.Count);
+      Assert.AreEqual("2", output[0]);
+    }
+
+    [TestMethod]
+    public void GetListNotContainingOtherList_Test2() {
+      var list1 = new List<string>();
+      list1.Add("1");
+      list1.Add("2");
+      list1.Add("1");
+      list1.Add("2");
+
+      var list2 = new List<string>();
+      list2.Add("1");
+      list2.Add("3");
+
+      var output = ListHelper.GetListNotContainingOtherList(list1, list2);
+      Assert.AreEqual(1, output.Count);
+      Assert.AreEqual("2", output[0]);
+    }
+
+    [TestMethod]
+    public void GetListNotContainingOtherList_List2Empty() {
+      var list1 = new List<string>();
+      list1.Add("1");
+      list1.Add("2");
+      list1.Add("1");
+      list1.Add("2");
+
+      var list2 = new List<string>();
+
+      var output = ListHelper.GetListNotContainingOtherList(list1, list2);
+      Assert.AreEqual(2, output.Count);
+      Assert.AreEqual("1", output[0]);
+      Assert.AreEqual("2", output[1]);
+    }
   }
 }
