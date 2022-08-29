@@ -106,6 +106,7 @@ namespace MiikanHelperSolution {
     private void inputCountRowsButton_Click(object sender, EventArgs e) {
       //results
       var list = GetRowsAsList(inputTextBox);
+      inputRowCountLabel.Text = list.Count + "";
       resultsTextBox.Text = $"Input list count {list.Count}";
     }
 
@@ -117,6 +118,7 @@ namespace MiikanHelperSolution {
     private void outputCountRowsButton_Click(object sender, EventArgs e) {
       //results
       var list = GetRowsAsList(outputTextBox);
+      outputRowCountLabel.Text = list.Count + "";
       resultsTextBox.Text = $"Output list count {list.Count}";
     }
 
@@ -264,22 +266,21 @@ namespace MiikanHelperSolution {
       ShowAsOutput(outputList);
     }
 
-    private void ShowAsOutput(List<string> outputList) {
-      //output
-      outputTextBox.Text = string.Join(Environment.NewLine, outputList);
-      outputRowCountLabel.Text = outputList.Count + "";
+    private void ShowAsOutput(List<string> list) {
+      ShowAs(outputTextBox, outputRowCountLabel, list);
     }
 
-    private void ShowAsInput(List<string> inputList) {
-      //input
-      inputTextBox.Text = string.Join(Environment.NewLine, inputList);
-      inputRowCountLabel.Text = inputList.Count + "";
+    private void ShowAsInput(List<string> list) {
+      ShowAs(inputTextBox, inputRowCountLabel, list);
     }
 
-    private void ShowAsResult(List<string> resultList) {
-      //result
-      resultsTextBox.Text = string.Join(Environment.NewLine, resultList);
-      resultsRowCountLabel.Text = resultList.Count + "";
+    private void ShowAsResult(List<string> list) {
+      ShowAs(resultsTextBox, resultsRowCountLabel, list);
+    }
+
+    private void ShowAs(TextBox textBox, Label countLabel, List<string> list) {
+      textBox.Text = string.Join(Environment.NewLine, list);
+      countLabel.Text = list.Count + "";
     }
 
     /// <summary>
