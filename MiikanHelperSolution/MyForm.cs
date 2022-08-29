@@ -68,14 +68,14 @@ namespace MiikanHelperSolution {
 
     private void ShowDuplicatesInResults(List<string> list) {
 
+      resultsTextBox.Text = "";
+
       //results
       var q = from x in list
               group x by x into g
               let count = g.Count()
               orderby count descending
               select new { Value = g.Key, Count = count };
-
-      resultsTextBox.Text = "";
 
       foreach(var x in q) {
         if(x.Count > 1) {
@@ -102,9 +102,9 @@ namespace MiikanHelperSolution {
     /// <param name="sender"></param>
     /// <param name="e"></param>
     private void inputCountRowsButton_Click(object sender, EventArgs e) {
-      //results
       var list = GetRowsAsList(inputTextBox);
       inputRowCountLabel.Text = list.Count + "";
+      //results
       resultsTextBox.Text = $"Input list count {list.Count}";
     }
 
@@ -114,9 +114,9 @@ namespace MiikanHelperSolution {
     /// <param name="sender"></param>
     /// <param name="e"></param>
     private void outputCountRowsButton_Click(object sender, EventArgs e) {
-      //results
       var list = GetRowsAsList(outputTextBox);
       outputRowCountLabel.Text = list.Count + "";
+      //results
       resultsTextBox.Text = $"Output list count {list.Count}";
     }
 
