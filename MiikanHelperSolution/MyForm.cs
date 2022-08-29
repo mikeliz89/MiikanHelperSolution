@@ -24,7 +24,7 @@ namespace MiikanHelperSolution {
     /// <param name="sender"></param>
     /// <param name="e"></param>
     private void inputToOutputButton_Click(object sender, EventArgs e) {
-      var list = GetRowsAsList(inputTextBox);
+      var list = ListHelper.GetRowsAsList(inputTextBox.Text);
       var outputList = ListHelper.GetOutputList(list, charactersToAdd: "'");
 
       ShowAsOutput(outputList);
@@ -49,9 +49,7 @@ namespace MiikanHelperSolution {
     }
 
     private List<string> GetRowsAsList(TextBox textBox) {
-      var inputText = textBox.Text;
-      var list = inputText.Split(new[] { '\r', '\n' }).Where(x => !string.IsNullOrEmpty(x)).ToList();
-      return list;
+      return ListHelper.GetRowsAsList(textBox.Text);
     }
 
     /// <summary>

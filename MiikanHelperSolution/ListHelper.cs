@@ -122,6 +122,16 @@ namespace MiikanHelperSolution {
     }
 
     /// <summary>
+    /// Hae rivit teskstistä ja palauta listana
+    /// </summary>
+    /// <param name="inputText"></param>
+    /// <returns></returns>
+    public static List<string> GetRowsAsList(string inputText) {
+      var list = inputText.Split(new[] { '\r', '\n' }).Where(x => !string.IsNullOrEmpty(x)).ToList();
+      return list;
+    }
+
+    /// <summary>
     /// Muuta erotinmerkin mukaan listaksi
     /// </summary>
     /// <param name="list"></param>

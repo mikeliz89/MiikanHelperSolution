@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using MiikanHelperSolution;
+using System;
 
 namespace UnitTestProject1 {
 
@@ -317,6 +318,23 @@ namespace UnitTestProject1 {
       Assert.AreEqual(2, output.Count);
       Assert.AreEqual("1", output[0]);
       Assert.AreEqual("2", output[1]);
+    }
+
+    [TestMethod]
+    public void GetRowsAsList_SimpleInput() {
+      var input = "abc";
+      var list = ListHelper.GetRowsAsList(input);
+      Assert.AreEqual(1, list.Count);
+      Assert.AreEqual("abc", list[0]);
+    }
+
+    [TestMethod]
+    public void GetRowsAsList_MoreComplexInput() {
+      var input = "abc" + Environment.NewLine + "123";
+      var list = ListHelper.GetRowsAsList(input);
+      Assert.AreEqual(2, list.Count);
+      Assert.AreEqual("abc", list[0]);
+      Assert.AreEqual("123", list[1]);
     }
   }
 }
