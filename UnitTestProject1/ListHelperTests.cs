@@ -336,5 +336,19 @@ namespace UnitTestProject1 {
       Assert.AreEqual("abc", list[0]);
       Assert.AreEqual("123", list[1]);
     }
+
+    [TestMethod]
+    public void ReplaceListText() {
+      var list = new List<string>();
+      list.Add("Miikan hieno testi");
+      list.Add("Toisen henkilön hieno testi");
+      var textFrom = "hieno";
+      var textTo = "upea";
+      var outputList = ListHelper.ReplaceListText(list, textFrom, textTo);
+
+      Assert.AreEqual(2, outputList.Count);
+      Assert.AreEqual("Miikan upea testi", outputList[0]);
+      Assert.AreEqual("Toisen henkilön upea testi", outputList[1]);
+    }
   }
 }

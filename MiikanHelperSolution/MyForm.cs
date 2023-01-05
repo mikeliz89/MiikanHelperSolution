@@ -417,5 +417,21 @@ namespace MiikanHelperSolution {
       ShowAsOutput(list1);
       ShowAsInput(list2);
     }
+
+    /// <summary>
+    /// Korvaa teksti toisella
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void button2_Click(object sender, EventArgs e) {
+      var list1 = GetRowsAsList(inputTextBox);
+
+      var text1 = textBoxFrom.Text;
+      var text2 = textBoxTo.Text;
+
+      var outputList = ListHelper.ReplaceListText(list1, text1, text2);
+
+      ShowAsOutput(outputList);
+    }
   }
 }

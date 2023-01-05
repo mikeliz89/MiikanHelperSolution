@@ -209,5 +209,21 @@ namespace MiikanHelperSolution {
         }
       }
     }
+
+    /// <summary>
+    /// Korvaa listan textFrom-tekstit textTo texteillä
+    /// </summary>
+    /// <param name="list"></param>
+    /// <param name="textFrom"></param>
+    /// <param name="textTo"></param>
+    /// <returns></returns>
+    public static List<string> ReplaceListText(List<string> list, string textFrom, string textTo) {
+      var outputList = new List<string>();
+      foreach(var item in list) {
+        var newItem = item.Replace(textFrom, textTo);
+        outputList.Add(newItem);
+      }
+      return outputList;
+    }
   }
 }

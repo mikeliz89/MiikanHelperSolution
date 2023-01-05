@@ -69,6 +69,12 @@
       this.btnFindList1ItemsNotInList2 = new System.Windows.Forms.Button();
       this.flipInputWithOutputBtn = new System.Windows.Forms.Button();
       this.inputRowCountLabel = new System.Windows.Forms.Label();
+      this.groupBox9 = new System.Windows.Forms.GroupBox();
+      this.textBoxFrom = new System.Windows.Forms.TextBox();
+      this.label7 = new System.Windows.Forms.Label();
+      this.button2 = new System.Windows.Forms.Button();
+      this.label6 = new System.Windows.Forms.Label();
+      this.textBoxTo = new System.Windows.Forms.TextBox();
       this.groupBox1.SuspendLayout();
       this.groupBox2.SuspendLayout();
       this.groupBox3.SuspendLayout();
@@ -77,6 +83,7 @@
       this.groupBox6.SuspendLayout();
       this.groupBox7.SuspendLayout();
       this.groupBox8.SuspendLayout();
+      this.groupBox9.SuspendLayout();
       this.SuspendLayout();
       // 
       // inputToOutputButton
@@ -239,9 +246,9 @@
       this.groupBox1.Controls.Add(this.inputStartRadioButton);
       this.groupBox1.Controls.Add(this.inputAddTextTextBox);
       this.groupBox1.Controls.Add(this.inputAddTextButton);
-      this.groupBox1.Location = new System.Drawing.Point(50, 476);
+      this.groupBox1.Location = new System.Drawing.Point(50, 460);
       this.groupBox1.Name = "groupBox1";
-      this.groupBox1.Size = new System.Drawing.Size(431, 112);
+      this.groupBox1.Size = new System.Drawing.Size(431, 128);
       this.groupBox1.TabIndex = 16;
       this.groupBox1.TabStop = false;
       this.groupBox1.Text = "Lisää annettu teksti";
@@ -309,9 +316,9 @@
       this.groupBox3.Controls.Add(this.inputSearchFromFilePath);
       this.groupBox3.Controls.Add(this.label4);
       this.groupBox3.Controls.Add(this.inputFilePath);
-      this.groupBox3.Location = new System.Drawing.Point(50, 364);
+      this.groupBox3.Location = new System.Drawing.Point(50, 357);
       this.groupBox3.Name = "groupBox3";
-      this.groupBox3.Size = new System.Drawing.Size(431, 106);
+      this.groupBox3.Size = new System.Drawing.Size(431, 97);
       this.groupBox3.TabIndex = 18;
       this.groupBox3.TabStop = false;
       this.groupBox3.Text = "Etsi tiedostosta";
@@ -356,9 +363,9 @@
       // 
       this.groupBox4.Controls.Add(this.inputToLower);
       this.groupBox4.Controls.Add(this.inputToUpper);
-      this.groupBox4.Location = new System.Drawing.Point(514, 485);
+      this.groupBox4.Location = new System.Drawing.Point(514, 535);
       this.groupBox4.Name = "groupBox4";
-      this.groupBox4.Size = new System.Drawing.Size(268, 103);
+      this.groupBox4.Size = new System.Drawing.Size(349, 53);
       this.groupBox4.TabIndex = 19;
       this.groupBox4.TabStop = false;
       this.groupBox4.Text = "Muuta tekstiä";
@@ -390,7 +397,7 @@
       this.groupBox5.Controls.Add(this.inputSplitCsvBtn);
       this.groupBox5.Location = new System.Drawing.Point(514, 603);
       this.groupBox5.Name = "groupBox5";
-      this.groupBox5.Size = new System.Drawing.Size(268, 129);
+      this.groupBox5.Size = new System.Drawing.Size(349, 129);
       this.groupBox5.TabIndex = 20;
       this.groupBox5.TabStop = false;
       this.groupBox5.Text = "Erottele pilkkulista";
@@ -408,7 +415,7 @@
       // 
       this.inputSplitCsv.Location = new System.Drawing.Point(7, 40);
       this.inputSplitCsv.Name = "inputSplitCsv";
-      this.inputSplitCsv.Size = new System.Drawing.Size(154, 20);
+      this.inputSplitCsv.Size = new System.Drawing.Size(150, 20);
       this.inputSplitCsv.TabIndex = 18;
       // 
       // inputSplitCsvBtn
@@ -542,11 +549,68 @@
       this.inputRowCountLabel.TabIndex = 27;
       this.inputRowCountLabel.Text = "placeholder";
       // 
+      // groupBox9
+      // 
+      this.groupBox9.Controls.Add(this.textBoxTo);
+      this.groupBox9.Controls.Add(this.label6);
+      this.groupBox9.Controls.Add(this.textBoxFrom);
+      this.groupBox9.Controls.Add(this.label7);
+      this.groupBox9.Controls.Add(this.button2);
+      this.groupBox9.Location = new System.Drawing.Point(514, 364);
+      this.groupBox9.Name = "groupBox9";
+      this.groupBox9.Size = new System.Drawing.Size(349, 147);
+      this.groupBox9.TabIndex = 28;
+      this.groupBox9.TabStop = false;
+      this.groupBox9.Text = "Korvaa teksti toisella";
+      // 
+      // textBoxFrom
+      // 
+      this.textBoxFrom.Location = new System.Drawing.Point(9, 46);
+      this.textBoxFrom.Name = "textBoxFrom";
+      this.textBoxFrom.Size = new System.Drawing.Size(308, 20);
+      this.textBoxFrom.TabIndex = 19;
+      // 
+      // label7
+      // 
+      this.label7.AutoSize = true;
+      this.label7.Location = new System.Drawing.Point(6, 31);
+      this.label7.Name = "label7";
+      this.label7.Size = new System.Drawing.Size(34, 13);
+      this.label7.TabIndex = 21;
+      this.label7.Text = "Tästä";
+      // 
+      // button2
+      // 
+      this.button2.Location = new System.Drawing.Point(9, 115);
+      this.button2.Name = "button2";
+      this.button2.Size = new System.Drawing.Size(72, 25);
+      this.button2.TabIndex = 2;
+      this.button2.Text = "Korvaa";
+      this.button2.UseVisualStyleBackColor = true;
+      this.button2.Click += new System.EventHandler(this.button2_Click);
+      // 
+      // label6
+      // 
+      this.label6.AutoSize = true;
+      this.label6.Location = new System.Drawing.Point(6, 75);
+      this.label6.Name = "label6";
+      this.label6.Size = new System.Drawing.Size(38, 13);
+      this.label6.TabIndex = 22;
+      this.label6.Text = "Tähän";
+      // 
+      // textBoxTo
+      // 
+      this.textBoxTo.Location = new System.Drawing.Point(9, 91);
+      this.textBoxTo.Name = "textBoxTo";
+      this.textBoxTo.Size = new System.Drawing.Size(308, 20);
+      this.textBoxTo.TabIndex = 23;
+      // 
       // MyForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1631, 826);
+      this.Controls.Add(this.groupBox9);
       this.Controls.Add(this.inputRowCountLabel);
       this.Controls.Add(this.flipInputWithOutputBtn);
       this.Controls.Add(this.btnFindList1ItemsNotInList2);
@@ -583,6 +647,8 @@
       this.groupBox6.ResumeLayout(false);
       this.groupBox7.ResumeLayout(false);
       this.groupBox8.ResumeLayout(false);
+      this.groupBox9.ResumeLayout(false);
+      this.groupBox9.PerformLayout();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -636,6 +702,12 @@
     private System.Windows.Forms.Button btnFindList1ItemsNotInList2;
     private System.Windows.Forms.Button flipInputWithOutputBtn;
     private System.Windows.Forms.Label inputRowCountLabel;
-  }
+        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.TextBox textBoxFrom;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox textBoxTo;
+        private System.Windows.Forms.Label label6;
+    }
 }
 
