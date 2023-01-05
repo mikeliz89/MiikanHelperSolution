@@ -225,5 +225,23 @@ namespace MiikanHelperSolution {
       }
       return outputList;
     }
+
+    /// <summary>
+    /// Poista listalta annetut tekstit (case-sensitive)
+    /// </summary>
+    /// <param name="list"></param>
+    /// <param name="text"></param>
+    /// <returns></returns>
+    public static List<string> RemoveListText(List<string> list, string text) {
+      var outputList = new List<string>();
+      foreach(var item in list) {
+        var newItem = item.Replace(text, "");
+        //dont add empties
+        if(!string.IsNullOrEmpty(newItem)) {
+          outputList.Add(newItem);
+        }
+      }
+      return outputList;
+    }
   }
 }

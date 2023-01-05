@@ -75,6 +75,9 @@
       this.button2 = new System.Windows.Forms.Button();
       this.label6 = new System.Windows.Forms.Label();
       this.textBoxTo = new System.Windows.Forms.TextBox();
+      this.groupBox10 = new System.Windows.Forms.GroupBox();
+      this.textBoxRemoveText = new System.Windows.Forms.TextBox();
+      this.button1 = new System.Windows.Forms.Button();
       this.groupBox1.SuspendLayout();
       this.groupBox2.SuspendLayout();
       this.groupBox3.SuspendLayout();
@@ -84,6 +87,7 @@
       this.groupBox7.SuspendLayout();
       this.groupBox8.SuspendLayout();
       this.groupBox9.SuspendLayout();
+      this.groupBox10.SuspendLayout();
       this.SuspendLayout();
       // 
       // inputToOutputButton
@@ -248,7 +252,7 @@
       this.groupBox1.Controls.Add(this.inputAddTextButton);
       this.groupBox1.Location = new System.Drawing.Point(50, 460);
       this.groupBox1.Name = "groupBox1";
-      this.groupBox1.Size = new System.Drawing.Size(431, 128);
+      this.groupBox1.Size = new System.Drawing.Size(431, 103);
       this.groupBox1.TabIndex = 16;
       this.groupBox1.TabStop = false;
       this.groupBox1.Text = "Lisää annettu teksti";
@@ -293,7 +297,7 @@
       this.groupBox2.Controls.Add(this.inputToOutputButton);
       this.groupBox2.Controls.Add(this.inputAddCommasButton);
       this.groupBox2.Controls.Add(this.inputGetUserIDsButton);
-      this.groupBox2.Location = new System.Drawing.Point(50, 594);
+      this.groupBox2.Location = new System.Drawing.Point(50, 669);
       this.groupBox2.Name = "groupBox2";
       this.groupBox2.Size = new System.Drawing.Size(431, 138);
       this.groupBox2.TabIndex = 17;
@@ -397,7 +401,7 @@
       this.groupBox5.Controls.Add(this.inputSplitCsvBtn);
       this.groupBox5.Location = new System.Drawing.Point(514, 603);
       this.groupBox5.Name = "groupBox5";
-      this.groupBox5.Size = new System.Drawing.Size(349, 129);
+      this.groupBox5.Size = new System.Drawing.Size(349, 101);
       this.groupBox5.TabIndex = 20;
       this.groupBox5.TabStop = false;
       this.groupBox5.Text = "Erottele pilkkulista";
@@ -605,11 +609,40 @@
       this.textBoxTo.Size = new System.Drawing.Size(308, 20);
       this.textBoxTo.TabIndex = 23;
       // 
+      // groupBox10
+      // 
+      this.groupBox10.Controls.Add(this.textBoxRemoveText);
+      this.groupBox10.Controls.Add(this.button1);
+      this.groupBox10.Location = new System.Drawing.Point(50, 569);
+      this.groupBox10.Name = "groupBox10";
+      this.groupBox10.Size = new System.Drawing.Size(349, 83);
+      this.groupBox10.TabIndex = 21;
+      this.groupBox10.TabStop = false;
+      this.groupBox10.Text = "Poista annettu teksti";
+      // 
+      // textBoxRemoveText
+      // 
+      this.textBoxRemoveText.Location = new System.Drawing.Point(9, 19);
+      this.textBoxRemoveText.Name = "textBoxRemoveText";
+      this.textBoxRemoveText.Size = new System.Drawing.Size(308, 20);
+      this.textBoxRemoveText.TabIndex = 18;
+      // 
+      // button1
+      // 
+      this.button1.Location = new System.Drawing.Point(6, 45);
+      this.button1.Name = "button1";
+      this.button1.Size = new System.Drawing.Size(72, 25);
+      this.button1.TabIndex = 2;
+      this.button1.Text = "Poista";
+      this.button1.UseVisualStyleBackColor = true;
+      this.button1.Click += new System.EventHandler(this.button1_Click);
+      // 
       // MyForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1631, 826);
+      this.Controls.Add(this.groupBox10);
       this.Controls.Add(this.groupBox9);
       this.Controls.Add(this.inputRowCountLabel);
       this.Controls.Add(this.flipInputWithOutputBtn);
@@ -649,6 +682,8 @@
       this.groupBox8.ResumeLayout(false);
       this.groupBox9.ResumeLayout(false);
       this.groupBox9.PerformLayout();
+      this.groupBox10.ResumeLayout(false);
+      this.groupBox10.PerformLayout();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -708,6 +743,9 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBoxTo;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.GroupBox groupBox10;
+        private System.Windows.Forms.TextBox textBoxRemoveText;
+        private System.Windows.Forms.Button button1;
     }
 }
 

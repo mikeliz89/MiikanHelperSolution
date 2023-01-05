@@ -433,5 +433,20 @@ namespace MiikanHelperSolution {
 
       ShowAsOutput(outputList);
     }
+
+    /// <summary>
+    /// Poista annettu teksti
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void button1_Click(object sender, EventArgs e) {
+      var list1 = GetRowsAsList(inputTextBox);
+
+      var text = textBoxRemoveText.Text;
+
+      var outputList = ListHelper.RemoveListText(list1, text);
+
+      ShowAsOutput(outputList);
+    }
   }
 }

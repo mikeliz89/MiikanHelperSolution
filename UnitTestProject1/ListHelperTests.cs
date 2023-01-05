@@ -350,5 +350,22 @@ namespace UnitTestProject1 {
       Assert.AreEqual("Miikan upea testi", outputList[0]);
       Assert.AreEqual("Toisen henkilön upea testi", outputList[1]);
     }
+
+    [TestMethod]
+    public void RemoveListText() {
+      var list = new List<string>();
+      list.Add("Test1");
+      list.Add("Test1somethingtest2");
+      list.Add("Something");
+
+      //Huom! ei poista Something koska something on eri koska case-sensitive
+      var text = "something";
+
+      var outputList = ListHelper.RemoveListText(list, text);
+      Assert.AreEqual(3, outputList.Count);
+      Assert.AreEqual("Test1", outputList[0]);
+      Assert.AreEqual("Test1test2", outputList[1]);
+      Assert.AreEqual("Something", outputList[2]);
+    }
   }
 }
