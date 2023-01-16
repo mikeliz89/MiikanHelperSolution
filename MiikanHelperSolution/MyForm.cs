@@ -77,10 +77,15 @@ namespace MiikanHelperSolution {
               orderby count descending
               select new { Value = g.Key, Count = count };
 
+      var counter = 0;
       foreach(var x in q) {
         if(x.Count > 1) {
+          counter++;
           resultsTextBox.Text += $" Value {x.Value} Count: {x.Count}" + Environment.NewLine;
         }
+      }
+      if(counter == 0) {
+        resultsTextBox.Text = "No duplicates found";
       }
     }
 
