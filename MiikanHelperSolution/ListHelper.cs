@@ -243,5 +243,16 @@ namespace MiikanHelperSolution {
       }
       return outputList;
     }
+
+    public static List<string> TrimEnds(List<string> list) {
+      var outputList = new List<string>();
+      foreach(var item in list) {
+        var newItem = item.TrimEnd();
+        if(!string.IsNullOrEmpty(newItem)) {
+          outputList.Add(newItem);  
+        }
+      }
+      return outputList;
+    }
   }
 }

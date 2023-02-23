@@ -70,14 +70,17 @@
       this.flipInputWithOutputBtn = new System.Windows.Forms.Button();
       this.inputRowCountLabel = new System.Windows.Forms.Label();
       this.groupBox9 = new System.Windows.Forms.GroupBox();
+      this.textBoxTo = new System.Windows.Forms.TextBox();
+      this.label6 = new System.Windows.Forms.Label();
       this.textBoxFrom = new System.Windows.Forms.TextBox();
       this.label7 = new System.Windows.Forms.Label();
       this.button2 = new System.Windows.Forms.Button();
-      this.label6 = new System.Windows.Forms.Label();
-      this.textBoxTo = new System.Windows.Forms.TextBox();
       this.groupBox10 = new System.Windows.Forms.GroupBox();
       this.textBoxRemoveText = new System.Windows.Forms.TextBox();
       this.button1 = new System.Windows.Forms.Button();
+      this.groupBox11 = new System.Windows.Forms.GroupBox();
+      this.inputCombineEveryEachOtherRowButton = new System.Windows.Forms.Button();
+      this.button3 = new System.Windows.Forms.Button();
       this.groupBox1.SuspendLayout();
       this.groupBox2.SuspendLayout();
       this.groupBox3.SuspendLayout();
@@ -88,6 +91,7 @@
       this.groupBox8.SuspendLayout();
       this.groupBox9.SuspendLayout();
       this.groupBox10.SuspendLayout();
+      this.groupBox11.SuspendLayout();
       this.SuspendLayout();
       // 
       // inputToOutputButton
@@ -188,7 +192,7 @@
       // 
       // inputCountRowsButton
       // 
-      this.inputCountRowsButton.Location = new System.Drawing.Point(634, 264);
+      this.inputCountRowsButton.Location = new System.Drawing.Point(141, 19);
       this.inputCountRowsButton.Name = "inputCountRowsButton";
       this.inputCountRowsButton.Size = new System.Drawing.Size(93, 23);
       this.inputCountRowsButton.TabIndex = 10;
@@ -198,7 +202,7 @@
       // 
       // outputCountRowsButton
       // 
-      this.outputCountRowsButton.Location = new System.Drawing.Point(1468, 264);
+      this.outputCountRowsButton.Location = new System.Drawing.Point(141, 19);
       this.outputCountRowsButton.Name = "outputCountRowsButton";
       this.outputCountRowsButton.Size = new System.Drawing.Size(93, 23);
       this.outputCountRowsButton.TabIndex = 11;
@@ -365,6 +369,7 @@
       // 
       // groupBox4
       // 
+      this.groupBox4.Controls.Add(this.button3);
       this.groupBox4.Controls.Add(this.inputToLower);
       this.groupBox4.Controls.Add(this.inputToUpper);
       this.groupBox4.Location = new System.Drawing.Point(514, 535);
@@ -435,9 +440,10 @@
       // groupBox6
       // 
       this.groupBox6.Controls.Add(this.outputCombineEveryEachOtherRowButton);
-      this.groupBox6.Location = new System.Drawing.Point(881, 364);
+      this.groupBox6.Controls.Add(this.outputCountRowsButton);
+      this.groupBox6.Location = new System.Drawing.Point(1316, 252);
       this.groupBox6.Name = "groupBox6";
-      this.groupBox6.Size = new System.Drawing.Size(147, 58);
+      this.groupBox6.Size = new System.Drawing.Size(245, 59);
       this.groupBox6.TabIndex = 21;
       this.groupBox6.TabStop = false;
       this.groupBox6.Text = "Yleiset";
@@ -567,6 +573,22 @@
       this.groupBox9.TabStop = false;
       this.groupBox9.Text = "Korvaa teksti toisella";
       // 
+      // textBoxTo
+      // 
+      this.textBoxTo.Location = new System.Drawing.Point(9, 91);
+      this.textBoxTo.Name = "textBoxTo";
+      this.textBoxTo.Size = new System.Drawing.Size(308, 20);
+      this.textBoxTo.TabIndex = 23;
+      // 
+      // label6
+      // 
+      this.label6.AutoSize = true;
+      this.label6.Location = new System.Drawing.Point(6, 75);
+      this.label6.Name = "label6";
+      this.label6.Size = new System.Drawing.Size(38, 13);
+      this.label6.TabIndex = 22;
+      this.label6.Text = "Tähän";
+      // 
       // textBoxFrom
       // 
       this.textBoxFrom.Location = new System.Drawing.Point(9, 46);
@@ -592,22 +614,6 @@
       this.button2.Text = "Korvaa";
       this.button2.UseVisualStyleBackColor = true;
       this.button2.Click += new System.EventHandler(this.button2_Click);
-      // 
-      // label6
-      // 
-      this.label6.AutoSize = true;
-      this.label6.Location = new System.Drawing.Point(6, 75);
-      this.label6.Name = "label6";
-      this.label6.Size = new System.Drawing.Size(38, 13);
-      this.label6.TabIndex = 22;
-      this.label6.Text = "Tähän";
-      // 
-      // textBoxTo
-      // 
-      this.textBoxTo.Location = new System.Drawing.Point(9, 91);
-      this.textBoxTo.Name = "textBoxTo";
-      this.textBoxTo.Size = new System.Drawing.Size(308, 20);
-      this.textBoxTo.TabIndex = 23;
       // 
       // groupBox10
       // 
@@ -637,11 +643,43 @@
       this.button1.UseVisualStyleBackColor = true;
       this.button1.Click += new System.EventHandler(this.button1_Click);
       // 
+      // groupBox11
+      // 
+      this.groupBox11.Controls.Add(this.inputCombineEveryEachOtherRowButton);
+      this.groupBox11.Controls.Add(this.inputCountRowsButton);
+      this.groupBox11.Location = new System.Drawing.Point(487, 252);
+      this.groupBox11.Name = "groupBox11";
+      this.groupBox11.Size = new System.Drawing.Size(243, 59);
+      this.groupBox11.TabIndex = 22;
+      this.groupBox11.TabStop = false;
+      this.groupBox11.Text = "Yleiset";
+      // 
+      // inputCombineEveryEachOtherRowButton
+      // 
+      this.inputCombineEveryEachOtherRowButton.Location = new System.Drawing.Point(6, 19);
+      this.inputCombineEveryEachOtherRowButton.Name = "inputCombineEveryEachOtherRowButton";
+      this.inputCombineEveryEachOtherRowButton.Size = new System.Drawing.Size(129, 23);
+      this.inputCombineEveryEachOtherRowButton.TabIndex = 9;
+      this.inputCombineEveryEachOtherRowButton.Text = "Yhdistä joka toinen rivi";
+      this.inputCombineEveryEachOtherRowButton.UseVisualStyleBackColor = true;
+      this.inputCombineEveryEachOtherRowButton.Click += new System.EventHandler(this.inputCombineEveryEachOtherRowButton_Click);
+      // 
+      // button3
+      // 
+      this.button3.Location = new System.Drawing.Point(163, 19);
+      this.button3.Name = "button3";
+      this.button3.Size = new System.Drawing.Size(84, 25);
+      this.button3.TabIndex = 2;
+      this.button3.Text = "Trimmaa endit";
+      this.button3.UseVisualStyleBackColor = true;
+      this.button3.Click += new System.EventHandler(this.inputTrimEndsButton_Click);
+      // 
       // MyForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1631, 826);
+      this.Controls.Add(this.groupBox11);
       this.Controls.Add(this.groupBox10);
       this.Controls.Add(this.groupBox9);
       this.Controls.Add(this.inputRowCountLabel);
@@ -654,12 +692,10 @@
       this.Controls.Add(this.groupBox7);
       this.Controls.Add(this.groupBox6);
       this.Controls.Add(this.groupBox5);
-      this.Controls.Add(this.outputCountRowsButton);
       this.Controls.Add(this.groupBox4);
       this.Controls.Add(this.groupBox3);
       this.Controls.Add(this.groupBox2);
       this.Controls.Add(this.groupBox1);
-      this.Controls.Add(this.inputCountRowsButton);
       this.Controls.Add(this.outputRowCountLabel);
       this.Controls.Add(this.label3);
       this.Controls.Add(this.resultsTextBox);
@@ -684,6 +720,7 @@
       this.groupBox9.PerformLayout();
       this.groupBox10.ResumeLayout(false);
       this.groupBox10.PerformLayout();
+      this.groupBox11.ResumeLayout(false);
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -746,6 +783,9 @@
         private System.Windows.Forms.GroupBox groupBox10;
         private System.Windows.Forms.TextBox textBoxRemoveText;
         private System.Windows.Forms.Button button1;
-    }
+    private System.Windows.Forms.GroupBox groupBox11;
+    private System.Windows.Forms.Button inputCombineEveryEachOtherRowButton;
+    private System.Windows.Forms.Button button3;
+  }
 }
 

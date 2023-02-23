@@ -367,5 +367,19 @@ namespace UnitTestProject1 {
       Assert.AreEqual("Test1test2", outputList[1]);
       Assert.AreEqual("Something", outputList[2]);
     }
+
+    [TestMethod]
+    public void TrimEnds() {
+      var list = new List<string>();
+      list.Add("Test 1      ");
+      list.Add("  Test   2 ");
+      list.Add("");
+      list.Add(" ");
+
+      var outputList = ListHelper.TrimEnds(list);
+      Assert.AreEqual(2, outputList.Count);
+      Assert.AreEqual("Test 1", outputList[0]);
+      Assert.AreEqual("  Test   2", outputList[1]);
+    }
   }
 }

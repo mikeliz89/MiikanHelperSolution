@@ -453,5 +453,17 @@ namespace MiikanHelperSolution {
 
       ShowAsOutput(outputList);
     }
+
+    private void inputCombineEveryEachOtherRowButton_Click(object sender, EventArgs e) {
+      var list = GetRowsAsList(inputTextBox);
+      var inputList = ListHelper.CombineEveryEachRow(list);
+      ShowAsInput(inputList);
+    }
+
+    private void inputTrimEndsButton_Click(object sender, EventArgs e) {
+      var list = GetRowsAsList(inputTextBox);
+      var inputList = ListHelper.TrimEnds(list);
+      ShowAsOutput(inputList);
+    }
   }
 }
