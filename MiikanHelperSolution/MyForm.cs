@@ -462,8 +462,14 @@ namespace MiikanHelperSolution {
 
     private void inputTrimEndsButton_Click(object sender, EventArgs e) {
       var list = GetRowsAsList(inputTextBox);
-      var inputList = ListHelper.TrimEnds(list);
-      ShowAsOutput(inputList);
+      var outputList = ListHelper.TrimEnds(list);
+      ShowAsOutput(outputList);
+    }
+
+    private void buttonXmlToRows_Click(object sender, EventArgs e) {
+      var list = GetRowsAsList(inputTextBox);
+      var outputList = ListHelper.XmlToRows(list);
+      ShowAsOutput(outputList);
     }
   }
 }

@@ -381,5 +381,15 @@ namespace UnitTestProject1 {
       Assert.AreEqual("Test 1", outputList[0]);
       Assert.AreEqual("  Test   2", outputList[1]);
     }
+
+    [TestMethod]
+    public void XmlToRows() {
+      var list = new List<string>();
+      var unformattedXml = "<data xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"><section id=\"basics\"><PASI_VehicleNumber xsi:type=\"System.String\">97563600</PASI_VehicleNumber><organisation xsi:type=\"System.String\">Helsingin kaupunki </organisation><PASI_LicensePlateType xsi:type=\"System.String\">Suomalainen rekisterikilpi</PASI_LicensePlateType><PASI_CountryCode xsi:type=\"System.String\">FIN Suomi</PASI_CountryCode><PASI_RegisterNumber xsi:type=\"System.String\">FOR-452</PASI_RegisterNumber><PASI_ChassisNumber xsi:type=\"System.String\">WVWZZZAUZJP536084</PASI_ChassisNumber><PASI_VehicleType xsi:type=\"System.String\">HenkilÃ¶auto</PASI_VehicleType><PASI_VehicleBrand xsi:type=\"System.String\">Haulotte</PASI_VehicleBrand><PASI_VehicleModel xsi:type=\"System.String\">GOLF Farmari (AC) 5ov 999cm3 A</PASI_VehicleModel><PASI_VehicleColor xsi:type=\"System.String\">Valkoinen</PASI_VehicleColor><PASI_Vehicle_TotalMass xsi:type=\"System.String\">0 kg</PASI_Vehicle_TotalMass><PASI_Vehicle_Emissions xsi:type=\"System.String\">0 g/km</PASI_Vehicle_Emissions><PASI_Vehicle_NoPlates xsi:type=\"System.String\">ei</PASI_Vehicle_NoPlates><PASI_Vehicle_PilotVehicle xsi:type=\"System.String\">ei</PASI_Vehicle_PilotVehicle><PASI_AKEUpdate xsi:type=\"System.String\">kyllÃ¤</PASI_AKEUpdate><PASI_LatestAKEUpdate xsi:type=\"System.String\">11.11.2022</PASI_LatestAKEUpdate><PASI_VehicleDetails xsi:type=\"System.String\">[Merkki: VOLKSWAGEN VW]</PASI_VehicleDetails><PASI_Vehicle_ScheduledAKEUpdate xsi:type=\"System.String\" /><pasi_foul xsi:type=\"System.String\">113068435</pasi_foul><pasi_foul xsi:type=\"System.String\">113102425</pasi_foul><pasi_transfer xsi:type=\"System.String\">36145434</pasi_transfer><pasi_transfer xsi:type=\"System.String\">36145575</pasi_transfer><pasi_transfer xsi:type=\"System.String\">111980065</pasi_transfer><pasi_plate_history xsi:type=\"System.String\">25.04.2022 -  , Kilvellinen: kyllÃ¤</pasi_plate_history><pasi_ownerorpossessor xsi:type=\"System.String\">29.04.2021 - , Ajoneuvon haltija: Peura, Otto Matias</pasi_ownerorpossessor><pasi_ownerorpossessor xsi:type=\"System.String\">29.04.2021 - , Ajoneuvon omistaja: OP Yrityspankki Oyj</pasi_ownerorpossessor></section><section id=\"documentlist\" /></data>";
+      list.Add(unformattedXml);
+
+      var outputList = ListHelper.XmlToRows(list);
+      Assert.Equals("", "");
+    }
   }
 }

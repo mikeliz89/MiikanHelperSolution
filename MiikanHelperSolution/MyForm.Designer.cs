@@ -51,6 +51,7 @@
       this.label4 = new System.Windows.Forms.Label();
       this.inputFilePath = new System.Windows.Forms.TextBox();
       this.groupBox4 = new System.Windows.Forms.GroupBox();
+      this.button3 = new System.Windows.Forms.Button();
       this.inputToLower = new System.Windows.Forms.Button();
       this.inputToUpper = new System.Windows.Forms.Button();
       this.groupBox5 = new System.Windows.Forms.GroupBox();
@@ -80,7 +81,8 @@
       this.button1 = new System.Windows.Forms.Button();
       this.groupBox11 = new System.Windows.Forms.GroupBox();
       this.inputCombineEveryEachOtherRowButton = new System.Windows.Forms.Button();
-      this.button3 = new System.Windows.Forms.Button();
+      this.groupBox12 = new System.Windows.Forms.GroupBox();
+      this.buttonXmlToRows = new System.Windows.Forms.Button();
       this.groupBox1.SuspendLayout();
       this.groupBox2.SuspendLayout();
       this.groupBox3.SuspendLayout();
@@ -92,6 +94,7 @@
       this.groupBox9.SuspendLayout();
       this.groupBox10.SuspendLayout();
       this.groupBox11.SuspendLayout();
+      this.groupBox12.SuspendLayout();
       this.SuspendLayout();
       // 
       // inputToOutputButton
@@ -379,6 +382,16 @@
       this.groupBox4.TabStop = false;
       this.groupBox4.Text = "Muuta tekstiä";
       // 
+      // button3
+      // 
+      this.button3.Location = new System.Drawing.Point(163, 19);
+      this.button3.Name = "button3";
+      this.button3.Size = new System.Drawing.Size(84, 25);
+      this.button3.TabIndex = 2;
+      this.button3.Text = "Trimmaa endit";
+      this.button3.UseVisualStyleBackColor = true;
+      this.button3.Click += new System.EventHandler(this.inputTrimEndsButton_Click);
+      // 
       // inputToLower
       // 
       this.inputToLower.Location = new System.Drawing.Point(85, 19);
@@ -664,21 +677,32 @@
       this.inputCombineEveryEachOtherRowButton.UseVisualStyleBackColor = true;
       this.inputCombineEveryEachOtherRowButton.Click += new System.EventHandler(this.inputCombineEveryEachOtherRowButton_Click);
       // 
-      // button3
+      // groupBox12
       // 
-      this.button3.Location = new System.Drawing.Point(163, 19);
-      this.button3.Name = "button3";
-      this.button3.Size = new System.Drawing.Size(84, 25);
-      this.button3.TabIndex = 2;
-      this.button3.Text = "Trimmaa endit";
-      this.button3.UseVisualStyleBackColor = true;
-      this.button3.Click += new System.EventHandler(this.inputTrimEndsButton_Click);
+      this.groupBox12.Controls.Add(this.buttonXmlToRows);
+      this.groupBox12.Location = new System.Drawing.Point(520, 720);
+      this.groupBox12.Name = "groupBox12";
+      this.groupBox12.Size = new System.Drawing.Size(111, 87);
+      this.groupBox12.TabIndex = 24;
+      this.groupBox12.TabStop = false;
+      this.groupBox12.Text = "XML";
+      // 
+      // buttonXmlToRows
+      // 
+      this.buttonXmlToRows.Location = new System.Drawing.Point(6, 19);
+      this.buttonXmlToRows.Name = "buttonXmlToRows";
+      this.buttonXmlToRows.Size = new System.Drawing.Size(96, 23);
+      this.buttonXmlToRows.TabIndex = 5;
+      this.buttonXmlToRows.Text = "Rivitä";
+      this.buttonXmlToRows.UseVisualStyleBackColor = true;
+      this.buttonXmlToRows.Click += new System.EventHandler(this.buttonXmlToRows_Click);
       // 
       // MyForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1631, 826);
+      this.Controls.Add(this.groupBox12);
       this.Controls.Add(this.groupBox11);
       this.Controls.Add(this.groupBox10);
       this.Controls.Add(this.groupBox9);
@@ -721,6 +745,7 @@
       this.groupBox10.ResumeLayout(false);
       this.groupBox10.PerformLayout();
       this.groupBox11.ResumeLayout(false);
+      this.groupBox12.ResumeLayout(false);
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -786,6 +811,8 @@
     private System.Windows.Forms.GroupBox groupBox11;
     private System.Windows.Forms.Button inputCombineEveryEachOtherRowButton;
     private System.Windows.Forms.Button button3;
+    private System.Windows.Forms.GroupBox groupBox12;
+    private System.Windows.Forms.Button buttonXmlToRows;
   }
 }
 

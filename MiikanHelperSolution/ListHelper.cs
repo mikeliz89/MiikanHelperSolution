@@ -254,5 +254,16 @@ namespace MiikanHelperSolution {
       }
       return outputList;
     }
+
+    public static List<string> XmlToRows(List<string> list) {
+      var outputList = new List<string>();
+      foreach(var item in list) {
+        var newItem = FormatXML.FormatXMLString(item);
+        if(!string.IsNullOrEmpty(newItem)) {
+          outputList.Add(newItem);
+        }
+      }
+      return outputList;
+    }
   }
 }
