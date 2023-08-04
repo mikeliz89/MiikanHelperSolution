@@ -391,5 +391,17 @@ namespace UnitTestProject1 {
       var outputList = ListHelper.XmlToRows(list);
       Assert.Equals("", "");
     }
+
+    [TestMethod]
+    public void ReplaceListItemTextWithGivenText() {
+      var list = new List<string>();
+      list.Add("A");
+      list.Add("B");
+
+      var outputList = ListHelper.ReplaceListItemTextWithGivenText(list, "insert into {0} text");
+      Assert.AreEqual(2, outputList.Count);
+      Assert.AreEqual("insert into A text", outputList[0]);
+      Assert.AreEqual("insert into B text", outputList[1]);
+    }
   }
 }

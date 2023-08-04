@@ -83,6 +83,7 @@
       this.inputCombineEveryEachOtherRowButton = new System.Windows.Forms.Button();
       this.groupBox12 = new System.Windows.Forms.GroupBox();
       this.buttonXmlToRows = new System.Windows.Forms.Button();
+      this.inputWrapTextRadioButton = new System.Windows.Forms.RadioButton();
       this.groupBox1.SuspendLayout();
       this.groupBox2.SuspendLayout();
       this.groupBox3.SuspendLayout();
@@ -252,6 +253,7 @@
       // 
       // groupBox1
       // 
+      this.groupBox1.Controls.Add(this.inputWrapTextRadioButton);
       this.groupBox1.Controls.Add(this.inputStartAndEndRadioButton);
       this.groupBox1.Controls.Add(this.inputEndRadioButton);
       this.groupBox1.Controls.Add(this.inputStartRadioButton);
@@ -697,6 +699,16 @@
       this.buttonXmlToRows.UseVisualStyleBackColor = true;
       this.buttonXmlToRows.Click += new System.EventHandler(this.buttonXmlToRows_Click);
       // 
+      // inputWrapTextRadioButton
+      // 
+      this.inputWrapTextRadioButton.AutoSize = true;
+      this.inputWrapTextRadioButton.Location = new System.Drawing.Point(195, 49);
+      this.inputWrapTextRadioButton.Name = "inputWrapTextRadioButton";
+      this.inputWrapTextRadioButton.Size = new System.Drawing.Size(121, 17);
+      this.inputWrapTextRadioButton.TabIndex = 19;
+      this.inputWrapTextRadioButton.Text = "{0}-kohdan ympärille";
+      this.inputWrapTextRadioButton.UseVisualStyleBackColor = true;
+      // 
       // MyForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -813,6 +825,7 @@
     private System.Windows.Forms.Button button3;
     private System.Windows.Forms.GroupBox groupBox12;
     private System.Windows.Forms.Button buttonXmlToRows;
+    private System.Windows.Forms.RadioButton inputWrapTextRadioButton;
   }
 }
 

@@ -225,6 +225,21 @@ namespace MiikanHelperSolution {
       }
       return outputList;
     }
+     
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="list"></param>
+    /// <param name="textTo"></param>
+    /// <returns></returns>
+    public static List<string> ReplaceListItemTextWithGivenText(List<string> list, string textTo) {
+      var outputList = new List<string>();
+      foreach(var item in list) {
+        var newItem = string.Format(textTo, item);
+        outputList.Add(newItem);
+      }
+      return outputList;
+    }
 
     /// <summary>
     /// Poista listalta annetut tekstit (case-sensitive)

@@ -143,15 +143,21 @@ namespace MiikanHelperSolution {
     /// <param name="sender"></param>
     /// <param name="e"></param>
     private void inputAddTextButton_Click(object sender, EventArgs e) {
+
       var list = GetRowsAsList(inputTextBox);
 
-      var outputList = ListHelper.GetOutputList(list,
-        charactersToAdd: inputAddTextTextBox.Text,
-        addToStart: GetAddToStart(),
-        addToEnd: GetAddToEnd(),
-        addCommas: false);
+      if(inputWrapTextRadioButton.Checked) {
+        var outputList = ListHelper.ReplaceListItemTextWithGivenText(list, inputAddTextTextBox.Text);
+        ShowAsOutput(outputList);
+      } else {
+        var outputList = ListHelper.GetOutputList(list,
+          charactersToAdd: inputAddTextTextBox.Text,
+          addToStart: GetAddToStart(),
+          addToEnd: GetAddToEnd(),
+          addCommas: false);
 
-      ShowAsOutput(outputList);
+        ShowAsOutput(outputList);
+      }
 
       //results
       resultsTextBox.Text = $"Muutettu {list.Count} riviä";
