@@ -24,13 +24,13 @@ namespace MiikanHelperSolution {
     /// <param name="sender"></param>
     /// <param name="e"></param>
     private void inputToOutputButton_Click(object sender, EventArgs e) {
-      var list = ListHelper.GetRowsAsList(inputTextBox.Text);
-      var outputList = ListHelper.GetOutputList(list, charactersToAdd: "'");
 
-      ShowAsOutput(outputList);
+      var input = ListHelper.GetRowsAsList(inputTextBox.Text);
+      var output = ListHelper.GetOutputList(input, charactersToAdd: "'");
 
-      //results
-      resultsTextBox.Text = $"Muutettu {list.Count} riviä";
+      ShowOutput(output);
+
+      ShowResult($"Muutettu {input.Count} riviä");
     }
 
     /// <summary>
@@ -39,13 +39,13 @@ namespace MiikanHelperSolution {
     /// <param name="sender"></param>
     /// <param name="e"></param>
     private void inputAddCommasButton_Click(object sender, EventArgs e) {
-      var list = GetRowsAsList(inputTextBox);
-      var outputList = ListHelper.GetOutputList(list, charactersToAdd: "", addToStart: true, addToEnd: true, addCommas: true);
 
-      ShowAsOutput(outputList);
+      var input = GetInput();
+      var output = ListHelper.GetOutputList(input, charactersToAdd: "", addToStart: true, addToEnd: true, addCommas: true);
 
-      //results
-      resultsTextBox.Text = $"Muutettu {list.Count} riviä";
+      ShowOutput(output);
+
+      ShowResult($"Muutettu {input.Count} riviä");
     }
 
     private List<string> GetRowsAsList(TextBox textBox) {
@@ -59,16 +59,16 @@ namespace MiikanHelperSolution {
     /// <param name="e"></param>
     private void outputRemoveDuplicates_Click(object sender, EventArgs e) {
 
-      var list = GetRowsAsList(outputTextBox);
-      ShowDuplicatesInResults(list);
+      var output = GetOutput();
+      ShowDuplicatesInResults(output);
 
-      var outputList = ListHelper.RemoveDuplicates(list);
-      ShowAsOutput(outputList);
+      var outputList = ListHelper.RemoveDuplicates(output);
+      ShowOutput(outputList);
     }
 
     private void ShowDuplicatesInResults(List<string> list) {
 
-      resultsTextBox.Text = "";
+      ShowResult("");
 
       //results
       var q = from x in list
@@ -81,11 +81,11 @@ namespace MiikanHelperSolution {
       foreach(var x in q) {
         if(x.Count > 1) {
           counter++;
-          resultsTextBox.Text += $" Value {x.Value} Count: {x.Count}" + Environment.NewLine;
+          AppendToResult($" Value {x.Value} Count: {x.Count}" + Environment.NewLine);
         }
       }
       if(counter == 0) {
-        resultsTextBox.Text = "No duplicates found";
+        ShowResult("No duplicates found");
       }
     }
 
@@ -95,10 +95,9 @@ namespace MiikanHelperSolution {
     /// <param name="sender"></param>
     /// <param name="e"></param>
     private void outputCombineEveryEachRowButton_Click(object sender, EventArgs e) {
-      var list = GetRowsAsList(outputTextBox);
-      var outputList = ListHelper.CombineEveryEachRow(list);
-
-      ShowAsOutput(outputList);
+      var output = GetOutput();
+      var outputList = ListHelper.CombineEveryEachRow(output);
+      ShowOutput(outputList);
     }
 
     /// <summary>
@@ -107,10 +106,9 @@ namespace MiikanHelperSolution {
     /// <param name="sender"></param>
     /// <param name="e"></param>
     private void inputCountRowsButton_Click(object sender, EventArgs e) {
-      var list = GetRowsAsList(inputTextBox);
-      inputRowCountLabel.Text = list.Count + "";
-      //results
-      resultsTextBox.Text = $"Input list count {list.Count}";
+      var input = GetInput();
+      inputRowCountLabel.Text = input.Count + "";
+      ShowResult($"Input list count {input.Count}");
     }
 
     /// <summary>
@@ -119,10 +117,9 @@ namespace MiikanHelperSolution {
     /// <param name="sender"></param>
     /// <param name="e"></param>
     private void outputCountRowsButton_Click(object sender, EventArgs e) {
-      var list = GetRowsAsList(outputTextBox);
-      outputRowCountLabel.Text = list.Count + "";
-      //results
-      resultsTextBox.Text = $"Output list count {list.Count}";
+      var output = GetOutput();
+      outputRowCountLabel.Text = output.Count + "";
+      ShowResult($"Output list count {output.Count}");
     }
 
     /// <summary>
@@ -131,10 +128,11 @@ namespace MiikanHelperSolution {
     /// <param name="sender"></param>
     /// <param name="e"></param>
     private void inputGetUserIDsButton_Click(object sender, EventArgs e) {
-      var list = GetRowsAsList(inputTextBox);
-      var listOfSubStrings = ListHelper.GetListOfSubstrings(list);
 
-      ShowAsOutput(listOfSubStrings);
+      var input = GetInput();
+      var output = ListHelper.GetListOfSubstrings(input);
+
+      ShowOutput(output);
     }
 
     /// <summary>
@@ -144,23 +142,22 @@ namespace MiikanHelperSolution {
     /// <param name="e"></param>
     private void inputAddTextButton_Click(object sender, EventArgs e) {
 
-      var list = GetRowsAsList(inputTextBox);
+      var input = GetInput();
 
       if(inputWrapTextRadioButton.Checked) {
-        var outputList = ListHelper.ReplaceListItemTextWithGivenText(list, inputAddTextTextBox.Text);
-        ShowAsOutput(outputList);
+        var outputList = ListHelper.ReplaceListItemTextWithGivenText(input, inputAddTextTextBox.Text);
+        ShowOutput(outputList);
       } else {
-        var outputList = ListHelper.GetOutputList(list,
+        var output = ListHelper.GetOutputList(input,
           charactersToAdd: inputAddTextTextBox.Text,
           addToStart: GetAddToStart(),
           addToEnd: GetAddToEnd(),
           addCommas: false);
 
-        ShowAsOutput(outputList);
+        ShowOutput(output);
       }
 
-      //results
-      resultsTextBox.Text = $"Muutettu {list.Count} riviä";
+      ShowResult($"Muutettu {input.Count} riviä");
     }
 
     private bool GetAddToEnd() {
@@ -207,33 +204,32 @@ namespace MiikanHelperSolution {
     /// <param name="e"></param>
     private void inputSearchFromFilePath_Click(object sender, EventArgs e) {
 
-      resultsTextBox.Text = "";
+      ShowResult("");
 
       var filePath = inputFilePath.Text;
 
       //guards
       if(string.IsNullOrEmpty(filePath)) {
-        resultsTextBox.Text = "Filepath cannot be null or empty";
+        ShowResult("Filepath cannot be null or empty");
         return;
       }
       if(!File.Exists(filePath)) {
-        resultsTextBox.Text = "File does not exist";
+        ShowResult("File does not exist");
         return;
       }
 
       var filesLines = File.ReadAllLines(filePath);
 
-      resultsTextBox.Text += $"Found {filesLines.Length} lines from file";
+      AppendToResult($"Found {filesLines.Length} lines from file");
 
-      var list = GetRowsAsList(inputTextBox);
+      var input = GetInput();
+      var output = ListHelper.GetListContainingOtherList(input, filesLines.ToList());
 
-      var outputList = ListHelper.GetListContainingOtherList(list, filesLines.ToList());
-
-      ShowAsOutput(outputList);
+      ShowOutput(output);
 
       //results
-      var list2 = GetRowsAsList(outputTextBox);
-      resultsTextBox.Text += $"{Environment.NewLine}Output list count {list2.Count}";
+      var list2 = GetOutput();
+      AppendToResult($"{Environment.NewLine}Output list count {list2.Count}");
     }
 
     /// <summary>
@@ -242,11 +238,11 @@ namespace MiikanHelperSolution {
     /// <param name="sender"></param>
     /// <param name="e"></param>
     private void inputToUpper_Click(object sender, EventArgs e) {
-      var list = GetRowsAsList(inputTextBox);
 
-      var outputList = ListHelper.ListToUpper(list);
+      var input = GetInput();
+      var output = ListHelper.ListToUpper(input);
 
-      ShowAsOutput(outputList);
+      ShowOutput(output);
     }
 
     /// <summary>
@@ -255,11 +251,11 @@ namespace MiikanHelperSolution {
     /// <param name="sender"></param>
     /// <param name="e"></param>
     private void inputToLower_Click(object sender, EventArgs e) {
-      var list = GetRowsAsList(inputTextBox);
 
-      var outputList = ListHelper.ListToLower(list);
+      var input = GetInput();
+      var output = ListHelper.ListToLower(input);
 
-      ShowAsOutput(outputList);
+      ShowOutput(output);
     }
 
     /// <summary>
@@ -268,23 +264,31 @@ namespace MiikanHelperSolution {
     /// <param name="sender"></param>
     /// <param name="e"></param>
     private void inputSplitCsvBtn_Click(object sender, EventArgs e) {
-      var list = GetRowsAsList(inputTextBox);
 
-      var outputList = ListHelper.Split(list, inputSplitCsv.Text);
+      var input = GetInput();
+      var output = ListHelper.Split(input, inputSplitCsv.Text);
 
-      ShowAsOutput(outputList);
+      ShowOutput(output);
     }
 
-    private void ShowAsOutput(List<string> list) {
+    private void ShowOutput(List<string> list) {
       ShowAs(outputTextBox, outputRowCountLabel, list);
     }
 
-    private void ShowAsInput(List<string> list) {
+    private void ShowInput(List<string> list) {
       ShowAs(inputTextBox, inputRowCountLabel, list);
     }
 
-    private void ShowAsResult(List<string> list) {
+    private void ShowResult(List<string> list) {
       ShowAs(resultsTextBox, resultsRowCountLabel, list);
+    }
+
+    private void ShowResult(string text) {
+      resultsTextBox.Text = text;
+    }
+
+    private void AppendToResult(string text) {
+      resultsTextBox.Text += text;
     }
 
     private void ShowAs(TextBox textBox, Label countLabel, List<string> list) {
@@ -299,14 +303,12 @@ namespace MiikanHelperSolution {
     /// <param name="e"></param>
     private void inputAddSingleQuotes_Click(object sender, EventArgs e) {
 
-      var list = GetRowsAsList(inputTextBox);
+      var input = GetInput();
+      var output = ListHelper.GetOutputList(input, charactersToAdd: "'", addToStart: true, addToEnd: true, addCommas: false);
 
-      var outputList = ListHelper.GetOutputList(list, charactersToAdd: "'", addToStart: true, addToEnd: true, addCommas: false);
+      ShowOutput(output);
 
-      ShowAsOutput(outputList);
-
-      //results
-      resultsTextBox.Text = $"Muutettu {list.Count} riviä";
+      ShowResult($"Muutettu {input.Count} riviä");
     }
 
     /// <summary>
@@ -315,21 +317,22 @@ namespace MiikanHelperSolution {
     /// <param name="sender"></param>
     /// <param name="e"></param>
     private void outputShowDuplicates_Click(object sender, EventArgs e) {
-      var list = GetRowsAsList(outputTextBox);
+      var list = GetOutput();
       ShowDuplicatesInResults(list);
     }
 
     private void inputShowDuplicates_Click(object sender, EventArgs e) {
-      var list = GetRowsAsList(inputTextBox);
-      ShowDuplicatesInResults(list);
+      var input = GetInput();
+      ShowDuplicatesInResults(input);
     }
 
     private void inputRemoveDuplicates_Click(object sender, EventArgs e) {
-      var list = GetRowsAsList(inputTextBox);
-      ShowDuplicatesInResults(list);
 
-      var outputList = ListHelper.RemoveDuplicates(list);
-      ShowAsOutput(outputList);
+      var input = GetInput();
+      ShowDuplicatesInResults(input);
+
+      var output = ListHelper.RemoveDuplicates(input);
+      ShowOutput(output);
     }
 
     /// <summary>
@@ -339,14 +342,14 @@ namespace MiikanHelperSolution {
     /// <param name="e"></param>
     private void compareBtn_Click(object sender, EventArgs e) {
 
-      var list1 = GetRowsAsList(inputTextBox);
-      var list2 = GetRowsAsList(outputTextBox);
+      var input = GetInput()  ;
+      var list2 = GetOutput();
 
-      resultsTextBox.Text = "Ladataan";
+      ShowResult("Ladataan");
 
-      var outputList = ListHelper.CompareTwoLists(list1, list2);
+      var outputList = ListHelper.CompareTwoLists(input, list2);
 
-      ShowAsResult(outputList);
+      ShowResult(outputList);
     }
 
     /// <summary>
@@ -355,33 +358,33 @@ namespace MiikanHelperSolution {
     /// <param name="sender"></param>
     /// <param name="e"></param>
     private void inputSearchFromFilePathNotContainsBtn_Click(object sender, EventArgs e) {
-      resultsTextBox.Text = "";
+      ShowResult("");
 
       var filePath = inputFilePath.Text;
 
       //guards
       if(string.IsNullOrEmpty(filePath)) {
-        resultsTextBox.Text = "Filepath cannot be null or empty";
+        ShowResult("Filepath cannot be null or empty");
         return;
       }
       if(!File.Exists(filePath)) {
-        resultsTextBox.Text = "File does not exist";
+        ShowResult("File does not exist");
         return;
       }
 
       var filesLines = File.ReadAllLines(filePath);
 
-      resultsTextBox.Text += $"Found {filesLines.Length} lines from file";
+      AppendToResult($"Found {filesLines.Length} lines from file");
 
-      var list = GetRowsAsList(inputTextBox);
+      var list = GetInput();
 
       var outputList = ListHelper.GetListNotContainingOtherList(list, filesLines.ToList());
 
-      ShowAsOutput(outputList);
+      ShowOutput(outputList);
 
       //results
-      var list2 = GetRowsAsList(outputTextBox);
-      resultsTextBox.Text += $"{Environment.NewLine}Output list count {list2.Count}";
+      var list2 = GetOutput();
+      AppendToResult($"{Environment.NewLine}Output list count {list2.Count}");
     }
 
     /// <summary>
@@ -392,12 +395,12 @@ namespace MiikanHelperSolution {
     private void btnFindList1ItemsInList2_Click(object sender, EventArgs e) {
       resultsTextBox.Text = "";
 
-      var list1 = GetRowsAsList(inputTextBox);
-      var list2 = GetRowsAsList(outputTextBox);
+      var input = GetInput();
+      var output = GetOutput();
 
-      var outputList = ListHelper.GetListContainingOtherList(list1, list2);
+      var outputList = ListHelper.GetListContainingOtherList(input, output);
 
-      ShowAsResult(outputList);
+      ShowResult(outputList);
     }
 
     /// <summary>
@@ -408,12 +411,12 @@ namespace MiikanHelperSolution {
     private void btnFindList1ItemsNotInList2_Click(object sender, EventArgs e) {
       resultsTextBox.Text = "";
 
-      var list1 = GetRowsAsList(inputTextBox);
-      var list2 = GetRowsAsList(outputTextBox);
+      var input = GetInput();
+      var output = GetOutput();
 
-      var outputList = ListHelper.GetListNotContainingOtherList(list1, list2);
+      var outputList = ListHelper.GetListNotContainingOtherList(input, output);
 
-      ShowAsResult(outputList);
+      ShowResult(outputList);
     }
 
     /// <summary>
@@ -422,11 +425,11 @@ namespace MiikanHelperSolution {
     /// <param name="sender"></param>
     /// <param name="e"></param>
     private void flipInputWithOutputBtn_Click(object sender, EventArgs e) {
-      var list1 = GetRowsAsList(inputTextBox);
-      var list2 = GetRowsAsList(outputTextBox);
+      var input = GetInput();
+      var output = GetOutput();
 
-      ShowAsOutput(list1);
-      ShowAsInput(list2);
+      ShowOutput(input);
+      ShowInput(output);
     }
 
     /// <summary>
@@ -435,14 +438,14 @@ namespace MiikanHelperSolution {
     /// <param name="sender"></param>
     /// <param name="e"></param>
     private void button2_Click(object sender, EventArgs e) {
-      var list1 = GetRowsAsList(inputTextBox);
+      var input = GetInput();
 
       var text1 = textBoxFrom.Text;
       var text2 = textBoxTo.Text;
 
-      var outputList = ListHelper.ReplaceListText(list1, text1, text2);
+      var output = ListHelper.ReplaceListText(input, text1, text2);
 
-      ShowAsOutput(outputList);
+      ShowOutput(output);
     }
 
     /// <summary>
@@ -451,31 +454,70 @@ namespace MiikanHelperSolution {
     /// <param name="sender"></param>
     /// <param name="e"></param>
     private void button1_Click(object sender, EventArgs e) {
-      var list1 = GetRowsAsList(inputTextBox);
+      var input = GetInput();
 
       var text = textBoxRemoveText.Text;
 
-      var outputList = ListHelper.RemoveListText(list1, text);
+      var output = ListHelper.RemoveListText(input, text);
 
-      ShowAsOutput(outputList);
+      ShowOutput(output);
     }
 
     private void inputCombineEveryEachOtherRowButton_Click(object sender, EventArgs e) {
-      var list = GetRowsAsList(inputTextBox);
-      var inputList = ListHelper.CombineEveryEachRow(list);
-      ShowAsInput(inputList);
+      var input = GetInput();
+      var inputList = ListHelper.CombineEveryEachRow(input);
+      ShowInput(inputList);
     }
 
     private void inputTrimEndsButton_Click(object sender, EventArgs e) {
-      var list = GetRowsAsList(inputTextBox);
-      var outputList = ListHelper.TrimEnds(list);
-      ShowAsOutput(outputList);
+      var input = GetInput();
+      var output = ListHelper.TrimEnds(input);
+      ShowOutput(output);
     }
 
     private void buttonXmlToRows_Click(object sender, EventArgs e) {
-      var list = GetRowsAsList(inputTextBox);
-      var outputList = ListHelper.XmlToRows(list);
-      ShowAsOutput(outputList);
+      var input = GetInput();
+      var output = ListHelper.XmlToRows(input);
+      ShowOutput(output);
+    }
+
+    //poista x-merkkiä alusta
+    private void button4_Click(object sender, EventArgs e) {
+      var input = GetInput();
+      var number = Convert.ToInt32(inputRemoveCharactersTextBox.Text);
+
+      var output = ListHelper.RemoveCharactersFromTheStart(input, number);
+      ShowOutput(output);
+    }
+
+    private List<string> GetInput() {
+      return GetRowsAsList(inputTextBox);
+    }
+
+    private List<string> GetOutput() {
+      return GetRowsAsList(outputTextBox);
+    }
+
+    private void buttonCountCharacters_Click(object sender, EventArgs e) {
+      var input = inputCountCharacters.Text;
+      var count = input.Length;
+      ShowResult($"Contains {count} characters");
+    }
+
+    private void groupBox15_Enter(object sender, EventArgs e) {
+
+    }
+
+    private void buttonSplitRows_Click(object sender, EventArgs e) {
+      var input = GetInput();
+      var output = ListHelper.SplitGetStarts(input, inputSplitCsv.Text);
+      ShowOutput(output);
+    }
+
+    private void button5_Click(object sender, EventArgs e) {
+      var input = GetInput();
+      var output = ListHelper.SplitGetEnds(input, inputSplitCsv.Text);
+      ShowOutput(output);
     }
   }
 }

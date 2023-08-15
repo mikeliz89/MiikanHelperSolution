@@ -403,5 +403,17 @@ namespace UnitTestProject1 {
       Assert.AreEqual("insert into A text", outputList[0]);
       Assert.AreEqual("insert into B text", outputList[1]);
     }
+
+    [TestMethod]
+    public void RemoveCharactersFromTheStart() {
+      var list = new List<string>();
+      list.Add("ABC");
+      list.Add("BC");
+
+      var outputList = ListHelper.RemoveCharactersFromTheStart(list, 2);
+      Assert.AreEqual(2, outputList.Count);
+      Assert.AreEqual("C", outputList[0]);
+      Assert.AreEqual("", outputList[1]);
+    }
   }
 }

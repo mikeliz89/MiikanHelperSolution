@@ -152,6 +152,42 @@ namespace MiikanHelperSolution {
     }
 
     /// <summary>
+    ///  Pilko lista erotinmerkin mukaan, palauta vain alkuosat
+    /// </summary>
+    /// <param name="list"></param>
+    /// <param name="separator"></param>
+    /// <returns></returns>
+    /// <remarks>TODO Unit testi</remarks>
+    public static List<string> SplitGetStarts(List<string> list, string separator) {
+      var outputList = new List<string>();
+      foreach(var row in list) {
+        var rowList = row.Split(separator.ToCharArray());
+        var start = rowList[0];
+        outputList.Add(start.Trim());
+      }
+      return outputList;
+    }
+
+    /// <summary>
+    /// Pilko lista erotinmerkin mukaan, palauta vain loppuosat
+    /// </summary>
+    /// <param name="list"></param>
+    /// <param name="separator"></param>
+    /// <returns></returns>
+    /// <remarks>TODO Unit testi</remarks>
+    public static List<string> SplitGetEnds(List<string> list, string separator) {
+      var outputList = new List<string>();
+      foreach(var row in list) {
+        var rowList = row.Split(separator.ToCharArray());
+        if(rowList.Length > 0) {
+          var start = rowList[1];
+          outputList.Add(start.Trim());
+        }
+      }
+      return outputList;
+    }
+
+    /// <summary>
     /// Muuta listan kaikki rivit toUpper() stringeiksi eli isoille kirjaimille
     /// </summary>
     /// <param name="list"></param>
@@ -225,7 +261,7 @@ namespace MiikanHelperSolution {
       }
       return outputList;
     }
-     
+
     /// <summary>
     /// 
     /// </summary>
@@ -264,7 +300,7 @@ namespace MiikanHelperSolution {
       foreach(var item in list) {
         var newItem = item.TrimEnd();
         if(!string.IsNullOrEmpty(newItem)) {
-          outputList.Add(newItem);  
+          outputList.Add(newItem);
         }
       }
       return outputList;
@@ -276,6 +312,17 @@ namespace MiikanHelperSolution {
         var newItem = FormatXML.FormatXMLString(item);
         if(!string.IsNullOrEmpty(newItem)) {
           outputList.Add(newItem);
+        }
+      }
+      return outputList;
+    }
+
+    public static List<string> RemoveCharactersFromTheStart(List<string> list, int howManyCharacters) {
+      var outputList = new List<string>();
+      foreach(var item in list) {
+        var newItem = item;
+        if(!string.IsNullOrEmpty(newItem)) {
+          outputList.Add(newItem.Remove(0, howManyCharacters));
         }
       }
       return outputList;

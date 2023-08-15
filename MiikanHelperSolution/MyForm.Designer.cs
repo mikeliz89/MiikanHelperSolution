@@ -40,6 +40,7 @@
       this.inputAddTextTextBox = new System.Windows.Forms.TextBox();
       this.inputAddTextButton = new System.Windows.Forms.Button();
       this.groupBox1 = new System.Windows.Forms.GroupBox();
+      this.inputWrapTextRadioButton = new System.Windows.Forms.RadioButton();
       this.inputStartAndEndRadioButton = new System.Windows.Forms.RadioButton();
       this.inputEndRadioButton = new System.Windows.Forms.RadioButton();
       this.inputStartRadioButton = new System.Windows.Forms.RadioButton();
@@ -83,7 +84,16 @@
       this.inputCombineEveryEachOtherRowButton = new System.Windows.Forms.Button();
       this.groupBox12 = new System.Windows.Forms.GroupBox();
       this.buttonXmlToRows = new System.Windows.Forms.Button();
-      this.inputWrapTextRadioButton = new System.Windows.Forms.RadioButton();
+      this.groupBox13 = new System.Windows.Forms.GroupBox();
+      this.label8 = new System.Windows.Forms.Label();
+      this.inputRemoveCharactersTextBox = new System.Windows.Forms.TextBox();
+      this.label9 = new System.Windows.Forms.Label();
+      this.button4 = new System.Windows.Forms.Button();
+      this.groupBox14 = new System.Windows.Forms.GroupBox();
+      this.buttonCountCharacters = new System.Windows.Forms.Button();
+      this.inputCountCharacters = new System.Windows.Forms.TextBox();
+      this.buttonSplitRows = new System.Windows.Forms.Button();
+      this.button5 = new System.Windows.Forms.Button();
       this.groupBox1.SuspendLayout();
       this.groupBox2.SuspendLayout();
       this.groupBox3.SuspendLayout();
@@ -96,6 +106,8 @@
       this.groupBox10.SuspendLayout();
       this.groupBox11.SuspendLayout();
       this.groupBox12.SuspendLayout();
+      this.groupBox13.SuspendLayout();
+      this.groupBox14.SuspendLayout();
       this.SuspendLayout();
       // 
       // inputToOutputButton
@@ -158,7 +170,7 @@
       // 
       // resultsTextBox
       // 
-      this.resultsTextBox.Location = new System.Drawing.Point(887, 504);
+      this.resultsTextBox.Location = new System.Drawing.Point(881, 569);
       this.resultsTextBox.MaxLength = 1327670;
       this.resultsTextBox.Multiline = true;
       this.resultsTextBox.Name = "resultsTextBox";
@@ -169,7 +181,7 @@
       // label3
       // 
       this.label3.AutoSize = true;
-      this.label3.Location = new System.Drawing.Point(884, 482);
+      this.label3.Location = new System.Drawing.Point(878, 547);
       this.label3.Name = "label3";
       this.label3.Size = new System.Drawing.Size(42, 13);
       this.label3.TabIndex = 7;
@@ -265,6 +277,16 @@
       this.groupBox1.TabIndex = 16;
       this.groupBox1.TabStop = false;
       this.groupBox1.Text = "Lisää annettu teksti";
+      // 
+      // inputWrapTextRadioButton
+      // 
+      this.inputWrapTextRadioButton.AutoSize = true;
+      this.inputWrapTextRadioButton.Location = new System.Drawing.Point(195, 49);
+      this.inputWrapTextRadioButton.Name = "inputWrapTextRadioButton";
+      this.inputWrapTextRadioButton.Size = new System.Drawing.Size(121, 17);
+      this.inputWrapTextRadioButton.TabIndex = 19;
+      this.inputWrapTextRadioButton.Text = "{0}-kohdan ympärille";
+      this.inputWrapTextRadioButton.UseVisualStyleBackColor = true;
       // 
       // inputStartAndEndRadioButton
       // 
@@ -377,7 +399,7 @@
       this.groupBox4.Controls.Add(this.button3);
       this.groupBox4.Controls.Add(this.inputToLower);
       this.groupBox4.Controls.Add(this.inputToUpper);
-      this.groupBox4.Location = new System.Drawing.Point(514, 535);
+      this.groupBox4.Location = new System.Drawing.Point(521, 499);
       this.groupBox4.Name = "groupBox4";
       this.groupBox4.Size = new System.Drawing.Size(349, 53);
       this.groupBox4.TabIndex = 19;
@@ -416,15 +438,17 @@
       // 
       // groupBox5
       // 
+      this.groupBox5.Controls.Add(this.button5);
+      this.groupBox5.Controls.Add(this.buttonSplitRows);
       this.groupBox5.Controls.Add(this.label5);
       this.groupBox5.Controls.Add(this.inputSplitCsv);
       this.groupBox5.Controls.Add(this.inputSplitCsvBtn);
-      this.groupBox5.Location = new System.Drawing.Point(514, 603);
+      this.groupBox5.Location = new System.Drawing.Point(521, 569);
       this.groupBox5.Name = "groupBox5";
-      this.groupBox5.Size = new System.Drawing.Size(349, 101);
+      this.groupBox5.Size = new System.Drawing.Size(349, 113);
       this.groupBox5.TabIndex = 20;
       this.groupBox5.TabStop = false;
-      this.groupBox5.Text = "Erottele pilkkulista";
+      this.groupBox5.Text = "Erottele";
       // 
       // label5
       // 
@@ -439,16 +463,16 @@
       // 
       this.inputSplitCsv.Location = new System.Drawing.Point(7, 40);
       this.inputSplitCsv.Name = "inputSplitCsv";
-      this.inputSplitCsv.Size = new System.Drawing.Size(150, 20);
+      this.inputSplitCsv.Size = new System.Drawing.Size(138, 20);
       this.inputSplitCsv.TabIndex = 18;
       // 
       // inputSplitCsvBtn
       // 
-      this.inputSplitCsvBtn.Location = new System.Drawing.Point(6, 66);
+      this.inputSplitCsvBtn.Location = new System.Drawing.Point(152, 12);
       this.inputSplitCsvBtn.Name = "inputSplitCsvBtn";
-      this.inputSplitCsvBtn.Size = new System.Drawing.Size(72, 25);
+      this.inputSplitCsvBtn.Size = new System.Drawing.Size(154, 25);
       this.inputSplitCsvBtn.TabIndex = 2;
-      this.inputSplitCsvBtn.Text = "Erottele";
+      this.inputSplitCsvBtn.Text = "Erottele - kaikki";
       this.inputSplitCsvBtn.UseVisualStyleBackColor = true;
       this.inputSplitCsvBtn.Click += new System.EventHandler(this.inputSplitCsvBtn_Click);
       // 
@@ -528,7 +552,7 @@
       // resultsRowCountLabel
       // 
       this.resultsRowCountLabel.AutoSize = true;
-      this.resultsRowCountLabel.Location = new System.Drawing.Point(1199, 485);
+      this.resultsRowCountLabel.Location = new System.Drawing.Point(1193, 550);
       this.resultsRowCountLabel.Name = "resultsRowCountLabel";
       this.resultsRowCountLabel.Size = new System.Drawing.Size(62, 13);
       this.resultsRowCountLabel.TabIndex = 25;
@@ -581,7 +605,7 @@
       this.groupBox9.Controls.Add(this.textBoxFrom);
       this.groupBox9.Controls.Add(this.label7);
       this.groupBox9.Controls.Add(this.button2);
-      this.groupBox9.Location = new System.Drawing.Point(514, 364);
+      this.groupBox9.Location = new System.Drawing.Point(521, 330);
       this.groupBox9.Name = "groupBox9";
       this.groupBox9.Size = new System.Drawing.Size(349, 147);
       this.groupBox9.TabIndex = 28;
@@ -682,9 +706,9 @@
       // groupBox12
       // 
       this.groupBox12.Controls.Add(this.buttonXmlToRows);
-      this.groupBox12.Location = new System.Drawing.Point(520, 720);
+      this.groupBox12.Location = new System.Drawing.Point(521, 688);
       this.groupBox12.Name = "groupBox12";
-      this.groupBox12.Size = new System.Drawing.Size(111, 87);
+      this.groupBox12.Size = new System.Drawing.Size(157, 62);
       this.groupBox12.TabIndex = 24;
       this.groupBox12.TabStop = false;
       this.groupBox12.Text = "XML";
@@ -699,21 +723,109 @@
       this.buttonXmlToRows.UseVisualStyleBackColor = true;
       this.buttonXmlToRows.Click += new System.EventHandler(this.buttonXmlToRows_Click);
       // 
-      // inputWrapTextRadioButton
+      // groupBox13
       // 
-      this.inputWrapTextRadioButton.AutoSize = true;
-      this.inputWrapTextRadioButton.Location = new System.Drawing.Point(195, 49);
-      this.inputWrapTextRadioButton.Name = "inputWrapTextRadioButton";
-      this.inputWrapTextRadioButton.Size = new System.Drawing.Size(121, 17);
-      this.inputWrapTextRadioButton.TabIndex = 19;
-      this.inputWrapTextRadioButton.Text = "{0}-kohdan ympärille";
-      this.inputWrapTextRadioButton.UseVisualStyleBackColor = true;
+      this.groupBox13.Controls.Add(this.label8);
+      this.groupBox13.Controls.Add(this.inputRemoveCharactersTextBox);
+      this.groupBox13.Controls.Add(this.label9);
+      this.groupBox13.Controls.Add(this.button4);
+      this.groupBox13.Location = new System.Drawing.Point(906, 361);
+      this.groupBox13.Name = "groupBox13";
+      this.groupBox13.Size = new System.Drawing.Size(349, 57);
+      this.groupBox13.TabIndex = 29;
+      this.groupBox13.TabStop = false;
+      this.groupBox13.Text = "Tiputa tekstin osia pois";
+      // 
+      // label8
+      // 
+      this.label8.AutoSize = true;
+      this.label8.Location = new System.Drawing.Point(180, 31);
+      this.label8.Name = "label8";
+      this.label8.Size = new System.Drawing.Size(44, 13);
+      this.label8.TabIndex = 22;
+      this.label8.Text = "merkkiä";
+      // 
+      // inputRemoveCharactersTextBox
+      // 
+      this.inputRemoveCharactersTextBox.Location = new System.Drawing.Point(124, 28);
+      this.inputRemoveCharactersTextBox.Name = "inputRemoveCharactersTextBox";
+      this.inputRemoveCharactersTextBox.Size = new System.Drawing.Size(50, 20);
+      this.inputRemoveCharactersTextBox.TabIndex = 19;
+      // 
+      // label9
+      // 
+      this.label9.AutoSize = true;
+      this.label9.Location = new System.Drawing.Point(6, 31);
+      this.label9.Name = "label9";
+      this.label9.Size = new System.Drawing.Size(112, 13);
+      this.label9.TabIndex = 21;
+      this.label9.Text = "Tiputa rivin alusta pois";
+      // 
+      // button4
+      // 
+      this.button4.Location = new System.Drawing.Point(230, 25);
+      this.button4.Name = "button4";
+      this.button4.Size = new System.Drawing.Size(72, 25);
+      this.button4.TabIndex = 2;
+      this.button4.Text = "Tiputa";
+      this.button4.UseVisualStyleBackColor = true;
+      this.button4.Click += new System.EventHandler(this.button4_Click);
+      // 
+      // groupBox14
+      // 
+      this.groupBox14.Controls.Add(this.inputCountCharacters);
+      this.groupBox14.Controls.Add(this.buttonCountCharacters);
+      this.groupBox14.Location = new System.Drawing.Point(906, 433);
+      this.groupBox14.Name = "groupBox14";
+      this.groupBox14.Size = new System.Drawing.Size(402, 96);
+      this.groupBox14.TabIndex = 30;
+      this.groupBox14.TabStop = false;
+      this.groupBox14.Text = "Laske merkkimäärä";
+      // 
+      // buttonCountCharacters
+      // 
+      this.buttonCountCharacters.Location = new System.Drawing.Point(290, 53);
+      this.buttonCountCharacters.Name = "buttonCountCharacters";
+      this.buttonCountCharacters.Size = new System.Drawing.Size(72, 25);
+      this.buttonCountCharacters.TabIndex = 2;
+      this.buttonCountCharacters.Text = "Laske";
+      this.buttonCountCharacters.UseVisualStyleBackColor = true;
+      this.buttonCountCharacters.Click += new System.EventHandler(this.buttonCountCharacters_Click);
+      // 
+      // inputCountCharacters
+      // 
+      this.inputCountCharacters.Location = new System.Drawing.Point(9, 27);
+      this.inputCountCharacters.Name = "inputCountCharacters";
+      this.inputCountCharacters.Size = new System.Drawing.Size(353, 20);
+      this.inputCountCharacters.TabIndex = 23;
+      // 
+      // buttonSplitRows
+      // 
+      this.buttonSplitRows.Location = new System.Drawing.Point(152, 43);
+      this.buttonSplitRows.Name = "buttonSplitRows";
+      this.buttonSplitRows.Size = new System.Drawing.Size(155, 25);
+      this.buttonSplitRows.TabIndex = 21;
+      this.buttonSplitRows.Text = "Erottele - vain alkuosat";
+      this.buttonSplitRows.UseVisualStyleBackColor = true;
+      this.buttonSplitRows.Click += new System.EventHandler(this.buttonSplitRows_Click);
+      // 
+      // button5
+      // 
+      this.button5.Location = new System.Drawing.Point(152, 74);
+      this.button5.Name = "button5";
+      this.button5.Size = new System.Drawing.Size(155, 25);
+      this.button5.TabIndex = 22;
+      this.button5.Text = "Erottele - vain loppuosat";
+      this.button5.UseVisualStyleBackColor = true;
+      this.button5.Click += new System.EventHandler(this.button5_Click);
       // 
       // MyForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1631, 826);
+      this.Controls.Add(this.groupBox14);
+      this.Controls.Add(this.groupBox13);
       this.Controls.Add(this.groupBox12);
       this.Controls.Add(this.groupBox11);
       this.Controls.Add(this.groupBox10);
@@ -758,6 +870,10 @@
       this.groupBox10.PerformLayout();
       this.groupBox11.ResumeLayout(false);
       this.groupBox12.ResumeLayout(false);
+      this.groupBox13.ResumeLayout(false);
+      this.groupBox13.PerformLayout();
+      this.groupBox14.ResumeLayout(false);
+      this.groupBox14.PerformLayout();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -826,6 +942,16 @@
     private System.Windows.Forms.GroupBox groupBox12;
     private System.Windows.Forms.Button buttonXmlToRows;
     private System.Windows.Forms.RadioButton inputWrapTextRadioButton;
+    private System.Windows.Forms.GroupBox groupBox13;
+    private System.Windows.Forms.Label label8;
+    private System.Windows.Forms.TextBox inputRemoveCharactersTextBox;
+    private System.Windows.Forms.Label label9;
+    private System.Windows.Forms.Button button4;
+    private System.Windows.Forms.GroupBox groupBox14;
+    private System.Windows.Forms.TextBox inputCountCharacters;
+    private System.Windows.Forms.Button buttonCountCharacters;
+    private System.Windows.Forms.Button buttonSplitRows;
+    private System.Windows.Forms.Button button5;
   }
 }
 
