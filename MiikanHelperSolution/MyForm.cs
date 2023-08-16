@@ -519,5 +519,11 @@ namespace MiikanHelperSolution {
       var output = ListHelper.SplitGetEnds(input, inputSplitCsv.Text);
       ShowOutput(output);
     }
+
+    private void buttonCountFoundText_Click(object sender, EventArgs e) {
+      var input = GetInput();
+      var output = ListHelper.CountFoundText(input, inputTextBoxCountFoundText.Text);
+      ShowResult(output);
+    }
   }
 }

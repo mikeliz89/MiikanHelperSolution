@@ -327,5 +327,25 @@ namespace MiikanHelperSolution {
       }
       return outputList;
     }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="list"></param>
+    /// <param name="textToFind"></param>
+    /// <returns></returns>
+    /// <remarks>TODO: Kirjoita unit testi</remarks>
+    public static string CountFoundText(List<string> list, string textToFind) {
+      var count = 0;
+      foreach(var item in list) {
+        if(!string.IsNullOrEmpty(item)) {
+          if(item == textToFind) {
+            count++;
+          }
+        }
+      }
+      var result = "Found text " + textToFind + " " + count + " times";
+      return result;
+    }
   }
 }
