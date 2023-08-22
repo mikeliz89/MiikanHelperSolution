@@ -342,7 +342,7 @@ namespace MiikanHelperSolution {
     /// <param name="e"></param>
     private void compareBtn_Click(object sender, EventArgs e) {
 
-      var input = GetInput()  ;
+      var input = GetInput();
       var list2 = GetOutput();
 
       ShowResult("Ladataan");
@@ -522,7 +522,13 @@ namespace MiikanHelperSolution {
 
     private void buttonCountFoundText_Click(object sender, EventArgs e) {
       var input = GetInput();
-      var output = ListHelper.CountFoundText(input, inputTextBoxCountFoundText.Text);
+      var textToFind = inputTextBoxCountFoundText.Text;
+      string output = "";
+      if(radioButton1.Checked) {
+        output = ListHelper.CountFoundText_Contains(input, textToFind);
+      } else if(radioButton2.Checked) {
+        output = ListHelper.CountFoundText_Exact(input, textToFind);
+      }
       ShowResult(output);
     }
   }

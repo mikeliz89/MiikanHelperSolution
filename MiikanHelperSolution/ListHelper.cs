@@ -335,7 +335,7 @@ namespace MiikanHelperSolution {
     /// <param name="textToFind"></param>
     /// <returns></returns>
     /// <remarks>TODO: Kirjoita unit testi</remarks>
-    public static string CountFoundText(List<string> list, string textToFind) {
+    public static string CountFoundText_Exact(List<string> list, string textToFind) {
       var count = 0;
       foreach(var item in list) {
         if(!string.IsNullOrEmpty(item)) {
@@ -344,7 +344,31 @@ namespace MiikanHelperSolution {
           }
         }
       }
-      var result = "Found text " + textToFind + " " + count + " times";
+      string result = GetCountText(textToFind, count);
+      return result;
+    }
+
+    private static string GetCountText(string textToFind, int count) {
+      return $"Found text {textToFind} {count} times";
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="list"></param>
+    /// <param name="textToFind"></param>
+    /// <returns></returns>
+    /// <remarks>TODO: Kirjoita unit testi</remarks>
+    public static string CountFoundText_Contains(List<string> list, string textToFind) {
+      var count = 0;
+      foreach(var item in list) {
+        if(!string.IsNullOrEmpty(item)) {
+          if(item.Contains(textToFind)) {
+            count++;
+          }
+        }
+      }
+      string result = GetCountText(textToFind, count);
       return result;
     }
   }
