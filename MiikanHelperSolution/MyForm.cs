@@ -135,6 +135,7 @@ namespace MiikanHelperSolution {
       ShowOutput(output);
     }
 
+
     /// <summary>
     /// Lisää tekstiä
     /// </summary>
@@ -530,6 +531,31 @@ namespace MiikanHelperSolution {
         output = ListHelper.CountFoundText_Exact(input, textToFind);
       }
       ShowResult(output);
+    }
+
+    private void groupBox16_Enter(object sender, EventArgs e) {
+
+    }
+
+    private void buttonGetLastWord_Click(object sender, EventArgs e) {
+      var input = GetInput();
+      var output = ListHelper.GetLastWord(input);
+      ShowOutput(output);
+    }
+
+    /// <summary>
+    /// Hanki riveiltä x ja y väliset merkit
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void button6_Click(object sender, EventArgs e) {
+      var input = GetInput();
+
+      var start = textBoxSubstringStart.Text;
+      var end = textBoxSubstringEnd.Text;
+      var output = ListHelper.GetListOfSubstringsByString(input, start, end);
+
+      ShowOutput(output);
     }
   }
 }

@@ -95,10 +95,19 @@
       this.inputCountCharacters = new System.Windows.Forms.TextBox();
       this.buttonCountCharacters = new System.Windows.Forms.Button();
       this.groupBox15 = new System.Windows.Forms.GroupBox();
-      this.inputTextBoxCountFoundText = new System.Windows.Forms.TextBox();
-      this.buttonCountFoundText = new System.Windows.Forms.Button();
       this.radioButton1 = new System.Windows.Forms.RadioButton();
       this.radioButton2 = new System.Windows.Forms.RadioButton();
+      this.inputTextBoxCountFoundText = new System.Windows.Forms.TextBox();
+      this.buttonCountFoundText = new System.Windows.Forms.Button();
+      this.groupBox16 = new System.Windows.Forms.GroupBox();
+      this.buttonGetLastWord = new System.Windows.Forms.Button();
+      this.button6 = new System.Windows.Forms.Button();
+      this.label10 = new System.Windows.Forms.Label();
+      this.label11 = new System.Windows.Forms.Label();
+      this.label12 = new System.Windows.Forms.Label();
+      this.label13 = new System.Windows.Forms.Label();
+      this.textBoxSubstringStart = new System.Windows.Forms.TextBox();
+      this.textBoxSubstringEnd = new System.Windows.Forms.TextBox();
       this.groupBox1.SuspendLayout();
       this.groupBox2.SuspendLayout();
       this.groupBox3.SuspendLayout();
@@ -114,12 +123,13 @@
       this.groupBox13.SuspendLayout();
       this.groupBox14.SuspendLayout();
       this.groupBox15.SuspendLayout();
+      this.groupBox16.SuspendLayout();
       this.SuspendLayout();
       // 
       // inputToOutputButton
       // 
       this.inputToOutputButton.Location = new System.Drawing.Point(9, 95);
-      this.inputToOutputButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.inputToOutputButton.Margin = new System.Windows.Forms.Padding(4);
       this.inputToOutputButton.Name = "inputToOutputButton";
       this.inputToOutputButton.Size = new System.Drawing.Size(205, 28);
       this.inputToOutputButton.TabIndex = 0;
@@ -130,7 +140,7 @@
       // inputTextBox
       // 
       this.inputTextBox.Location = new System.Drawing.Point(67, 57);
-      this.inputTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.inputTextBox.Margin = new System.Windows.Forms.Padding(4);
       this.inputTextBox.MaxLength = 13276700;
       this.inputTextBox.Multiline = true;
       this.inputTextBox.Name = "inputTextBox";
@@ -141,7 +151,7 @@
       // outputTextBox
       // 
       this.outputTextBox.Location = new System.Drawing.Point(1175, 57);
-      this.outputTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.outputTextBox.Margin = new System.Windows.Forms.Padding(4);
       this.outputTextBox.MaxLength = 13276700;
       this.outputTextBox.Multiline = true;
       this.outputTextBox.Name = "outputTextBox";
@@ -172,7 +182,7 @@
       // outputRemoveDuplicatesButton
       // 
       this.outputRemoveDuplicatesButton.Location = new System.Drawing.Point(8, 59);
-      this.outputRemoveDuplicatesButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.outputRemoveDuplicatesButton.Margin = new System.Windows.Forms.Padding(4);
       this.outputRemoveDuplicatesButton.Name = "outputRemoveDuplicatesButton";
       this.outputRemoveDuplicatesButton.Size = new System.Drawing.Size(144, 28);
       this.outputRemoveDuplicatesButton.TabIndex = 5;
@@ -182,19 +192,19 @@
       // 
       // resultsTextBox
       // 
-      this.resultsTextBox.Location = new System.Drawing.Point(1208, 759);
-      this.resultsTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.resultsTextBox.Location = new System.Drawing.Point(1175, 759);
+      this.resultsTextBox.Margin = new System.Windows.Forms.Padding(4);
       this.resultsTextBox.MaxLength = 1327670;
       this.resultsTextBox.Multiline = true;
       this.resultsTextBox.Name = "resultsTextBox";
       this.resultsTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-      this.resultsTextBox.Size = new System.Drawing.Size(905, 245);
+      this.resultsTextBox.Size = new System.Drawing.Size(938, 245);
       this.resultsTextBox.TabIndex = 6;
       // 
       // label3
       // 
       this.label3.AutoSize = true;
-      this.label3.Location = new System.Drawing.Point(1216, 730);
+      this.label3.Location = new System.Drawing.Point(1171, 739);
       this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
       this.label3.Name = "label3";
       this.label3.Size = new System.Drawing.Size(52, 16);
@@ -214,7 +224,7 @@
       // outputCombineEveryEachOtherRowButton
       // 
       this.outputCombineEveryEachOtherRowButton.Location = new System.Drawing.Point(8, 23);
-      this.outputCombineEveryEachOtherRowButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.outputCombineEveryEachOtherRowButton.Margin = new System.Windows.Forms.Padding(4);
       this.outputCombineEveryEachOtherRowButton.Name = "outputCombineEveryEachOtherRowButton";
       this.outputCombineEveryEachOtherRowButton.Size = new System.Drawing.Size(172, 28);
       this.outputCombineEveryEachOtherRowButton.TabIndex = 9;
@@ -225,7 +235,7 @@
       // inputCountRowsButton
       // 
       this.inputCountRowsButton.Location = new System.Drawing.Point(188, 23);
-      this.inputCountRowsButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.inputCountRowsButton.Margin = new System.Windows.Forms.Padding(4);
       this.inputCountRowsButton.Name = "inputCountRowsButton";
       this.inputCountRowsButton.Size = new System.Drawing.Size(124, 28);
       this.inputCountRowsButton.TabIndex = 10;
@@ -236,7 +246,7 @@
       // outputCountRowsButton
       // 
       this.outputCountRowsButton.Location = new System.Drawing.Point(188, 23);
-      this.outputCountRowsButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.outputCountRowsButton.Margin = new System.Windows.Forms.Padding(4);
       this.outputCountRowsButton.Name = "outputCountRowsButton";
       this.outputCountRowsButton.Size = new System.Drawing.Size(124, 28);
       this.outputCountRowsButton.TabIndex = 11;
@@ -246,19 +256,19 @@
       // 
       // inputGetUserIDsButton
       // 
-      this.inputGetUserIDsButton.Location = new System.Drawing.Point(9, 134);
-      this.inputGetUserIDsButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.inputGetUserIDsButton.Location = new System.Drawing.Point(260, 129);
+      this.inputGetUserIDsButton.Margin = new System.Windows.Forms.Padding(4);
       this.inputGetUserIDsButton.Name = "inputGetUserIDsButton";
-      this.inputGetUserIDsButton.Size = new System.Drawing.Size(284, 28);
+      this.inputGetUserIDsButton.Size = new System.Drawing.Size(69, 28);
       this.inputGetUserIDsButton.TabIndex = 12;
-      this.inputGetUserIDsButton.Text = "Hanki riveiltä : ja välilyönti väliset merkit";
+      this.inputGetUserIDsButton.Text = "Hae";
       this.inputGetUserIDsButton.UseVisualStyleBackColor = true;
       this.inputGetUserIDsButton.Click += new System.EventHandler(this.inputGetUserIDsButton_Click);
       // 
       // inputAddCommasButton
       // 
       this.inputAddCommasButton.Location = new System.Drawing.Point(9, 59);
-      this.inputAddCommasButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.inputAddCommasButton.Margin = new System.Windows.Forms.Padding(4);
       this.inputAddCommasButton.Name = "inputAddCommasButton";
       this.inputAddCommasButton.Size = new System.Drawing.Size(132, 28);
       this.inputAddCommasButton.TabIndex = 13;
@@ -269,7 +279,7 @@
       // inputAddTextTextBox
       // 
       this.inputAddTextTextBox.Location = new System.Drawing.Point(8, 23);
-      this.inputAddTextTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.inputAddTextTextBox.Margin = new System.Windows.Forms.Padding(4);
       this.inputAddTextTextBox.Name = "inputAddTextTextBox";
       this.inputAddTextTextBox.Size = new System.Drawing.Size(525, 22);
       this.inputAddTextTextBox.TabIndex = 14;
@@ -277,7 +287,7 @@
       // inputAddTextButton
       // 
       this.inputAddTextButton.Location = new System.Drawing.Point(8, 57);
-      this.inputAddTextButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.inputAddTextButton.Margin = new System.Windows.Forms.Padding(4);
       this.inputAddTextButton.Name = "inputAddTextButton";
       this.inputAddTextButton.Size = new System.Drawing.Size(157, 28);
       this.inputAddTextButton.TabIndex = 15;
@@ -294,9 +304,9 @@
       this.groupBox1.Controls.Add(this.inputAddTextTextBox);
       this.groupBox1.Controls.Add(this.inputAddTextButton);
       this.groupBox1.Location = new System.Drawing.Point(67, 566);
-      this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
       this.groupBox1.Name = "groupBox1";
-      this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
       this.groupBox1.Size = new System.Drawing.Size(575, 127);
       this.groupBox1.TabIndex = 16;
       this.groupBox1.TabStop = false;
@@ -306,9 +316,9 @@
       // 
       this.inputWrapTextRadioButton.AutoSize = true;
       this.inputWrapTextRadioButton.Location = new System.Drawing.Point(260, 60);
-      this.inputWrapTextRadioButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.inputWrapTextRadioButton.Margin = new System.Windows.Forms.Padding(4);
       this.inputWrapTextRadioButton.Name = "inputWrapTextRadioButton";
-      this.inputWrapTextRadioButton.Size = new System.Drawing.Size(152, 20);
+      this.inputWrapTextRadioButton.Size = new System.Drawing.Size(149, 20);
       this.inputWrapTextRadioButton.TabIndex = 19;
       this.inputWrapTextRadioButton.Text = "{0}-kohdan ympärille";
       this.inputWrapTextRadioButton.UseVisualStyleBackColor = true;
@@ -317,9 +327,9 @@
       // 
       this.inputStartAndEndRadioButton.AutoSize = true;
       this.inputStartAndEndRadioButton.Location = new System.Drawing.Point(260, 92);
-      this.inputStartAndEndRadioButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.inputStartAndEndRadioButton.Margin = new System.Windows.Forms.Padding(4);
       this.inputStartAndEndRadioButton.Name = "inputStartAndEndRadioButton";
-      this.inputStartAndEndRadioButton.Size = new System.Drawing.Size(167, 20);
+      this.inputStartAndEndRadioButton.Size = new System.Drawing.Size(164, 20);
       this.inputStartAndEndRadioButton.TabIndex = 18;
       this.inputStartAndEndRadioButton.Text = "rivien alkuun ja loppuun";
       this.inputStartAndEndRadioButton.UseVisualStyleBackColor = true;
@@ -328,9 +338,9 @@
       // 
       this.inputEndRadioButton.AutoSize = true;
       this.inputEndRadioButton.Location = new System.Drawing.Point(131, 92);
-      this.inputEndRadioButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.inputEndRadioButton.Margin = new System.Windows.Forms.Padding(4);
       this.inputEndRadioButton.Name = "inputEndRadioButton";
-      this.inputEndRadioButton.Size = new System.Drawing.Size(111, 20);
+      this.inputEndRadioButton.Size = new System.Drawing.Size(108, 20);
       this.inputEndRadioButton.TabIndex = 17;
       this.inputEndRadioButton.Text = "rivien loppuun";
       this.inputEndRadioButton.UseVisualStyleBackColor = true;
@@ -341,9 +351,9 @@
       this.inputStartRadioButton.AutoSize = true;
       this.inputStartRadioButton.Checked = true;
       this.inputStartRadioButton.Location = new System.Drawing.Point(9, 92);
-      this.inputStartRadioButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.inputStartRadioButton.Margin = new System.Windows.Forms.Padding(4);
       this.inputStartRadioButton.Name = "inputStartRadioButton";
-      this.inputStartRadioButton.Size = new System.Drawing.Size(102, 20);
+      this.inputStartRadioButton.Size = new System.Drawing.Size(99, 20);
       this.inputStartRadioButton.TabIndex = 16;
       this.inputStartRadioButton.TabStop = true;
       this.inputStartRadioButton.Text = "rivien alkuun";
@@ -352,15 +362,22 @@
       // 
       // groupBox2
       // 
+      this.groupBox2.Controls.Add(this.textBoxSubstringEnd);
+      this.groupBox2.Controls.Add(this.textBoxSubstringStart);
+      this.groupBox2.Controls.Add(this.label13);
+      this.groupBox2.Controls.Add(this.label12);
+      this.groupBox2.Controls.Add(this.label11);
+      this.groupBox2.Controls.Add(this.label10);
+      this.groupBox2.Controls.Add(this.button6);
       this.groupBox2.Controls.Add(this.inputAddSingleQuotes);
       this.groupBox2.Controls.Add(this.inputToOutputButton);
       this.groupBox2.Controls.Add(this.inputAddCommasButton);
       this.groupBox2.Controls.Add(this.inputGetUserIDsButton);
-      this.groupBox2.Location = new System.Drawing.Point(67, 823);
-      this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.groupBox2.Location = new System.Drawing.Point(67, 810);
+      this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
       this.groupBox2.Name = "groupBox2";
-      this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-      this.groupBox2.Size = new System.Drawing.Size(575, 170);
+      this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
+      this.groupBox2.Size = new System.Drawing.Size(575, 196);
       this.groupBox2.TabIndex = 17;
       this.groupBox2.TabStop = false;
       this.groupBox2.Text = "Lisää pilkkuja, heittomerkkejä";
@@ -368,7 +385,7 @@
       // inputAddSingleQuotes
       // 
       this.inputAddSingleQuotes.Location = new System.Drawing.Point(9, 23);
-      this.inputAddSingleQuotes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.inputAddSingleQuotes.Margin = new System.Windows.Forms.Padding(4);
       this.inputAddSingleQuotes.Name = "inputAddSingleQuotes";
       this.inputAddSingleQuotes.Size = new System.Drawing.Size(167, 28);
       this.inputAddSingleQuotes.TabIndex = 14;
@@ -383,9 +400,9 @@
       this.groupBox3.Controls.Add(this.label4);
       this.groupBox3.Controls.Add(this.inputFilePath);
       this.groupBox3.Location = new System.Drawing.Point(67, 439);
-      this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
       this.groupBox3.Name = "groupBox3";
-      this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
       this.groupBox3.Size = new System.Drawing.Size(575, 119);
       this.groupBox3.TabIndex = 18;
       this.groupBox3.TabStop = false;
@@ -394,7 +411,7 @@
       // inputSearchFromFilePathNotContainsBtn
       // 
       this.inputSearchFromFilePathNotContainsBtn.Location = new System.Drawing.Point(173, 79);
-      this.inputSearchFromFilePathNotContainsBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.inputSearchFromFilePathNotContainsBtn.Margin = new System.Windows.Forms.Padding(4);
       this.inputSearchFromFilePathNotContainsBtn.Name = "inputSearchFromFilePathNotContainsBtn";
       this.inputSearchFromFilePathNotContainsBtn.Size = new System.Drawing.Size(184, 28);
       this.inputSearchFromFilePathNotContainsBtn.TabIndex = 20;
@@ -405,7 +422,7 @@
       // inputSearchFromFilePath
       // 
       this.inputSearchFromFilePath.Location = new System.Drawing.Point(8, 79);
-      this.inputSearchFromFilePath.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.inputSearchFromFilePath.Margin = new System.Windows.Forms.Padding(4);
       this.inputSearchFromFilePath.Name = "inputSearchFromFilePath";
       this.inputSearchFromFilePath.Size = new System.Drawing.Size(157, 28);
       this.inputSearchFromFilePath.TabIndex = 18;
@@ -426,7 +443,7 @@
       // inputFilePath
       // 
       this.inputFilePath.Location = new System.Drawing.Point(8, 47);
-      this.inputFilePath.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.inputFilePath.Margin = new System.Windows.Forms.Padding(4);
       this.inputFilePath.Name = "inputFilePath";
       this.inputFilePath.Size = new System.Drawing.Size(525, 22);
       this.inputFilePath.TabIndex = 18;
@@ -437,9 +454,9 @@
       this.groupBox4.Controls.Add(this.inputToLower);
       this.groupBox4.Controls.Add(this.inputToUpper);
       this.groupBox4.Location = new System.Drawing.Point(695, 614);
-      this.groupBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
       this.groupBox4.Name = "groupBox4";
-      this.groupBox4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
       this.groupBox4.Size = new System.Drawing.Size(465, 65);
       this.groupBox4.TabIndex = 19;
       this.groupBox4.TabStop = false;
@@ -448,7 +465,7 @@
       // button3
       // 
       this.button3.Location = new System.Drawing.Point(217, 23);
-      this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.button3.Margin = new System.Windows.Forms.Padding(4);
       this.button3.Name = "button3";
       this.button3.Size = new System.Drawing.Size(112, 31);
       this.button3.TabIndex = 2;
@@ -459,7 +476,7 @@
       // inputToLower
       // 
       this.inputToLower.Location = new System.Drawing.Point(113, 23);
-      this.inputToLower.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.inputToLower.Margin = new System.Windows.Forms.Padding(4);
       this.inputToLower.Name = "inputToLower";
       this.inputToLower.Size = new System.Drawing.Size(96, 31);
       this.inputToLower.TabIndex = 1;
@@ -470,7 +487,7 @@
       // inputToUpper
       // 
       this.inputToUpper.Location = new System.Drawing.Point(9, 25);
-      this.inputToUpper.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.inputToUpper.Margin = new System.Windows.Forms.Padding(4);
       this.inputToUpper.Name = "inputToUpper";
       this.inputToUpper.Size = new System.Drawing.Size(96, 31);
       this.inputToUpper.TabIndex = 0;
@@ -486,9 +503,9 @@
       this.groupBox5.Controls.Add(this.inputSplitCsv);
       this.groupBox5.Controls.Add(this.inputSplitCsvBtn);
       this.groupBox5.Location = new System.Drawing.Point(695, 700);
-      this.groupBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.groupBox5.Margin = new System.Windows.Forms.Padding(4);
       this.groupBox5.Name = "groupBox5";
-      this.groupBox5.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.groupBox5.Padding = new System.Windows.Forms.Padding(4);
       this.groupBox5.Size = new System.Drawing.Size(465, 139);
       this.groupBox5.TabIndex = 20;
       this.groupBox5.TabStop = false;
@@ -497,7 +514,7 @@
       // button5
       // 
       this.button5.Location = new System.Drawing.Point(203, 91);
-      this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.button5.Margin = new System.Windows.Forms.Padding(4);
       this.button5.Name = "button5";
       this.button5.Size = new System.Drawing.Size(207, 31);
       this.button5.TabIndex = 22;
@@ -508,7 +525,7 @@
       // buttonSplitRows
       // 
       this.buttonSplitRows.Location = new System.Drawing.Point(203, 53);
-      this.buttonSplitRows.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.buttonSplitRows.Margin = new System.Windows.Forms.Padding(4);
       this.buttonSplitRows.Name = "buttonSplitRows";
       this.buttonSplitRows.Size = new System.Drawing.Size(207, 31);
       this.buttonSplitRows.TabIndex = 21;
@@ -529,7 +546,7 @@
       // inputSplitCsv
       // 
       this.inputSplitCsv.Location = new System.Drawing.Point(9, 49);
-      this.inputSplitCsv.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.inputSplitCsv.Margin = new System.Windows.Forms.Padding(4);
       this.inputSplitCsv.Name = "inputSplitCsv";
       this.inputSplitCsv.Size = new System.Drawing.Size(183, 22);
       this.inputSplitCsv.TabIndex = 18;
@@ -537,7 +554,7 @@
       // inputSplitCsvBtn
       // 
       this.inputSplitCsvBtn.Location = new System.Drawing.Point(203, 15);
-      this.inputSplitCsvBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.inputSplitCsvBtn.Margin = new System.Windows.Forms.Padding(4);
       this.inputSplitCsvBtn.Name = "inputSplitCsvBtn";
       this.inputSplitCsvBtn.Size = new System.Drawing.Size(205, 31);
       this.inputSplitCsvBtn.TabIndex = 2;
@@ -550,9 +567,9 @@
       this.groupBox6.Controls.Add(this.outputCombineEveryEachOtherRowButton);
       this.groupBox6.Controls.Add(this.outputCountRowsButton);
       this.groupBox6.Location = new System.Drawing.Point(1755, 310);
-      this.groupBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.groupBox6.Margin = new System.Windows.Forms.Padding(4);
       this.groupBox6.Name = "groupBox6";
-      this.groupBox6.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.groupBox6.Padding = new System.Windows.Forms.Padding(4);
       this.groupBox6.Size = new System.Drawing.Size(327, 73);
       this.groupBox6.TabIndex = 21;
       this.groupBox6.TabStop = false;
@@ -563,9 +580,9 @@
       this.groupBox7.Controls.Add(this.outputRemoveDuplicatesButton);
       this.groupBox7.Controls.Add(this.outputShowDuplicates);
       this.groupBox7.Location = new System.Drawing.Point(1175, 310);
-      this.groupBox7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.groupBox7.Margin = new System.Windows.Forms.Padding(4);
       this.groupBox7.Name = "groupBox7";
-      this.groupBox7.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.groupBox7.Padding = new System.Windows.Forms.Padding(4);
       this.groupBox7.Size = new System.Drawing.Size(180, 107);
       this.groupBox7.TabIndex = 22;
       this.groupBox7.TabStop = false;
@@ -574,7 +591,7 @@
       // outputShowDuplicates
       // 
       this.outputShowDuplicates.Location = new System.Drawing.Point(8, 23);
-      this.outputShowDuplicates.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.outputShowDuplicates.Margin = new System.Windows.Forms.Padding(4);
       this.outputShowDuplicates.Name = "outputShowDuplicates";
       this.outputShowDuplicates.Size = new System.Drawing.Size(144, 28);
       this.outputShowDuplicates.TabIndex = 5;
@@ -587,9 +604,9 @@
       this.groupBox8.Controls.Add(this.inputRemoveDuplicates);
       this.groupBox8.Controls.Add(this.inputShowDuplicates);
       this.groupBox8.Location = new System.Drawing.Point(67, 325);
-      this.groupBox8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.groupBox8.Margin = new System.Windows.Forms.Padding(4);
       this.groupBox8.Name = "groupBox8";
-      this.groupBox8.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.groupBox8.Padding = new System.Windows.Forms.Padding(4);
       this.groupBox8.Size = new System.Drawing.Size(165, 107);
       this.groupBox8.TabIndex = 23;
       this.groupBox8.TabStop = false;
@@ -598,7 +615,7 @@
       // inputRemoveDuplicates
       // 
       this.inputRemoveDuplicates.Location = new System.Drawing.Point(8, 59);
-      this.inputRemoveDuplicates.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.inputRemoveDuplicates.Margin = new System.Windows.Forms.Padding(4);
       this.inputRemoveDuplicates.Name = "inputRemoveDuplicates";
       this.inputRemoveDuplicates.Size = new System.Drawing.Size(144, 28);
       this.inputRemoveDuplicates.TabIndex = 5;
@@ -609,7 +626,7 @@
       // inputShowDuplicates
       // 
       this.inputShowDuplicates.Location = new System.Drawing.Point(8, 23);
-      this.inputShowDuplicates.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.inputShowDuplicates.Margin = new System.Windows.Forms.Padding(4);
       this.inputShowDuplicates.Name = "inputShowDuplicates";
       this.inputShowDuplicates.Size = new System.Drawing.Size(144, 28);
       this.inputShowDuplicates.TabIndex = 5;
@@ -620,7 +637,7 @@
       // compareBtn
       // 
       this.compareBtn.Location = new System.Drawing.Point(1007, 166);
-      this.compareBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.compareBtn.Margin = new System.Windows.Forms.Padding(4);
       this.compareBtn.Name = "compareBtn";
       this.compareBtn.Size = new System.Drawing.Size(124, 28);
       this.compareBtn.TabIndex = 24;
@@ -631,7 +648,7 @@
       // resultsRowCountLabel
       // 
       this.resultsRowCountLabel.AutoSize = true;
-      this.resultsRowCountLabel.Location = new System.Drawing.Point(1759, 727);
+      this.resultsRowCountLabel.Location = new System.Drawing.Point(1599, 739);
       this.resultsRowCountLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
       this.resultsRowCountLabel.Name = "resultsRowCountLabel";
       this.resultsRowCountLabel.Size = new System.Drawing.Size(79, 16);
@@ -641,7 +658,7 @@
       // btnFindList1ItemsInList2
       // 
       this.btnFindList1ItemsInList2.Location = new System.Drawing.Point(993, 202);
-      this.btnFindList1ItemsInList2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.btnFindList1ItemsInList2.Margin = new System.Windows.Forms.Padding(4);
       this.btnFindList1ItemsInList2.Name = "btnFindList1ItemsInList2";
       this.btnFindList1ItemsInList2.Size = new System.Drawing.Size(157, 28);
       this.btnFindList1ItemsInList2.TabIndex = 21;
@@ -652,7 +669,7 @@
       // btnFindList1ItemsNotInList2
       // 
       this.btnFindList1ItemsNotInList2.Location = new System.Drawing.Point(981, 238);
-      this.btnFindList1ItemsNotInList2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.btnFindList1ItemsNotInList2.Margin = new System.Windows.Forms.Padding(4);
       this.btnFindList1ItemsNotInList2.Name = "btnFindList1ItemsNotInList2";
       this.btnFindList1ItemsNotInList2.Size = new System.Drawing.Size(184, 28);
       this.btnFindList1ItemsNotInList2.TabIndex = 21;
@@ -664,7 +681,7 @@
       // 
       this.flipInputWithOutputBtn.FlatStyle = System.Windows.Forms.FlatStyle.System;
       this.flipInputWithOutputBtn.Location = new System.Drawing.Point(1007, 130);
-      this.flipInputWithOutputBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.flipInputWithOutputBtn.Margin = new System.Windows.Forms.Padding(4);
       this.flipInputWithOutputBtn.Name = "flipInputWithOutputBtn";
       this.flipInputWithOutputBtn.Size = new System.Drawing.Size(124, 28);
       this.flipInputWithOutputBtn.TabIndex = 26;
@@ -675,7 +692,7 @@
       // inputRowCountLabel
       // 
       this.inputRowCountLabel.AutoSize = true;
-      this.inputRowCountLabel.Location = new System.Drawing.Point(645, 30);
+      this.inputRowCountLabel.Location = new System.Drawing.Point(646, 31);
       this.inputRowCountLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
       this.inputRowCountLabel.Name = "inputRowCountLabel";
       this.inputRowCountLabel.Size = new System.Drawing.Size(79, 16);
@@ -690,9 +707,9 @@
       this.groupBox9.Controls.Add(this.label7);
       this.groupBox9.Controls.Add(this.button2);
       this.groupBox9.Location = new System.Drawing.Point(695, 406);
-      this.groupBox9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.groupBox9.Margin = new System.Windows.Forms.Padding(4);
       this.groupBox9.Name = "groupBox9";
-      this.groupBox9.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.groupBox9.Padding = new System.Windows.Forms.Padding(4);
       this.groupBox9.Size = new System.Drawing.Size(465, 181);
       this.groupBox9.TabIndex = 28;
       this.groupBox9.TabStop = false;
@@ -701,7 +718,7 @@
       // textBoxTo
       // 
       this.textBoxTo.Location = new System.Drawing.Point(12, 112);
-      this.textBoxTo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.textBoxTo.Margin = new System.Windows.Forms.Padding(4);
       this.textBoxTo.Name = "textBoxTo";
       this.textBoxTo.Size = new System.Drawing.Size(409, 22);
       this.textBoxTo.TabIndex = 23;
@@ -719,7 +736,7 @@
       // textBoxFrom
       // 
       this.textBoxFrom.Location = new System.Drawing.Point(12, 57);
-      this.textBoxFrom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.textBoxFrom.Margin = new System.Windows.Forms.Padding(4);
       this.textBoxFrom.Name = "textBoxFrom";
       this.textBoxFrom.Size = new System.Drawing.Size(409, 22);
       this.textBoxFrom.TabIndex = 19;
@@ -737,7 +754,7 @@
       // button2
       // 
       this.button2.Location = new System.Drawing.Point(12, 142);
-      this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.button2.Margin = new System.Windows.Forms.Padding(4);
       this.button2.Name = "button2";
       this.button2.Size = new System.Drawing.Size(96, 31);
       this.button2.TabIndex = 2;
@@ -750,9 +767,9 @@
       this.groupBox10.Controls.Add(this.textBoxRemoveText);
       this.groupBox10.Controls.Add(this.button1);
       this.groupBox10.Location = new System.Drawing.Point(67, 700);
-      this.groupBox10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.groupBox10.Margin = new System.Windows.Forms.Padding(4);
       this.groupBox10.Name = "groupBox10";
-      this.groupBox10.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.groupBox10.Padding = new System.Windows.Forms.Padding(4);
       this.groupBox10.Size = new System.Drawing.Size(575, 102);
       this.groupBox10.TabIndex = 21;
       this.groupBox10.TabStop = false;
@@ -761,7 +778,7 @@
       // textBoxRemoveText
       // 
       this.textBoxRemoveText.Location = new System.Drawing.Point(12, 23);
-      this.textBoxRemoveText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.textBoxRemoveText.Margin = new System.Windows.Forms.Padding(4);
       this.textBoxRemoveText.Name = "textBoxRemoveText";
       this.textBoxRemoveText.Size = new System.Drawing.Size(521, 22);
       this.textBoxRemoveText.TabIndex = 18;
@@ -769,7 +786,7 @@
       // button1
       // 
       this.button1.Location = new System.Drawing.Point(8, 55);
-      this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.button1.Margin = new System.Windows.Forms.Padding(4);
       this.button1.Name = "button1";
       this.button1.Size = new System.Drawing.Size(96, 31);
       this.button1.TabIndex = 2;
@@ -782,9 +799,9 @@
       this.groupBox11.Controls.Add(this.inputCombineEveryEachOtherRowButton);
       this.groupBox11.Controls.Add(this.inputCountRowsButton);
       this.groupBox11.Location = new System.Drawing.Point(649, 310);
-      this.groupBox11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.groupBox11.Margin = new System.Windows.Forms.Padding(4);
       this.groupBox11.Name = "groupBox11";
-      this.groupBox11.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.groupBox11.Padding = new System.Windows.Forms.Padding(4);
       this.groupBox11.Size = new System.Drawing.Size(324, 73);
       this.groupBox11.TabIndex = 22;
       this.groupBox11.TabStop = false;
@@ -793,7 +810,7 @@
       // inputCombineEveryEachOtherRowButton
       // 
       this.inputCombineEveryEachOtherRowButton.Location = new System.Drawing.Point(8, 23);
-      this.inputCombineEveryEachOtherRowButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.inputCombineEveryEachOtherRowButton.Margin = new System.Windows.Forms.Padding(4);
       this.inputCombineEveryEachOtherRowButton.Name = "inputCombineEveryEachOtherRowButton";
       this.inputCombineEveryEachOtherRowButton.Size = new System.Drawing.Size(172, 28);
       this.inputCombineEveryEachOtherRowButton.TabIndex = 9;
@@ -805,9 +822,9 @@
       // 
       this.groupBox12.Controls.Add(this.buttonXmlToRows);
       this.groupBox12.Location = new System.Drawing.Point(695, 948);
-      this.groupBox12.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.groupBox12.Margin = new System.Windows.Forms.Padding(4);
       this.groupBox12.Name = "groupBox12";
-      this.groupBox12.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.groupBox12.Padding = new System.Windows.Forms.Padding(4);
       this.groupBox12.Size = new System.Drawing.Size(209, 58);
       this.groupBox12.TabIndex = 24;
       this.groupBox12.TabStop = false;
@@ -816,7 +833,7 @@
       // buttonXmlToRows
       // 
       this.buttonXmlToRows.Location = new System.Drawing.Point(8, 23);
-      this.buttonXmlToRows.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.buttonXmlToRows.Margin = new System.Windows.Forms.Padding(4);
       this.buttonXmlToRows.Name = "buttonXmlToRows";
       this.buttonXmlToRows.Size = new System.Drawing.Size(128, 28);
       this.buttonXmlToRows.TabIndex = 5;
@@ -831,9 +848,9 @@
       this.groupBox13.Controls.Add(this.label9);
       this.groupBox13.Controls.Add(this.button4);
       this.groupBox13.Location = new System.Drawing.Point(1208, 444);
-      this.groupBox13.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.groupBox13.Margin = new System.Windows.Forms.Padding(4);
       this.groupBox13.Name = "groupBox13";
-      this.groupBox13.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.groupBox13.Padding = new System.Windows.Forms.Padding(4);
       this.groupBox13.Size = new System.Drawing.Size(465, 70);
       this.groupBox13.TabIndex = 29;
       this.groupBox13.TabStop = false;
@@ -852,7 +869,7 @@
       // inputRemoveCharactersTextBox
       // 
       this.inputRemoveCharactersTextBox.Location = new System.Drawing.Point(165, 34);
-      this.inputRemoveCharactersTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.inputRemoveCharactersTextBox.Margin = new System.Windows.Forms.Padding(4);
       this.inputRemoveCharactersTextBox.Name = "inputRemoveCharactersTextBox";
       this.inputRemoveCharactersTextBox.Size = new System.Drawing.Size(65, 22);
       this.inputRemoveCharactersTextBox.TabIndex = 19;
@@ -870,7 +887,7 @@
       // button4
       // 
       this.button4.Location = new System.Drawing.Point(307, 31);
-      this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.button4.Margin = new System.Windows.Forms.Padding(4);
       this.button4.Name = "button4";
       this.button4.Size = new System.Drawing.Size(96, 31);
       this.button4.TabIndex = 2;
@@ -882,10 +899,10 @@
       // 
       this.groupBox14.Controls.Add(this.inputCountCharacters);
       this.groupBox14.Controls.Add(this.buttonCountCharacters);
-      this.groupBox14.Location = new System.Drawing.Point(1208, 590);
-      this.groupBox14.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.groupBox14.Location = new System.Drawing.Point(1208, 528);
+      this.groupBox14.Margin = new System.Windows.Forms.Padding(4);
       this.groupBox14.Name = "groupBox14";
-      this.groupBox14.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.groupBox14.Padding = new System.Windows.Forms.Padding(4);
       this.groupBox14.Size = new System.Drawing.Size(536, 118);
       this.groupBox14.TabIndex = 30;
       this.groupBox14.TabStop = false;
@@ -894,7 +911,7 @@
       // inputCountCharacters
       // 
       this.inputCountCharacters.Location = new System.Drawing.Point(12, 33);
-      this.inputCountCharacters.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.inputCountCharacters.Margin = new System.Windows.Forms.Padding(4);
       this.inputCountCharacters.Name = "inputCountCharacters";
       this.inputCountCharacters.Size = new System.Drawing.Size(469, 22);
       this.inputCountCharacters.TabIndex = 23;
@@ -902,7 +919,7 @@
       // buttonCountCharacters
       // 
       this.buttonCountCharacters.Location = new System.Drawing.Point(387, 65);
-      this.buttonCountCharacters.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.buttonCountCharacters.Margin = new System.Windows.Forms.Padding(4);
       this.buttonCountCharacters.Name = "buttonCountCharacters";
       this.buttonCountCharacters.Size = new System.Drawing.Size(96, 31);
       this.buttonCountCharacters.TabIndex = 2;
@@ -917,32 +934,13 @@
       this.groupBox15.Controls.Add(this.inputTextBoxCountFoundText);
       this.groupBox15.Controls.Add(this.buttonCountFoundText);
       this.groupBox15.Location = new System.Drawing.Point(695, 847);
-      this.groupBox15.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.groupBox15.Margin = new System.Windows.Forms.Padding(4);
       this.groupBox15.Name = "groupBox15";
-      this.groupBox15.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.groupBox15.Padding = new System.Windows.Forms.Padding(4);
       this.groupBox15.Size = new System.Drawing.Size(465, 94);
       this.groupBox15.TabIndex = 25;
       this.groupBox15.TabStop = false;
       this.groupBox15.Text = "Laske löytyneiden määrä";
-      // 
-      // inputTextBoxCountFoundText
-      // 
-      this.inputTextBoxCountFoundText.Location = new System.Drawing.Point(12, 23);
-      this.inputTextBoxCountFoundText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-      this.inputTextBoxCountFoundText.Name = "inputTextBoxCountFoundText";
-      this.inputTextBoxCountFoundText.Size = new System.Drawing.Size(443, 22);
-      this.inputTextBoxCountFoundText.TabIndex = 23;
-      // 
-      // buttonCountFoundText
-      // 
-      this.buttonCountFoundText.Location = new System.Drawing.Point(328, 58);
-      this.buttonCountFoundText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-      this.buttonCountFoundText.Name = "buttonCountFoundText";
-      this.buttonCountFoundText.Size = new System.Drawing.Size(128, 28);
-      this.buttonCountFoundText.TabIndex = 5;
-      this.buttonCountFoundText.Text = "Laske";
-      this.buttonCountFoundText.UseVisualStyleBackColor = true;
-      this.buttonCountFoundText.Click += new System.EventHandler(this.buttonCountFoundText_Click);
       // 
       // radioButton1
       // 
@@ -951,7 +949,7 @@
       this.radioButton1.Location = new System.Drawing.Point(12, 53);
       this.radioButton1.Margin = new System.Windows.Forms.Padding(4);
       this.radioButton1.Name = "radioButton1";
-      this.radioButton1.Size = new System.Drawing.Size(75, 20);
+      this.radioButton1.Size = new System.Drawing.Size(72, 20);
       this.radioButton1.TabIndex = 20;
       this.radioButton1.TabStop = true;
       this.radioButton1.Text = "sisältää";
@@ -964,17 +962,128 @@
       this.radioButton2.Location = new System.Drawing.Point(113, 53);
       this.radioButton2.Margin = new System.Windows.Forms.Padding(4);
       this.radioButton2.Name = "radioButton2";
-      this.radioButton2.Size = new System.Drawing.Size(43, 20);
+      this.radioButton2.Size = new System.Drawing.Size(40, 20);
       this.radioButton2.TabIndex = 23;
       this.radioButton2.TabStop = true;
       this.radioButton2.Text = "on";
       this.radioButton2.UseVisualStyleBackColor = true;
       // 
+      // inputTextBoxCountFoundText
+      // 
+      this.inputTextBoxCountFoundText.Location = new System.Drawing.Point(12, 23);
+      this.inputTextBoxCountFoundText.Margin = new System.Windows.Forms.Padding(4);
+      this.inputTextBoxCountFoundText.Name = "inputTextBoxCountFoundText";
+      this.inputTextBoxCountFoundText.Size = new System.Drawing.Size(443, 22);
+      this.inputTextBoxCountFoundText.TabIndex = 23;
+      // 
+      // buttonCountFoundText
+      // 
+      this.buttonCountFoundText.Location = new System.Drawing.Point(328, 58);
+      this.buttonCountFoundText.Margin = new System.Windows.Forms.Padding(4);
+      this.buttonCountFoundText.Name = "buttonCountFoundText";
+      this.buttonCountFoundText.Size = new System.Drawing.Size(128, 28);
+      this.buttonCountFoundText.TabIndex = 5;
+      this.buttonCountFoundText.Text = "Laske";
+      this.buttonCountFoundText.UseVisualStyleBackColor = true;
+      this.buttonCountFoundText.Click += new System.EventHandler(this.buttonCountFoundText_Click);
+      // 
+      // groupBox16
+      // 
+      this.groupBox16.Controls.Add(this.buttonGetLastWord);
+      this.groupBox16.Location = new System.Drawing.Point(259, 333);
+      this.groupBox16.Margin = new System.Windows.Forms.Padding(4);
+      this.groupBox16.Name = "groupBox16";
+      this.groupBox16.Padding = new System.Windows.Forms.Padding(4);
+      this.groupBox16.Size = new System.Drawing.Size(165, 107);
+      this.groupBox16.TabIndex = 24;
+      this.groupBox16.TabStop = false;
+      this.groupBox16.Text = "Erottele sanat";
+      this.groupBox16.Enter += new System.EventHandler(this.groupBox16_Enter);
+      // 
+      // buttonGetLastWord
+      // 
+      this.buttonGetLastWord.Location = new System.Drawing.Point(8, 70);
+      this.buttonGetLastWord.Margin = new System.Windows.Forms.Padding(4);
+      this.buttonGetLastWord.Name = "buttonGetLastWord";
+      this.buttonGetLastWord.Size = new System.Drawing.Size(144, 28);
+      this.buttonGetLastWord.TabIndex = 5;
+      this.buttonGetLastWord.Text = "Viimeinen sana";
+      this.buttonGetLastWord.UseVisualStyleBackColor = true;
+      this.buttonGetLastWord.Click += new System.EventHandler(this.buttonGetLastWord_Click);
+      // 
+      // button6
+      // 
+      this.button6.Location = new System.Drawing.Point(410, 158);
+      this.button6.Margin = new System.Windows.Forms.Padding(4);
+      this.button6.Name = "button6";
+      this.button6.Size = new System.Drawing.Size(69, 28);
+      this.button6.TabIndex = 15;
+      this.button6.Text = "Hae";
+      this.button6.UseVisualStyleBackColor = true;
+      this.button6.Click += new System.EventHandler(this.button6_Click);
+      // 
+      // label10
+      // 
+      this.label10.AutoSize = true;
+      this.label10.Location = new System.Drawing.Point(9, 135);
+      this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+      this.label10.Name = "label10";
+      this.label10.Size = new System.Drawing.Size(240, 16);
+      this.label10.TabIndex = 23;
+      this.label10.Text = "Hanki riveiltä : ja välilyönti väliset merkit";
+      // 
+      // label11
+      // 
+      this.label11.AutoSize = true;
+      this.label11.Location = new System.Drawing.Point(317, 167);
+      this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+      this.label11.Name = "label11";
+      this.label11.Size = new System.Drawing.Size(85, 16);
+      this.label11.TabIndex = 24;
+      this.label11.Text = "väliset merkit";
+      // 
+      // label12
+      // 
+      this.label12.AutoSize = true;
+      this.label12.Location = new System.Drawing.Point(196, 167);
+      this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+      this.label12.Name = "label12";
+      this.label12.Size = new System.Drawing.Size(18, 16);
+      this.label12.TabIndex = 25;
+      this.label12.Text = "ja";
+      // 
+      // label13
+      // 
+      this.label13.AutoSize = true;
+      this.label13.Location = new System.Drawing.Point(9, 167);
+      this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+      this.label13.Name = "label13";
+      this.label13.Size = new System.Drawing.Size(84, 16);
+      this.label13.TabIndex = 26;
+      this.label13.Text = "Hanki riveiltä";
+      // 
+      // textBoxSubstringStart
+      // 
+      this.textBoxSubstringStart.Location = new System.Drawing.Point(101, 164);
+      this.textBoxSubstringStart.Margin = new System.Windows.Forms.Padding(4);
+      this.textBoxSubstringStart.Name = "textBoxSubstringStart";
+      this.textBoxSubstringStart.Size = new System.Drawing.Size(87, 22);
+      this.textBoxSubstringStart.TabIndex = 19;
+      // 
+      // textBoxSubstringEnd
+      // 
+      this.textBoxSubstringEnd.Location = new System.Drawing.Point(222, 164);
+      this.textBoxSubstringEnd.Margin = new System.Windows.Forms.Padding(4);
+      this.textBoxSubstringEnd.Name = "textBoxSubstringEnd";
+      this.textBoxSubstringEnd.Size = new System.Drawing.Size(87, 22);
+      this.textBoxSubstringEnd.TabIndex = 27;
+      // 
       // MyForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(1924, 1017);
+      this.ClientSize = new System.Drawing.Size(2131, 1042);
+      this.Controls.Add(this.groupBox16);
       this.Controls.Add(this.groupBox15);
       this.Controls.Add(this.groupBox14);
       this.Controls.Add(this.groupBox13);
@@ -1003,12 +1112,13 @@
       this.Controls.Add(this.label1);
       this.Controls.Add(this.outputTextBox);
       this.Controls.Add(this.inputTextBox);
-      this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.Margin = new System.Windows.Forms.Padding(4);
       this.Name = "MyForm";
       this.Text = "Form1";
       this.groupBox1.ResumeLayout(false);
       this.groupBox1.PerformLayout();
       this.groupBox2.ResumeLayout(false);
+      this.groupBox2.PerformLayout();
       this.groupBox3.ResumeLayout(false);
       this.groupBox3.PerformLayout();
       this.groupBox4.ResumeLayout(false);
@@ -1029,6 +1139,7 @@
       this.groupBox14.PerformLayout();
       this.groupBox15.ResumeLayout(false);
       this.groupBox15.PerformLayout();
+      this.groupBox16.ResumeLayout(false);
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -1112,6 +1223,15 @@
     private System.Windows.Forms.Button buttonCountFoundText;
     private System.Windows.Forms.RadioButton radioButton1;
     private System.Windows.Forms.RadioButton radioButton2;
+    private System.Windows.Forms.GroupBox groupBox16;
+    private System.Windows.Forms.Button buttonGetLastWord;
+    private System.Windows.Forms.TextBox textBoxSubstringEnd;
+    private System.Windows.Forms.TextBox textBoxSubstringStart;
+    private System.Windows.Forms.Label label13;
+    private System.Windows.Forms.Label label12;
+    private System.Windows.Forms.Label label11;
+    private System.Windows.Forms.Label label10;
+    private System.Windows.Forms.Button button6;
   }
 }
 

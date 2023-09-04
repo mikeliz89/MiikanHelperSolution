@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 namespace MiikanHelperSolution {
   public static class ListHelper {
@@ -62,18 +63,49 @@ namespace MiikanHelperSolution {
       return outputList;
     }
 
-    public static List<string> GetListOfSubstrings(List<string> list) {
-      var listOfSubStrings = new List<string>();
+    /// <summary>
+    /// Hae start ja end merkkien välinen teksti
+    /// </summary>
+    /// <param name="list"></param>
+    /// <param name="startChar"></param>
+    /// <param name="endChar"></param>
+    /// <returns></returns>
+    public static List<string> GetListOfSubstrings(List<string> list, char startChar = ' ', char endChar = ':') {
+
+      var outputList = new List<string>();
+
       foreach(var listItem in list) {
-        var indexOfSpace = listItem.IndexOf(' ');
-        var indexOfColon = listItem.IndexOf(':');
-        var characterCountBetweenSpaceAndColon = indexOfSpace - indexOfColon;
-        if(characterCountBetweenSpaceAndColon > 0) {
-          var subString = listItem.Substring(indexOfColon + 1, characterCountBetweenSpaceAndColon - 1);
-          listOfSubStrings.Add(subString);
+        var indexOfStartChar = listItem.IndexOf(startChar);
+        var indexOfEndChar = listItem.IndexOf(endChar);
+
+        var characterCountBetweenStartAndEndIndex = indexOfStartChar - indexOfEndChar;
+
+        if(characterCountBetweenStartAndEndIndex > 0) {
+          var subString = listItem.Substring(indexOfEndChar + 1, characterCountBetweenStartAndEndIndex - 1);
+          outputList.Add(subString);
         }
       }
-      return listOfSubStrings;
+      return outputList;
+    }
+
+    /// <summary>
+    /// Hae start ja end sanojen välinen teksti
+    /// </summary>
+    /// <param name="list"></param>
+    /// <param name="startString"></param>
+    /// <param name="endString"></param>
+    /// <returns></returns>
+    /// <remarks>TOOD: Unit testit</remarks>
+    public static List<string> GetListOfSubstringsByString(List<string> list, string startString, string endString) {
+      var outputList = new List<string>();
+      foreach(var listItem in list) {
+        var from = listItem.IndexOf(startString) + startString.Length;
+        var to = listItem.IndexOf(endString);
+
+        var result = listItem.Substring(from, to - from);
+        outputList.Add(result);
+      }
+      return outputList;
     }
 
     /// <summary>
@@ -370,6 +402,27 @@ namespace MiikanHelperSolution {
       }
       string result = GetCountText(textToFind, count);
       return result;
+    }
+
+    /// <summary>
+    /// Hae välilyönnillä erotettuna viimeinen sana joka riviltä
+    /// </summary>
+    /// <param name="list"></param>
+    /// <returns></returns>
+    /// <remarks>TOOD: Unit testit</remarks>
+    public static List<string> GetLastWord(List<string> list) {
+      var outputList = new List<string>();
+      foreach(var item in list) {
+        var newItem = item;
+
+        string lastWord = newItem.Split(' ').Last();
+        if(lastWord.Length < 1) {
+          lastWord = " ";
+        }
+        outputList.Add(lastWord);
+      }
+
+      return outputList;
     }
   }
 }
