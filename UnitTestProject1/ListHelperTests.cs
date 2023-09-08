@@ -389,14 +389,15 @@ namespace UnitTestProject1 {
       list.Add(unformattedXml);
 
       var outputList = ListHelper.XmlToRows(list);
-      Assert.Equals("", "");
+      Assert.AreEqual("", "");
     }
 
     [TestMethod]
     public void ReplaceListItemTextWithGivenText() {
-      var list = new List<string>();
-      list.Add("A");
-      list.Add("B");
+      var list = new List<string> {
+        "A",
+        "B"
+      };
 
       var outputList = ListHelper.ReplaceListItemTextWithGivenText(list, "insert into {0} text");
       Assert.AreEqual(2, outputList.Count);
@@ -414,6 +415,61 @@ namespace UnitTestProject1 {
       Assert.AreEqual(2, outputList.Count);
       Assert.AreEqual("C", outputList[0]);
       Assert.AreEqual("", outputList[1]);
+    }
+
+    [TestMethod]
+    public void GetDifferencesBetweenTwoLists_SecondListContainsOneOfTheFirstListItems() {
+      var list = new List<string> {
+        "TämäonTestirivi1",
+        "TämäonTestirivi2"
+      };
+
+      var list2 = new List<string>();
+      list2.Add("TämäonTestirivi1");
+
+      //The LINQ Except() method allows you to get the elements from the first sequence that are not in the second sequence.
+      //It returns a new sequence with the type IEnumerable<T> that contains these elements. 
+      var differences = ListHelper.GetDifferencesBetweenTwoLists(list.ToArray(), list2.ToArray());
+
+      Assert.AreEqual(1, differences.Count);
+      Assert.AreEqual("TämäonTestirivi2", differences[0]);
+    }
+
+    [TestMethod]
+    public void GetDifferencesBetweenTwoLists_SecondListContainsFirstListItems() {
+      var list = new List<string>();
+      list.Add("TämäonTestirivi1");
+
+      var list2 = new List<string> {
+        "TämäonTestirivi1",
+        "TämäonTestirivi2"
+      };
+
+      //The LINQ Except() method allows you to get the elements from the first sequence that are not in the second sequence.
+      //It returns a new sequence with the type IEnumerable<T> that contains these elements. 
+      var differences = ListHelper.GetDifferencesBetweenTwoLists(list.ToArray(), list2.ToArray());
+
+      Assert.AreEqual(0, differences.Count);
+    }
+
+    [TestMethod]
+    public void GetDifferencesBetweenTwoLists_SecondListDoesNotContainFirstListItems() {
+      var list = new List<string>();
+      list.Add("TämäonTestirivi1");
+      list.Add("TämäonTestirivi2");
+
+      var list2 = new List<string> {
+        "TämäonTestirivi3",
+        "TämäonTestirivi4"
+      };
+
+      //The LINQ Except() method allows you to get the elements from the first sequence that are not in the second sequence.
+      //It returns a new sequence with the type IEnumerable<T> that contains these elements. 
+      var differences = ListHelper.GetDifferencesBetweenTwoLists(list.ToArray(), list2.ToArray());
+
+      Assert.AreEqual(2, differences.Count);
+      Assert.AreEqual("TämäonTestirivi1", differences[0]);
+      Assert.AreEqual("TämäonTestirivi2", differences[1]);
     }
   }
 }

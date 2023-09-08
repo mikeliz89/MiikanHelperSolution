@@ -129,6 +129,12 @@ namespace MiikanHelperSolution {
       return outputList;
     }
 
+    public static List<string> GetDifferencesBetweenTwoLists(string[] list, string[] list2) {
+      //The LINQ Except() method allows you to get the elements from the first sequence that are not in the second sequence.
+      //It returns a new sequence with the type IEnumerable<T> that contains these elements. 
+      return list.Except(list2).ToList();
+    }
+
     /// <summary>
     /// Palauta lista niistä listan 1 asioista joita ei löydy listalta 2
     /// </summary>

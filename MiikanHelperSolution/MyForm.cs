@@ -591,10 +591,10 @@ namespace MiikanHelperSolution {
         return;
       }
 
-      var filesLinesFirst = File.ReadAllLines(filePathFirst, Encoding.GetEncoding("windows-1254"));
+      var fileLinesFirst = File.ReadAllLines(filePathFirst, Encoding.GetEncoding("windows-1254"));
       var fileLinesSecond = File.ReadAllLines(filePathSecond, Encoding.GetEncoding("windows-1254"));
 
-      List<string> stringMissingInSecondList = filesLinesFirst.Except(fileLinesSecond).ToList();
+      var stringMissingInSecondList = ListHelper.GetDifferencesBetweenTwoLists(fileLinesFirst, fileLinesSecond);
 
       ShowResult(stringMissingInSecondList);
     }
