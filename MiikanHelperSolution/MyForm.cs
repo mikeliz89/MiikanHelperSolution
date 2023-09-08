@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Windows.Forms;
 
 namespace MiikanHelperSolution {
@@ -210,12 +212,10 @@ namespace MiikanHelperSolution {
       var filePath = inputFilePath.Text;
 
       //guards
-      if(string.IsNullOrEmpty(filePath)) {
-        ShowResult("Filepath cannot be null or empty");
+      if(IsFilePathNull(filePath)) {
         return;
       }
-      if(!File.Exists(filePath)) {
-        ShowResult("File does not exist");
+      if(!IsFileExisting(filePath)) {
         return;
       }
 
@@ -231,6 +231,22 @@ namespace MiikanHelperSolution {
       //results
       var list2 = GetOutput();
       AppendToResult($"{Environment.NewLine}Output list count {list2.Count}");
+    }
+
+    private bool IsFilePathNull(string filePath) {
+      if(string.IsNullOrEmpty(filePath)) {
+        ShowResult("FilePath cannot be null or empty");
+        return true;
+      }
+      return false;
+    }
+
+    private bool IsFileExisting(string filePath) {
+      if(!File.Exists(filePath)) {
+        ShowResult($"File {filePath} does not exist");
+        return false;
+      }
+      return true;
     }
 
     /// <summary>
@@ -364,12 +380,10 @@ namespace MiikanHelperSolution {
       var filePath = inputFilePath.Text;
 
       //guards
-      if(string.IsNullOrEmpty(filePath)) {
-        ShowResult("Filepath cannot be null or empty");
+      if(IsFilePathNull(filePath)) {
         return;
       }
-      if(!File.Exists(filePath)) {
-        ShowResult("File does not exist");
+      if(!IsFileExisting(filePath)) {
         return;
       }
 
@@ -556,6 +570,41 @@ namespace MiikanHelperSolution {
       var output = ListHelper.GetListOfSubstringsByString(input, start, end);
 
       ShowOutput(output);
+    }
+
+    private void buttonCompareTwoFiles_Click(object sender, EventArgs e) {
+
+      var filePathFirst = textBoxCompareTwoFilesFirst.Text.Trim('"');
+      if(IsFilePathNull(filePathFirst)) {
+        return;
+      }
+      var filePathSecond = textBoxCompareTwoFilesSecond.Text.Trim('"');
+      if(IsFilePathNull(filePathSecond)) {
+        return;
+      }
+
+      if(!IsFileExisting(filePathFirst)) {
+        return;
+      }
+
+      if(!IsFileExisting(filePathSecond)) {
+        return;
+      }
+
+      var filesLinesFirst = File.ReadAllLines(filePathFirst, Encoding.GetEncoding("windows-1254"));
+      var fileLinesSecond = File.ReadAllLines(filePathSecond, Encoding.GetEncoding("windows-1254"));
+
+      List<string> stringMissingInSecondList = filesLinesFirst.Except(fileLinesSecond).ToList();
+
+      ShowResult(stringMissingInSecondList);
+    }
+
+    private void buttonCompareTwoFilesFlipFileNames_Click(object sender, EventArgs e) {
+      var filePathFirst = textBoxCompareTwoFilesFirst.Text;
+      var filePathSecond = textBoxCompareTwoFilesSecond.Text;
+
+      textBoxCompareTwoFilesSecond.Text = filePathFirst;
+      textBoxCompareTwoFilesFirst.Text = filePathSecond;
     }
   }
 }
