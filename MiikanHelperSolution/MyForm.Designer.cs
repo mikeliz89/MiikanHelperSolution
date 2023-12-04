@@ -115,6 +115,7 @@
       this.textBoxCompareTwoFilesSecond = new System.Windows.Forms.TextBox();
       this.textBoxCompareTwoFilesFirst = new System.Windows.Forms.TextBox();
       this.buttonCompareTwoFiles = new System.Windows.Forms.Button();
+      this.buttonOrderByText = new System.Windows.Forms.Button();
       this.groupBox1.SuspendLayout();
       this.groupBox2.SuspendLayout();
       this.groupBox3.SuspendLayout();
@@ -871,13 +872,14 @@
       // 
       // groupBox11
       // 
+      this.groupBox11.Controls.Add(this.buttonOrderByText);
       this.groupBox11.Controls.Add(this.inputCombineEveryEachOtherRowButton);
       this.groupBox11.Controls.Add(this.inputCountRowsButton);
       this.groupBox11.Location = new System.Drawing.Point(621, 306);
       this.groupBox11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.groupBox11.Name = "groupBox11";
       this.groupBox11.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-      this.groupBox11.Size = new System.Drawing.Size(324, 73);
+      this.groupBox11.Size = new System.Drawing.Size(324, 88);
       this.groupBox11.TabIndex = 22;
       this.groupBox11.TabStop = false;
       this.groupBox11.Text = "Yleiset";
@@ -1161,6 +1163,17 @@
       this.buttonCompareTwoFiles.UseVisualStyleBackColor = true;
       this.buttonCompareTwoFiles.Click += new System.EventHandler(this.buttonCompareTwoFiles_Click);
       // 
+      // buttonOrderByText
+      // 
+      this.buttonOrderByText.Location = new System.Drawing.Point(8, 60);
+      this.buttonOrderByText.Margin = new System.Windows.Forms.Padding(4);
+      this.buttonOrderByText.Name = "buttonOrderByText";
+      this.buttonOrderByText.Size = new System.Drawing.Size(172, 28);
+      this.buttonOrderByText.TabIndex = 11;
+      this.buttonOrderByText.Text = "Aakkosittain";
+      this.buttonOrderByText.UseVisualStyleBackColor = true;
+      this.buttonOrderByText.Click += new System.EventHandler(this.buttonOrderByText_Click);
+      // 
       // MyForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1326,6 +1339,7 @@
     private System.Windows.Forms.TextBox textBoxCompareTwoFilesFirst;
     private System.Windows.Forms.Button buttonCompareTwoFiles;
     private System.Windows.Forms.Button buttonCompareTwoFilesFlipFileNames;
+    private System.Windows.Forms.Button buttonOrderByText;
   }
 }
 

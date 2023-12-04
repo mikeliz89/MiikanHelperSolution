@@ -606,5 +606,11 @@ namespace MiikanHelperSolution {
       textBoxCompareTwoFilesSecond.Text = filePathFirst;
       textBoxCompareTwoFilesFirst.Text = filePathSecond;
     }
+
+    private void buttonOrderByText_Click(object sender, EventArgs e) {
+      var input = GetInput();
+      var output = ListHelper.OrderByText(input);
+      ShowOutput(output);
+    }
   }
 }

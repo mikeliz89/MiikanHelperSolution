@@ -471,5 +471,24 @@ namespace UnitTestProject1 {
       Assert.AreEqual("TämäonTestirivi1", differences[0]);
       Assert.AreEqual("TämäonTestirivi2", differences[1]);
     }
+
+    [TestMethod]
+    public void OrderByText_Test() {
+      var list = new List<string>();
+      list.Add("banaani");
+      list.Add("Apina");
+      list.Add("Ääkköset");
+      list.Add("-testi123");
+      list.Add(""); //tyhjä
+      list.Add(" "); //pelkkä välilyönti
+      
+      var outputList = ListHelper.OrderByText(list);
+      Assert.AreEqual(4, outputList.Count);
+
+      Assert.AreEqual("Ääkköset", outputList[0]);
+      Assert.AreEqual("Apina", outputList[1]);
+      Assert.AreEqual("banaani", outputList[2]);
+      Assert.AreEqual("-testi123", outputList[3]);
+    }
   }
 }
