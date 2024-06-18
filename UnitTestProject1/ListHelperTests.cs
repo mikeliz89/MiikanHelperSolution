@@ -496,12 +496,16 @@ namespace UnitTestProject1 {
       var list = new List<string>();
       list.Add("id=\"eka\"");
       list.Add("ID=\"toka\"");
+      list.Add("Id=\"kolmas\"");
+      list.Add("iD=\"neljäs\"");
 
-      //hae id=" ja " -väliset merkit
+      //hae id=" ja " -väliset merkit case sensitive
       var outputList = ListHelper.GetListOfSubstringsByString(list, "id=\"", "\"", true);
-      Assert.AreEqual(2, outputList.Count);
+      Assert.AreEqual(4, outputList.Count);
       Assert.AreEqual("eka", outputList[0]);
       Assert.AreEqual("", outputList[1]);
+      Assert.AreEqual("", outputList[2]);
+      Assert.AreEqual("", outputList[3]);
     }
 
     [TestMethod]
@@ -509,12 +513,33 @@ namespace UnitTestProject1 {
       var list = new List<string>();
       list.Add("id=\"eka\"");
       list.Add("ID=\"toka\"");
+      list.Add("Id=\"kolmas\"");
+      list.Add("iD=\"neljäs\"");
 
-      //hae id=" ja " -väliset merkit
+      //hae id=" ja " -väliset merkit incasesensitive
       var outputList = ListHelper.GetListOfSubstringsByString(list, "id=\"", "\"", false);
-      Assert.AreEqual(2, outputList.Count);
+      Assert.AreEqual(4, outputList.Count);
       Assert.AreEqual("eka", outputList[0]);
       Assert.AreEqual("toka", outputList[1]);
+      Assert.AreEqual("kolmas", outputList[2]);
+      Assert.AreEqual("neljäs", outputList[3]);
+    }
+
+    [TestMethod]
+    public void GetListOfSubstringsByStringFullWordsOnly_Test() {
+      var list = new List<string>();
+      list.Add("id=\"eka\"");
+      list.Add("my test ID=\"toka\"");
+      list.Add("Id=\"kolmas\"");
+      list.Add("templateiD=\"neljäs\"");
+
+      //hae id=" ja " -väliset merkit incasesensitive
+      var outputList = ListHelper.GetListOfSubstringsByStringFullWordsOnly(list, "id=\"", "\"");
+      Assert.AreEqual(4, outputList.Count);
+      Assert.AreEqual("eka", outputList[0]);
+      Assert.AreEqual("toka", outputList[1]);
+      Assert.AreEqual("kolmas", outputList[2]);
+      Assert.AreEqual("", outputList[3]);
     }
   }
 }

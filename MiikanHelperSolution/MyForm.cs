@@ -587,6 +587,16 @@ namespace MiikanHelperSolution {
       ShowOutput(output);
     }
 
+    private void button8_Click(object sender, EventArgs e) {
+      var input = GetInput();
+
+      var start = textBoxSubstringStart.Text;
+      var end = textBoxSubstringEnd.Text;
+      var output = ListHelper.GetListOfSubstringsByStringFullWordsOnly(input, start, end);
+
+      ShowOutput(output);
+    }
+
     private void buttonCompareTwoFiles_Click(object sender, EventArgs e) {
 
       var filePathFirst = textBoxCompareTwoFilesFirst.Text.Trim('"');

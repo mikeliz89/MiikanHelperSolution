@@ -117,6 +117,7 @@
       this.textBoxCompareTwoFilesFirst = new System.Windows.Forms.TextBox();
       this.buttonCompareTwoFiles = new System.Windows.Forms.Button();
       this.button7 = new System.Windows.Forms.Button();
+      this.button8 = new System.Windows.Forms.Button();
       this.groupBox1.SuspendLayout();
       this.groupBox2.SuspendLayout();
       this.groupBox3.SuspendLayout();
@@ -350,6 +351,7 @@
       // 
       // groupBox2
       // 
+      this.groupBox2.Controls.Add(this.button8);
       this.groupBox2.Controls.Add(this.button7);
       this.groupBox2.Controls.Add(this.textBoxSubstringEnd);
       this.groupBox2.Controls.Add(this.textBoxSubstringStart);
@@ -421,7 +423,7 @@
       // 
       // button6
       // 
-      this.button6.Location = new System.Drawing.Point(286, 109);
+      this.button6.Location = new System.Drawing.Point(285, 88);
       this.button6.Name = "button6";
       this.button6.Size = new System.Drawing.Size(139, 23);
       this.button6.TabIndex = 15;
@@ -1068,13 +1070,23 @@
       // 
       // button7
       // 
-      this.button7.Location = new System.Drawing.Point(286, 133);
+      this.button7.Location = new System.Drawing.Point(285, 112);
       this.button7.Name = "button7";
       this.button7.Size = new System.Drawing.Size(139, 23);
       this.button7.TabIndex = 28;
       this.button7.Text = "Hae case insensitive";
       this.button7.UseVisualStyleBackColor = true;
       this.button7.Click += new System.EventHandler(this.button7_Click);
+      // 
+      // button8
+      // 
+      this.button8.Location = new System.Drawing.Point(276, 136);
+      this.button8.Name = "button8";
+      this.button8.Size = new System.Drawing.Size(148, 23);
+      this.button8.TabIndex = 29;
+      this.button8.Text = "Hae vain kokonaisia sanoja";
+      this.button8.UseVisualStyleBackColor = true;
+      this.button8.Click += new System.EventHandler(this.button8_Click);
       // 
       // MyForm
       // 
@@ -1242,6 +1254,7 @@
     private System.Windows.Forms.Button buttonCompareTwoFilesFlipFileNames;
     private System.Windows.Forms.Button buttonOrderByText;
     private System.Windows.Forms.Button button7;
+    private System.Windows.Forms.Button button8;
   }
 }
 

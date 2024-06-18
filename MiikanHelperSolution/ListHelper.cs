@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace MiikanHelperSolution {
@@ -94,9 +95,8 @@ namespace MiikanHelperSolution {
     /// <param name="list"></param>
     /// <param name="startString"></param>
     /// <param name="endString"></param>
-    /// <param name="useCaseSensitive"></param>
+    /// <param name="useCaseSensitive">oletuksena true niin esim ID ja id on eri. False niin id, ID, Id, iD kaikki tarkoittaa samaa</param>
     /// <returns></returns>
-    /// <remarks>TOOD: Unit testit</remarks>
     public static List<string> GetListOfSubstringsByString(List<string> list, string startString, string endString, bool useCaseSensitive = true) {
       var outputList = new List<string>();
       foreach(var listItem in list) {
@@ -130,6 +130,32 @@ namespace MiikanHelperSolution {
         if(endIndex != -1) {
           return input.Substring(startIndex, endIndex - startIndex);
         }
+      }
+      return string.Empty; // Return an empty string if no match is found
+    }
+
+    /// <summary>
+    /// Hae start ja end sanojen välinen teksti, mutta vain kokonaiset sanat
+    /// </summary>
+    /// <param name="list"></param>
+    /// <param name="startString"></param>
+    /// <param name="endString"></param>
+    /// <returns></returns>
+    public static List<string> GetListOfSubstringsByStringFullWordsOnly(List<string> list, string startString, string endString) {
+      var outputList = new List<string>();
+      foreach(var listItem in list) {
+        var result = GetIdValueFullWordsOnly(listItem, startString, endString);
+        outputList.Add(result);
+      }
+      return outputList;
+    }
+
+    private static string GetIdValueFullWordsOnly(string input, string startString, string endString) {
+      // Construct the pattern to match exact word startString followed by any characters until endString
+      string pattern = $@"\b{Regex.Escape(startString)}(.*?)\b{Regex.Escape(endString)}";
+      Match match = Regex.Match(input, pattern, RegexOptions.IgnoreCase);
+      if(match.Success) {
+        return match.Groups[1].Value;
       }
       return string.Empty; // Return an empty string if no match is found
     }
