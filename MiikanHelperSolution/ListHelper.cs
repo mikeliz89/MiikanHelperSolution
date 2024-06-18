@@ -94,18 +94,44 @@ namespace MiikanHelperSolution {
     /// <param name="list"></param>
     /// <param name="startString"></param>
     /// <param name="endString"></param>
+    /// <param name="useCaseSensitive"></param>
     /// <returns></returns>
     /// <remarks>TOOD: Unit testit</remarks>
-    public static List<string> GetListOfSubstringsByString(List<string> list, string startString, string endString) {
+    public static List<string> GetListOfSubstringsByString(List<string> list, string startString, string endString, bool useCaseSensitive = true) {
       var outputList = new List<string>();
       foreach(var listItem in list) {
-        var from = listItem.IndexOf(startString) + startString.Length;
-        var to = listItem.IndexOf(endString);
-
-        var result = listItem.Substring(from, to - from);
+        var result = 
+          useCaseSensitive ? GetIdValueCaseSensitive(listItem, startString, endString) : 
+            GetIdValueCaseInSensitive(listItem, startString, endString);
         outputList.Add(result);
       }
       return outputList;
+    }
+
+    private static string GetIdValueCaseSensitive(string input, string startString, string endString) {
+      string startMarker = startString;
+      int startIndex = input.IndexOf(startMarker);
+      if(startIndex != -1) {
+        startIndex += startMarker.Length;
+        int endIndex = input.IndexOf(endString, startIndex);
+        if(endIndex != -1) {
+          return input.Substring(startIndex, endIndex - startIndex);
+        }
+      }
+      return string.Empty; // Return an empty string if no match is found
+    }
+
+    private static string GetIdValueCaseInSensitive(string input, string startString, string endString) {
+      string startMarker = startString;
+      int startIndex = input.IndexOf(startMarker, StringComparison.OrdinalIgnoreCase);
+      if(startIndex != -1) {
+        startIndex += startMarker.Length;
+        int endIndex = input.IndexOf(endString, startIndex, StringComparison.OrdinalIgnoreCase);
+        if(endIndex != -1) {
+          return input.Substring(startIndex, endIndex - startIndex);
+        }
+      }
+      return string.Empty; // Return an empty string if no match is found
     }
 
     /// <summary>

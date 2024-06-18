@@ -490,5 +490,31 @@ namespace UnitTestProject1 {
       Assert.AreEqual("banaani", outputList[2]);
       Assert.AreEqual("-testi123", outputList[3]);
     }
+
+    [TestMethod]
+    public void GetListOfSubstringsByStringCaseSensitive_Test() {
+      var list = new List<string>();
+      list.Add("id=\"eka\"");
+      list.Add("ID=\"toka\"");
+
+      //hae id=" ja " -väliset merkit
+      var outputList = ListHelper.GetListOfSubstringsByString(list, "id=\"", "\"", true);
+      Assert.AreEqual(2, outputList.Count);
+      Assert.AreEqual("eka", outputList[0]);
+      Assert.AreEqual("", outputList[1]);
+    }
+
+    [TestMethod]
+    public void GetListOfSubstringsByStringCaseInSensitive_Test() {
+      var list = new List<string>();
+      list.Add("id=\"eka\"");
+      list.Add("ID=\"toka\"");
+
+      //hae id=" ja " -väliset merkit
+      var outputList = ListHelper.GetListOfSubstringsByString(list, "id=\"", "\"", false);
+      Assert.AreEqual(2, outputList.Count);
+      Assert.AreEqual("eka", outputList[0]);
+      Assert.AreEqual("toka", outputList[1]);
+    }
   }
 }

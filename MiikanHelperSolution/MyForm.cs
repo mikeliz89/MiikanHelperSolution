@@ -558,7 +558,7 @@ namespace MiikanHelperSolution {
     }
 
     /// <summary>
-    /// Hanki riveiltä x ja y väliset merkit
+    /// Hanki riveiltä x ja y väliset merkit (case sensitive)
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -567,7 +567,22 @@ namespace MiikanHelperSolution {
 
       var start = textBoxSubstringStart.Text;
       var end = textBoxSubstringEnd.Text;
-      var output = ListHelper.GetListOfSubstringsByString(input, start, end);
+      var output = ListHelper.GetListOfSubstringsByString(input, start, end, true);
+
+      ShowOutput(output);
+    }
+
+    /// <summary>
+    /// Hanki riveiltä x ja y väliset merkit (case insensitive)
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void button7_Click(object sender, EventArgs e) {
+      var input = GetInput();
+
+      var start = textBoxSubstringStart.Text;
+      var end = textBoxSubstringEnd.Text;
+      var output = ListHelper.GetListOfSubstringsByString(input, start, end, false);
 
       ShowOutput(output);
     }
