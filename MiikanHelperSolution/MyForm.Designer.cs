@@ -45,6 +45,8 @@
       this.inputEndRadioButton = new System.Windows.Forms.RadioButton();
       this.inputStartRadioButton = new System.Windows.Forms.RadioButton();
       this.groupBox2 = new System.Windows.Forms.GroupBox();
+      this.button8 = new System.Windows.Forms.Button();
+      this.button7 = new System.Windows.Forms.Button();
       this.textBoxSubstringEnd = new System.Windows.Forms.TextBox();
       this.textBoxSubstringStart = new System.Windows.Forms.TextBox();
       this.label13 = new System.Windows.Forms.Label();
@@ -116,8 +118,9 @@
       this.textBoxCompareTwoFilesSecond = new System.Windows.Forms.TextBox();
       this.textBoxCompareTwoFilesFirst = new System.Windows.Forms.TextBox();
       this.buttonCompareTwoFiles = new System.Windows.Forms.Button();
-      this.button7 = new System.Windows.Forms.Button();
-      this.button8 = new System.Windows.Forms.Button();
+      this.groupBox18 = new System.Windows.Forms.GroupBox();
+      this.groupBox19 = new System.Windows.Forms.GroupBox();
+      this.buttonCalculateStringLength = new System.Windows.Forms.Button();
       this.groupBox1.SuspendLayout();
       this.groupBox2.SuspendLayout();
       this.groupBox3.SuspendLayout();
@@ -135,11 +138,13 @@
       this.groupBox15.SuspendLayout();
       this.groupBox16.SuspendLayout();
       this.groupBox17.SuspendLayout();
+      this.groupBox18.SuspendLayout();
+      this.groupBox19.SuspendLayout();
       this.SuspendLayout();
       // 
       // inputToOutputButton
       // 
-      this.inputToOutputButton.Location = new System.Drawing.Point(241, 19);
+      this.inputToOutputButton.Location = new System.Drawing.Point(243, 19);
       this.inputToOutputButton.Name = "inputToOutputButton";
       this.inputToOutputButton.Size = new System.Drawing.Size(154, 23);
       this.inputToOutputButton.TabIndex = 0;
@@ -255,7 +260,7 @@
       // 
       // inputGetUserIDsButton
       // 
-      this.inputGetUserIDsButton.Location = new System.Drawing.Point(204, 51);
+      this.inputGetUserIDsButton.Location = new System.Drawing.Point(204, 14);
       this.inputGetUserIDsButton.Name = "inputGetUserIDsButton";
       this.inputGetUserIDsButton.Size = new System.Drawing.Size(52, 23);
       this.inputGetUserIDsButton.TabIndex = 12;
@@ -360,27 +365,45 @@
       this.groupBox2.Controls.Add(this.label11);
       this.groupBox2.Controls.Add(this.label10);
       this.groupBox2.Controls.Add(this.button6);
-      this.groupBox2.Controls.Add(this.inputAddSingleQuotes);
-      this.groupBox2.Controls.Add(this.inputToOutputButton);
-      this.groupBox2.Controls.Add(this.inputAddCommasButton);
       this.groupBox2.Controls.Add(this.inputGetUserIDsButton);
-      this.groupBox2.Location = new System.Drawing.Point(29, 655);
+      this.groupBox2.Location = new System.Drawing.Point(29, 704);
       this.groupBox2.Name = "groupBox2";
-      this.groupBox2.Size = new System.Drawing.Size(431, 159);
+      this.groupBox2.Size = new System.Drawing.Size(431, 110);
       this.groupBox2.TabIndex = 17;
       this.groupBox2.TabStop = false;
-      this.groupBox2.Text = "Lisää pilkkuja, heittomerkkejä";
+      this.groupBox2.Text = "Hae riveiltä";
+      this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+      // 
+      // button8
+      // 
+      this.button8.Location = new System.Drawing.Point(278, 80);
+      this.button8.Name = "button8";
+      this.button8.Size = new System.Drawing.Size(148, 23);
+      this.button8.TabIndex = 29;
+      this.button8.Text = "Hae vain kokonaisia sanoja";
+      this.button8.UseVisualStyleBackColor = true;
+      this.button8.Click += new System.EventHandler(this.button8_Click);
+      // 
+      // button7
+      // 
+      this.button7.Location = new System.Drawing.Point(278, 56);
+      this.button7.Name = "button7";
+      this.button7.Size = new System.Drawing.Size(148, 23);
+      this.button7.TabIndex = 28;
+      this.button7.Text = "Hae case insensitive";
+      this.button7.UseVisualStyleBackColor = true;
+      this.button7.Click += new System.EventHandler(this.button7_Click);
       // 
       // textBoxSubstringEnd
       // 
-      this.textBoxSubstringEnd.Location = new System.Drawing.Point(144, 110);
+      this.textBoxSubstringEnd.Location = new System.Drawing.Point(146, 54);
       this.textBoxSubstringEnd.Name = "textBoxSubstringEnd";
-      this.textBoxSubstringEnd.Size = new System.Drawing.Size(135, 20);
+      this.textBoxSubstringEnd.Size = new System.Drawing.Size(124, 20);
       this.textBoxSubstringEnd.TabIndex = 27;
       // 
       // textBoxSubstringStart
       // 
-      this.textBoxSubstringStart.Location = new System.Drawing.Point(7, 109);
+      this.textBoxSubstringStart.Location = new System.Drawing.Point(9, 53);
       this.textBoxSubstringStart.Name = "textBoxSubstringStart";
       this.textBoxSubstringStart.Size = new System.Drawing.Size(117, 20);
       this.textBoxSubstringStart.TabIndex = 19;
@@ -388,7 +411,7 @@
       // label13
       // 
       this.label13.AutoSize = true;
-      this.label13.Location = new System.Drawing.Point(4, 93);
+      this.label13.Location = new System.Drawing.Point(6, 37);
       this.label13.Name = "label13";
       this.label13.Size = new System.Drawing.Size(68, 13);
       this.label13.TabIndex = 26;
@@ -397,7 +420,7 @@
       // label12
       // 
       this.label12.AutoSize = true;
-      this.label12.Location = new System.Drawing.Point(127, 110);
+      this.label12.Location = new System.Drawing.Point(129, 54);
       this.label12.Name = "label12";
       this.label12.Size = new System.Drawing.Size(15, 13);
       this.label12.TabIndex = 25;
@@ -406,7 +429,7 @@
       // label11
       // 
       this.label11.AutoSize = true;
-      this.label11.Location = new System.Drawing.Point(6, 133);
+      this.label11.Location = new System.Drawing.Point(8, 77);
       this.label11.Name = "label11";
       this.label11.Size = new System.Drawing.Size(68, 13);
       this.label11.TabIndex = 24;
@@ -415,7 +438,7 @@
       // label10
       // 
       this.label10.AutoSize = true;
-      this.label10.Location = new System.Drawing.Point(6, 56);
+      this.label10.Location = new System.Drawing.Point(6, 19);
       this.label10.Name = "label10";
       this.label10.Size = new System.Drawing.Size(192, 13);
       this.label10.TabIndex = 23;
@@ -423,9 +446,9 @@
       // 
       // button6
       // 
-      this.button6.Location = new System.Drawing.Point(285, 88);
+      this.button6.Location = new System.Drawing.Point(278, 32);
       this.button6.Name = "button6";
-      this.button6.Size = new System.Drawing.Size(139, 23);
+      this.button6.Size = new System.Drawing.Size(148, 23);
       this.button6.TabIndex = 15;
       this.button6.Text = "Hae case sensitive";
       this.button6.UseVisualStyleBackColor = true;
@@ -541,14 +564,14 @@
       this.groupBox5.Controls.Add(this.inputSplitCsvBtn);
       this.groupBox5.Location = new System.Drawing.Point(500, 566);
       this.groupBox5.Name = "groupBox5";
-      this.groupBox5.Size = new System.Drawing.Size(349, 113);
+      this.groupBox5.Size = new System.Drawing.Size(351, 102);
       this.groupBox5.TabIndex = 20;
       this.groupBox5.TabStop = false;
       this.groupBox5.Text = "Erottele";
       // 
       // button5
       // 
-      this.button5.Location = new System.Drawing.Point(152, 74);
+      this.button5.Location = new System.Drawing.Point(152, 71);
       this.button5.Name = "button5";
       this.button5.Size = new System.Drawing.Size(155, 25);
       this.button5.TabIndex = 22;
@@ -558,7 +581,7 @@
       // 
       // buttonSplitRows
       // 
-      this.buttonSplitRows.Location = new System.Drawing.Point(152, 43);
+      this.buttonSplitRows.Location = new System.Drawing.Point(152, 40);
       this.buttonSplitRows.Name = "buttonSplitRows";
       this.buttonSplitRows.Size = new System.Drawing.Size(155, 25);
       this.buttonSplitRows.TabIndex = 21;
@@ -932,7 +955,7 @@
       this.groupBox15.Controls.Add(this.radioButton2);
       this.groupBox15.Controls.Add(this.inputTextBoxCountFoundText);
       this.groupBox15.Controls.Add(this.buttonCountFoundText);
-      this.groupBox15.Location = new System.Drawing.Point(500, 685);
+      this.groupBox15.Location = new System.Drawing.Point(500, 678);
       this.groupBox15.Name = "groupBox15";
       this.groupBox15.Size = new System.Drawing.Size(349, 76);
       this.groupBox15.TabIndex = 25;
@@ -1068,25 +1091,38 @@
       this.buttonCompareTwoFiles.UseVisualStyleBackColor = true;
       this.buttonCompareTwoFiles.Click += new System.EventHandler(this.buttonCompareTwoFiles_Click);
       // 
-      // button7
+      // groupBox18
       // 
-      this.button7.Location = new System.Drawing.Point(285, 112);
-      this.button7.Name = "button7";
-      this.button7.Size = new System.Drawing.Size(139, 23);
-      this.button7.TabIndex = 28;
-      this.button7.Text = "Hae case insensitive";
-      this.button7.UseVisualStyleBackColor = true;
-      this.button7.Click += new System.EventHandler(this.button7_Click);
+      this.groupBox18.Controls.Add(this.inputAddSingleQuotes);
+      this.groupBox18.Controls.Add(this.inputAddCommasButton);
+      this.groupBox18.Controls.Add(this.inputToOutputButton);
+      this.groupBox18.Location = new System.Drawing.Point(29, 655);
+      this.groupBox18.Name = "groupBox18";
+      this.groupBox18.Size = new System.Drawing.Size(431, 50);
+      this.groupBox18.TabIndex = 32;
+      this.groupBox18.TabStop = false;
+      this.groupBox18.Text = "Lisää pilkkuja, heittomerkkejä";
+      this.groupBox18.Enter += new System.EventHandler(this.groupBox18_Enter);
       // 
-      // button8
+      // groupBox19
       // 
-      this.button8.Location = new System.Drawing.Point(276, 136);
-      this.button8.Name = "button8";
-      this.button8.Size = new System.Drawing.Size(148, 23);
-      this.button8.TabIndex = 29;
-      this.button8.Text = "Hae vain kokonaisia sanoja";
-      this.button8.UseVisualStyleBackColor = true;
-      this.button8.Click += new System.EventHandler(this.button8_Click);
+      this.groupBox19.Controls.Add(this.buttonCalculateStringLength);
+      this.groupBox19.Location = new System.Drawing.Point(307, 261);
+      this.groupBox19.Name = "groupBox19";
+      this.groupBox19.Size = new System.Drawing.Size(124, 87);
+      this.groupBox19.TabIndex = 25;
+      this.groupBox19.TabStop = false;
+      this.groupBox19.Text = "Laske merkit";
+      // 
+      // buttonCalculateStringLength
+      // 
+      this.buttonCalculateStringLength.Location = new System.Drawing.Point(6, 57);
+      this.buttonCalculateStringLength.Name = "buttonCalculateStringLength";
+      this.buttonCalculateStringLength.Size = new System.Drawing.Size(108, 23);
+      this.buttonCalculateStringLength.TabIndex = 5;
+      this.buttonCalculateStringLength.Text = "Laske merkit";
+      this.buttonCalculateStringLength.UseVisualStyleBackColor = true;
+      this.buttonCalculateStringLength.Click += new System.EventHandler(this.buttonCalculateStringLength_Click);
       // 
       // MyForm
       // 
@@ -1094,6 +1130,9 @@
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.AutoScroll = true;
       this.ClientSize = new System.Drawing.Size(1443, 847);
+      this.Controls.Add(this.groupBox19);
+      this.Controls.Add(this.groupBox2);
+      this.Controls.Add(this.groupBox18);
       this.Controls.Add(this.groupBox17);
       this.Controls.Add(this.groupBox16);
       this.Controls.Add(this.groupBox15);
@@ -1115,7 +1154,6 @@
       this.Controls.Add(this.groupBox5);
       this.Controls.Add(this.groupBox4);
       this.Controls.Add(this.groupBox3);
-      this.Controls.Add(this.groupBox2);
       this.Controls.Add(this.groupBox1);
       this.Controls.Add(this.outputRowCountLabel);
       this.Controls.Add(this.label3);
@@ -1153,6 +1191,8 @@
       this.groupBox16.ResumeLayout(false);
       this.groupBox17.ResumeLayout(false);
       this.groupBox17.PerformLayout();
+      this.groupBox18.ResumeLayout(false);
+      this.groupBox19.ResumeLayout(false);
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -1255,6 +1295,9 @@
     private System.Windows.Forms.Button buttonOrderByText;
     private System.Windows.Forms.Button button7;
     private System.Windows.Forms.Button button8;
+    private System.Windows.Forms.GroupBox groupBox18;
+    private System.Windows.Forms.GroupBox groupBox19;
+    private System.Windows.Forms.Button buttonCalculateStringLength;
   }
 }
 

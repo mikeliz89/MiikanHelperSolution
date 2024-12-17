@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Windows.Forms;
 
 namespace MiikanHelperSolution {
+
   public static class ListHelper {
     /// <summary>
     /// Yhdistä joka toinen rivi 
@@ -498,6 +498,19 @@ namespace MiikanHelperSolution {
         outputList.Add(newItem);
       }
       return outputList.OrderBy(x => x).ToList();
+    }
+
+    /// <summary>
+    /// Laske merkkijonon pituus
+    /// </summary>
+    /// <param name="list"></param>
+    /// <returns></returns>
+    public static int CalculateStringLength(List<string> list) {
+      var totalLength = 0;
+      foreach(var item in list) {
+        totalLength += item.Length;
+      }
+      return totalLength;
     }
   }
 }

@@ -70,7 +70,7 @@ namespace UnitTestProject1 {
     public void GetOutputList_OneItemInInputList() {
       var input = new List<string>();
       input.Add("Test");
-      var output = ListHelper.GetOutputList(input, "'", addToStart: true, addToEnd: true, addCommas:false);
+      var output = ListHelper.GetOutputList(input, "'", addToStart: true, addToEnd: true, addCommas: false);
       Assert.AreEqual(1, output.Count);
       Assert.AreEqual("'Test'", output[0]);
 
@@ -481,7 +481,7 @@ namespace UnitTestProject1 {
       list.Add("-testi123");
       list.Add(""); //tyhjä
       list.Add(" "); //pelkkä välilyönti
-      
+
       var outputList = ListHelper.OrderByText(list);
       Assert.AreEqual(4, outputList.Count);
 
@@ -540,6 +540,22 @@ namespace UnitTestProject1 {
       Assert.AreEqual("toka", outputList[1]);
       Assert.AreEqual("kolmas", outputList[2]);
       Assert.AreEqual("", outputList[3]);
+    }
+
+    [TestMethod]
+    public void CalculateStringLength_SingleLineNormalCharacters_Test() {
+      var list = new List<string>();
+      list.Add("abc");
+      var output = ListHelper.CalculateStringLength(list);
+      Assert.AreEqual(3, output);
+    }
+
+    [TestMethod]
+    public void CalculateStringLength_SingleLineSpecialCharacters_Test() {
+      var list = new List<string>();
+      list.Add("@$€%/[");
+      var output = ListHelper.CalculateStringLength(list);
+      Assert.AreEqual(6, output);
     }
   }
 }

@@ -637,5 +637,24 @@ namespace MiikanHelperSolution {
       var output = ListHelper.OrderByText(input);
       ShowOutput(output);
     }
+
+    private void groupBox18_Enter(object sender, EventArgs e) {
+
+    }
+
+    private void groupBox2_Enter(object sender, EventArgs e) {
+
+    }
+
+    private void buttonCalculateStringLength_Click(object sender, EventArgs e) {
+
+      var input = GetInput();
+
+      var output = ListHelper.CalculateStringLength(input);
+
+      var outputList = new List<string>();
+      outputList.Add(output.ToString());
+      ShowOutput(outputList);
+    }
   }
 }
