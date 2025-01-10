@@ -557,5 +557,24 @@ namespace UnitTestProject1 {
       var output = ListHelper.CalculateStringLength(list);
       Assert.AreEqual(6, output);
     }
+
+    [TestMethod]
+    public void RemoveEmpties_Test() {
+      var list = new List<string>();
+      list.Add("");
+      list.Add("A");
+      list.Add(" ");
+      list.Add(null);
+      list.Add("B");
+      list.Add("      ");
+      list.Add("C");
+
+      var output = ListHelper.RemoveEmpties(list);
+      Assert.AreEqual(3, output.Count);
+
+      Assert.AreEqual("A", output[0]);
+      Assert.AreEqual("B", output[1]);
+      Assert.AreEqual("C", output[2]);
+    }
   }
 }

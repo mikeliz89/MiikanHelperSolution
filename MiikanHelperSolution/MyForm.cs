@@ -656,5 +656,13 @@ namespace MiikanHelperSolution {
       outputList.Add(output.ToString());
       ShowOutput(outputList);
     }
+
+    private void button9_Click(object sender, EventArgs e) {
+
+      var input = GetInput();
+
+      var output = ListHelper.RemoveEmpties(input);
+      ShowOutput(output);
+    }
   }
 }

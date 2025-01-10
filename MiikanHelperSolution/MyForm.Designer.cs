@@ -121,6 +121,7 @@
       this.groupBox18 = new System.Windows.Forms.GroupBox();
       this.groupBox19 = new System.Windows.Forms.GroupBox();
       this.buttonCalculateStringLength = new System.Windows.Forms.Button();
+      this.button9 = new System.Windows.Forms.Button();
       this.groupBox1.SuspendLayout();
       this.groupBox2.SuspendLayout();
       this.groupBox3.SuspendLayout();
@@ -744,7 +745,7 @@
       this.groupBox9.Controls.Add(this.textBoxFrom);
       this.groupBox9.Controls.Add(this.label7);
       this.groupBox9.Controls.Add(this.button2);
-      this.groupBox9.Location = new System.Drawing.Point(500, 327);
+      this.groupBox9.Location = new System.Drawing.Point(500, 338);
       this.groupBox9.Name = "groupBox9";
       this.groupBox9.Size = new System.Drawing.Size(349, 147);
       this.groupBox9.TabIndex = 28;
@@ -823,12 +824,13 @@
       // 
       // groupBox11
       // 
+      this.groupBox11.Controls.Add(this.button9);
       this.groupBox11.Controls.Add(this.buttonOrderByText);
       this.groupBox11.Controls.Add(this.inputCombineEveryEachOtherRowButton);
       this.groupBox11.Controls.Add(this.inputCountRowsButton);
       this.groupBox11.Location = new System.Drawing.Point(466, 249);
       this.groupBox11.Name = "groupBox11";
-      this.groupBox11.Size = new System.Drawing.Size(243, 72);
+      this.groupBox11.Size = new System.Drawing.Size(325, 83);
       this.groupBox11.TabIndex = 22;
       this.groupBox11.TabStop = false;
       this.groupBox11.Text = "Yleiset";
@@ -1124,12 +1126,22 @@
       this.buttonCalculateStringLength.UseVisualStyleBackColor = true;
       this.buttonCalculateStringLength.Click += new System.EventHandler(this.buttonCalculateStringLength_Click);
       // 
+      // button9
+      // 
+      this.button9.Location = new System.Drawing.Point(141, 48);
+      this.button9.Name = "button9";
+      this.button9.Size = new System.Drawing.Size(93, 23);
+      this.button9.TabIndex = 12;
+      this.button9.Text = "Poista tyhjät";
+      this.button9.UseVisualStyleBackColor = true;
+      this.button9.Click += new System.EventHandler(this.button9_Click);
+      // 
       // MyForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.AutoScroll = true;
-      this.ClientSize = new System.Drawing.Size(1443, 847);
+      this.ClientSize = new System.Drawing.Size(1667, 847);
       this.Controls.Add(this.groupBox19);
       this.Controls.Add(this.groupBox2);
       this.Controls.Add(this.groupBox18);
@@ -1298,6 +1310,7 @@
     private System.Windows.Forms.GroupBox groupBox18;
     private System.Windows.Forms.GroupBox groupBox19;
     private System.Windows.Forms.Button buttonCalculateStringLength;
+    private System.Windows.Forms.Button button9;
   }
 }
 

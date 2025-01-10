@@ -512,5 +512,22 @@ namespace MiikanHelperSolution {
       }
       return totalLength;
     }
+
+    /// <summary>
+    /// Poista tyhjät listalta
+    /// </summary>
+    /// <param name="list"></param>
+    /// <returns></returns>
+    public static List<string> RemoveEmpties(List<string> list) {
+      var outputList = new List<string>();
+      foreach(var item in list) {
+        var newItem = item;
+        if(string.IsNullOrWhiteSpace(newItem)) {
+          continue;
+        }
+        outputList.Add(newItem);
+      }
+      return outputList;
+    }
   }
 }
