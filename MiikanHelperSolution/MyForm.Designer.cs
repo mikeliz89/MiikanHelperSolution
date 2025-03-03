@@ -92,6 +92,7 @@
       this.textBoxRemoveText = new System.Windows.Forms.TextBox();
       this.button1 = new System.Windows.Forms.Button();
       this.groupBox11 = new System.Windows.Forms.GroupBox();
+      this.button9 = new System.Windows.Forms.Button();
       this.buttonOrderByText = new System.Windows.Forms.Button();
       this.inputCombineEveryEachOtherRowButton = new System.Windows.Forms.Button();
       this.groupBox12 = new System.Windows.Forms.GroupBox();
@@ -121,7 +122,10 @@
       this.groupBox18 = new System.Windows.Forms.GroupBox();
       this.groupBox19 = new System.Windows.Forms.GroupBox();
       this.buttonCalculateStringLength = new System.Windows.Forms.Button();
-      this.button9 = new System.Windows.Forms.Button();
+      this.groupBox20 = new System.Windows.Forms.GroupBox();
+      this.button10 = new System.Windows.Forms.Button();
+      this.inputMaxLineLength = new System.Windows.Forms.TextBox();
+      this.label16 = new System.Windows.Forms.Label();
       this.groupBox1.SuspendLayout();
       this.groupBox2.SuspendLayout();
       this.groupBox3.SuspendLayout();
@@ -141,6 +145,7 @@
       this.groupBox17.SuspendLayout();
       this.groupBox18.SuspendLayout();
       this.groupBox19.SuspendLayout();
+      this.groupBox20.SuspendLayout();
       this.SuspendLayout();
       // 
       // inputToOutputButton
@@ -835,6 +840,16 @@
       this.groupBox11.TabStop = false;
       this.groupBox11.Text = "Yleiset";
       // 
+      // button9
+      // 
+      this.button9.Location = new System.Drawing.Point(141, 48);
+      this.button9.Name = "button9";
+      this.button9.Size = new System.Drawing.Size(93, 23);
+      this.button9.TabIndex = 12;
+      this.button9.Text = "Poista tyhjät";
+      this.button9.UseVisualStyleBackColor = true;
+      this.button9.Click += new System.EventHandler(this.button9_Click);
+      // 
       // buttonOrderByText
       // 
       this.buttonOrderByText.Location = new System.Drawing.Point(6, 49);
@@ -1126,15 +1141,43 @@
       this.buttonCalculateStringLength.UseVisualStyleBackColor = true;
       this.buttonCalculateStringLength.Click += new System.EventHandler(this.buttonCalculateStringLength_Click);
       // 
-      // button9
+      // groupBox20
       // 
-      this.button9.Location = new System.Drawing.Point(141, 48);
-      this.button9.Name = "button9";
-      this.button9.Size = new System.Drawing.Size(93, 23);
-      this.button9.TabIndex = 12;
-      this.button9.Text = "Poista tyhjät";
-      this.button9.UseVisualStyleBackColor = true;
-      this.button9.Click += new System.EventHandler(this.button9_Click);
+      this.groupBox20.Controls.Add(this.label16);
+      this.groupBox20.Controls.Add(this.inputMaxLineLength);
+      this.groupBox20.Controls.Add(this.button10);
+      this.groupBox20.Location = new System.Drawing.Point(652, 767);
+      this.groupBox20.Name = "groupBox20";
+      this.groupBox20.Size = new System.Drawing.Size(190, 68);
+      this.groupBox20.TabIndex = 25;
+      this.groupBox20.TabStop = false;
+      this.groupBox20.Text = "Teksti";
+      // 
+      // button10
+      // 
+      this.button10.Location = new System.Drawing.Point(6, 19);
+      this.button10.Name = "button10";
+      this.button10.Size = new System.Drawing.Size(96, 23);
+      this.button10.TabIndex = 5;
+      this.button10.Text = "Rivitä";
+      this.button10.UseVisualStyleBackColor = true;
+      this.button10.Click += new System.EventHandler(this.button10_Click);
+      // 
+      // inputMaxLineLength
+      // 
+      this.inputMaxLineLength.Location = new System.Drawing.Point(6, 48);
+      this.inputMaxLineLength.Name = "inputMaxLineLength";
+      this.inputMaxLineLength.Size = new System.Drawing.Size(49, 20);
+      this.inputMaxLineLength.TabIndex = 24;
+      // 
+      // label16
+      // 
+      this.label16.AutoSize = true;
+      this.label16.Location = new System.Drawing.Point(60, 52);
+      this.label16.Name = "label16";
+      this.label16.Size = new System.Drawing.Size(86, 13);
+      this.label16.TabIndex = 23;
+      this.label16.Text = "merkkiä rivierotin";
       // 
       // MyForm
       // 
@@ -1142,6 +1185,7 @@
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.AutoScroll = true;
       this.ClientSize = new System.Drawing.Size(1667, 847);
+      this.Controls.Add(this.groupBox20);
       this.Controls.Add(this.groupBox19);
       this.Controls.Add(this.groupBox2);
       this.Controls.Add(this.groupBox18);
@@ -1205,6 +1249,8 @@
       this.groupBox17.PerformLayout();
       this.groupBox18.ResumeLayout(false);
       this.groupBox19.ResumeLayout(false);
+      this.groupBox20.ResumeLayout(false);
+      this.groupBox20.PerformLayout();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -1311,6 +1357,10 @@
     private System.Windows.Forms.GroupBox groupBox19;
     private System.Windows.Forms.Button buttonCalculateStringLength;
     private System.Windows.Forms.Button button9;
+    private System.Windows.Forms.GroupBox groupBox20;
+    private System.Windows.Forms.Button button10;
+    private System.Windows.Forms.Label label16;
+    private System.Windows.Forms.TextBox inputMaxLineLength;
   }
 }
 

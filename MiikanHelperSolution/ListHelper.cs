@@ -100,8 +100,8 @@ namespace MiikanHelperSolution {
     public static List<string> GetListOfSubstringsByString(List<string> list, string startString, string endString, bool useCaseSensitive = true) {
       var outputList = new List<string>();
       foreach(var listItem in list) {
-        var result = 
-          useCaseSensitive ? GetIdValueCaseSensitive(listItem, startString, endString) : 
+        var result =
+          useCaseSensitive ? GetIdValueCaseSensitive(listItem, startString, endString) :
             GetIdValueCaseInSensitive(listItem, startString, endString);
         outputList.Add(result);
       }
@@ -529,5 +529,37 @@ namespace MiikanHelperSolution {
       }
       return outputList;
     }
+
+    /// <summary>
+    /// Wrappaa pitkä teksti annetun pituisiksi riveiksi
+    /// </summary>
+    /// <param name="text"></param>
+    /// <param name="maxLineLength"></param>
+    /// <returns></returns>
+    public static List<string> WordWrap(string text, int maxLineLength) {
+      List<string> lines = new List<string>();
+      string[] words = text.Split(' ');
+      string currentLine = "";
+
+      foreach(string word in words) {
+        if(currentLine.Length > 0 && (currentLine.Length + word.Length + 1 > maxLineLength)) {
+          lines.Add(currentLine.Trim());
+          currentLine = "";
+        }
+
+        if(currentLine.Length > 0) {
+          currentLine += " ";
+        }
+
+        currentLine += word;
+      }
+
+      if(!string.IsNullOrWhiteSpace(currentLine)) {
+        lines.Add(currentLine.Trim());
+      }
+
+      return lines;
+    }
   }
+
 }

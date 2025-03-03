@@ -664,5 +664,16 @@ namespace MiikanHelperSolution {
       var output = ListHelper.RemoveEmpties(input);
       ShowOutput(output);
     }
+
+    /// <summary>
+    /// Teksti rivitä
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void button10_Click(object sender, EventArgs e) {
+      var input = GetInput();
+      var output = ListHelper.WordWrap(input[0], Convert.ToInt32(inputMaxLineLength.Text));
+      ShowOutput(output);
+    }
   }
 }

@@ -485,10 +485,10 @@ namespace UnitTestProject1 {
       var outputList = ListHelper.OrderByText(list);
       Assert.AreEqual(4, outputList.Count);
 
-      Assert.AreEqual("Ääkköset", outputList[0]);
-      Assert.AreEqual("Apina", outputList[1]);
-      Assert.AreEqual("banaani", outputList[2]);
-      Assert.AreEqual("-testi123", outputList[3]);
+      Assert.AreEqual("Apina", outputList[0]);
+      Assert.AreEqual("banaani", outputList[1]);
+      Assert.AreEqual("-testi123", outputList[2]);
+      Assert.AreEqual("Ääkköset", outputList[3]);
     }
 
     [TestMethod]
@@ -575,6 +575,68 @@ namespace UnitTestProject1 {
       Assert.AreEqual("A", output[0]);
       Assert.AreEqual("B", output[1]);
       Assert.AreEqual("C", output[2]);
+    }
+
+    [TestMethod]
+    public void WordWrap_MaxLineLength20_Test() {
+      string text = "Tämä on esimerkkiteksti, joka jaetaan useille riveille niin, että sanat eivät katkea keskeltä.";
+      int maxLineLength = 20;
+
+      //Act
+      List<string> wrappedLines = ListHelper.WordWrap(text, maxLineLength);
+
+      //testaa annetun tekstin pituus
+      Assert.AreEqual(94, text.Length);
+
+      //testaa rivien määrä
+      Assert.AreEqual(6, wrappedLines.Count);
+
+      //testaa rivien sisältö
+      Assert.AreEqual("Tämä on", wrappedLines[0]);
+      Assert.AreEqual("esimerkkiteksti,", wrappedLines[1]);
+      Assert.AreEqual("joka jaetaan useille", wrappedLines[2]);
+      Assert.AreEqual("riveille niin, että", wrappedLines[3]);
+      Assert.AreEqual("sanat eivät katkea", wrappedLines[4]);
+      Assert.AreEqual("keskeltä.", wrappedLines[5]);
+    }
+
+    [TestMethod]
+    public void WordWrap_MaxLineLength30_Test() {
+      string text = "Tämä on esimerkkiteksti, joka jaetaan useille riveille niin, että sanat eivät katkea keskeltä.";
+      int maxLineLength = 30;
+
+      //Act
+      List<string> wrappedLines = ListHelper.WordWrap(text, maxLineLength);
+
+      //testaa annetun tekstin pituus
+      Assert.AreEqual(94, text.Length);
+
+      //testaa rivien määrä
+      Assert.AreEqual(4, wrappedLines.Count);
+
+      //testaa rivien sisältö
+      Assert.AreEqual("Tämä on esimerkkiteksti, joka", wrappedLines[0]);
+      Assert.AreEqual("jaetaan useille riveille niin,", wrappedLines[1]);
+      Assert.AreEqual("että sanat eivät katkea", wrappedLines[2]);
+      Assert.AreEqual("keskeltä.", wrappedLines[3]);
+    }
+
+    [TestMethod]
+    public void WordWrap_MaxLineLength1_Test() {
+      string text = "222";
+      int maxLineLength = 1;
+
+      //Act
+      List<string> wrappedLines = ListHelper.WordWrap(text, maxLineLength);
+
+      //testaa annetun tekstin pituus
+      Assert.AreEqual(3, text.Length);
+
+      //testaa rivien määrä
+      Assert.AreEqual(1, wrappedLines.Count);
+
+      //testaa rivien sisältö
+      Assert.AreEqual("222", wrappedLines[0]);
     }
   }
 }
