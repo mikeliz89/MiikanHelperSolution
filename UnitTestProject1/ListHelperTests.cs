@@ -559,6 +559,20 @@ namespace UnitTestProject1 {
     }
 
     [TestMethod]
+    public void CalculateStringLengthList_Test() {
+      var list = new List<string>();
+      list.Add("A");
+      list.Add("120325 Viitemaksu 77295630140 43,00+ GSCTC019792205700002 ");
+      list.Add("@$ä.'");
+
+      var output = ListHelper.CalculateStringLengthList(list);
+      Assert.AreEqual(3, output.Count);
+      Assert.AreEqual("1", output[0]);
+      Assert.AreEqual("58", output[1]);
+      Assert.AreEqual("5", output[2]);
+    }
+
+    [TestMethod]
     public void RemoveEmpties_Test() {
       var list = new List<string>();
       list.Add("");

@@ -675,5 +675,18 @@ namespace MiikanHelperSolution {
       var output = ListHelper.WordWrap(input[0], Convert.ToInt32(inputMaxLineLength.Text));
       ShowOutput(output);
     }
+
+    /// <summary>
+    /// Laske merkit (joka riville erikseen)
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void button11_Click(object sender, EventArgs e) {
+      var input = GetInput();
+
+      var outputList = ListHelper.CalculateStringLengthList(input);
+
+      ShowOutput(outputList);
+    }
   }
 }

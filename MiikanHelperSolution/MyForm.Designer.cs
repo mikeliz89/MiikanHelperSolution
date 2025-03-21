@@ -123,9 +123,10 @@
       this.groupBox19 = new System.Windows.Forms.GroupBox();
       this.buttonCalculateStringLength = new System.Windows.Forms.Button();
       this.groupBox20 = new System.Windows.Forms.GroupBox();
-      this.button10 = new System.Windows.Forms.Button();
-      this.inputMaxLineLength = new System.Windows.Forms.TextBox();
       this.label16 = new System.Windows.Forms.Label();
+      this.inputMaxLineLength = new System.Windows.Forms.TextBox();
+      this.button10 = new System.Windows.Forms.Button();
+      this.button11 = new System.Windows.Forms.Button();
       this.groupBox1.SuspendLayout();
       this.groupBox2.SuspendLayout();
       this.groupBox3.SuspendLayout();
@@ -1123,6 +1124,7 @@
       // 
       // groupBox19
       // 
+      this.groupBox19.Controls.Add(this.button11);
       this.groupBox19.Controls.Add(this.buttonCalculateStringLength);
       this.groupBox19.Location = new System.Drawing.Point(307, 261);
       this.groupBox19.Name = "groupBox19";
@@ -1137,7 +1139,7 @@
       this.buttonCalculateStringLength.Name = "buttonCalculateStringLength";
       this.buttonCalculateStringLength.Size = new System.Drawing.Size(108, 23);
       this.buttonCalculateStringLength.TabIndex = 5;
-      this.buttonCalculateStringLength.Text = "Laske merkit";
+      this.buttonCalculateStringLength.Text = "Laske merkit yht";
       this.buttonCalculateStringLength.UseVisualStyleBackColor = true;
       this.buttonCalculateStringLength.Click += new System.EventHandler(this.buttonCalculateStringLength_Click);
       // 
@@ -1153,6 +1155,22 @@
       this.groupBox20.TabStop = false;
       this.groupBox20.Text = "Teksti";
       // 
+      // label16
+      // 
+      this.label16.AutoSize = true;
+      this.label16.Location = new System.Drawing.Point(60, 52);
+      this.label16.Name = "label16";
+      this.label16.Size = new System.Drawing.Size(86, 13);
+      this.label16.TabIndex = 23;
+      this.label16.Text = "merkkiä rivierotin";
+      // 
+      // inputMaxLineLength
+      // 
+      this.inputMaxLineLength.Location = new System.Drawing.Point(6, 48);
+      this.inputMaxLineLength.Name = "inputMaxLineLength";
+      this.inputMaxLineLength.Size = new System.Drawing.Size(49, 20);
+      this.inputMaxLineLength.TabIndex = 24;
+      // 
       // button10
       // 
       this.button10.Location = new System.Drawing.Point(6, 19);
@@ -1163,21 +1181,15 @@
       this.button10.UseVisualStyleBackColor = true;
       this.button10.Click += new System.EventHandler(this.button10_Click);
       // 
-      // inputMaxLineLength
+      // button11
       // 
-      this.inputMaxLineLength.Location = new System.Drawing.Point(6, 48);
-      this.inputMaxLineLength.Name = "inputMaxLineLength";
-      this.inputMaxLineLength.Size = new System.Drawing.Size(49, 20);
-      this.inputMaxLineLength.TabIndex = 24;
-      // 
-      // label16
-      // 
-      this.label16.AutoSize = true;
-      this.label16.Location = new System.Drawing.Point(60, 52);
-      this.label16.Name = "label16";
-      this.label16.Size = new System.Drawing.Size(86, 13);
-      this.label16.TabIndex = 23;
-      this.label16.Text = "merkkiä rivierotin";
+      this.button11.Location = new System.Drawing.Point(6, 28);
+      this.button11.Name = "button11";
+      this.button11.Size = new System.Drawing.Size(108, 23);
+      this.button11.TabIndex = 6;
+      this.button11.Text = "Laske merkit";
+      this.button11.UseVisualStyleBackColor = true;
+      this.button11.Click += new System.EventHandler(this.button11_Click);
       // 
       // MyForm
       // 
@@ -1361,6 +1373,7 @@
     private System.Windows.Forms.Button button10;
     private System.Windows.Forms.Label label16;
     private System.Windows.Forms.TextBox inputMaxLineLength;
+    private System.Windows.Forms.Button button11;
   }
 }
 

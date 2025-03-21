@@ -501,7 +501,7 @@ namespace MiikanHelperSolution {
     }
 
     /// <summary>
-    /// Laske merkkijonon pituus
+    /// Laske merkkijonon pituus (merkit yhteensä)
     /// </summary>
     /// <param name="list"></param>
     /// <returns></returns>
@@ -511,6 +511,19 @@ namespace MiikanHelperSolution {
         totalLength += item.Length;
       }
       return totalLength;
+    }
+
+    /// <summary>
+    /// Laske listan jokaiselle merkkijonon pituus
+    /// </summary>
+    /// <param name="list"></param>
+    /// <returns></returns>
+    public static List<string> CalculateStringLengthList(List<string> list) {
+      var outputList = new List<string>();
+      foreach(var item in list) {
+        outputList.Add(item.Length.ToString());
+      }
+      return outputList;
     }
 
     /// <summary>
