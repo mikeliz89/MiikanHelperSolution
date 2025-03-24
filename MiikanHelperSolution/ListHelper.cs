@@ -101,32 +101,20 @@ namespace MiikanHelperSolution {
       var outputList = new List<string>();
       foreach(var listItem in list) {
         var result =
-          useCaseSensitive ? GetIdValueCaseSensitive(listItem, startString, endString) :
-            GetIdValueCaseInSensitive(listItem, startString, endString);
+          useCaseSensitive ? 
+            GetIdValue(listItem, startString, endString, StringComparison.Ordinal) :
+            GetIdValue(listItem, startString, endString, StringComparison.OrdinalIgnoreCase);
         outputList.Add(result);
       }
       return outputList;
     }
 
-    private static string GetIdValueCaseSensitive(string input, string startString, string endString) {
+    private static string GetIdValue(string input, string startString, string endString, StringComparison stringComparison) {
       string startMarker = startString;
-      int startIndex = input.IndexOf(startMarker);
+      int startIndex = input.IndexOf(startMarker, stringComparison);
       if(startIndex != -1) {
         startIndex += startMarker.Length;
-        int endIndex = input.IndexOf(endString, startIndex);
-        if(endIndex != -1) {
-          return input.Substring(startIndex, endIndex - startIndex);
-        }
-      }
-      return string.Empty; // Return an empty string if no match is found
-    }
-
-    private static string GetIdValueCaseInSensitive(string input, string startString, string endString) {
-      string startMarker = startString;
-      int startIndex = input.IndexOf(startMarker, StringComparison.OrdinalIgnoreCase);
-      if(startIndex != -1) {
-        startIndex += startMarker.Length;
-        int endIndex = input.IndexOf(endString, startIndex, StringComparison.OrdinalIgnoreCase);
+        int endIndex = input.IndexOf(endString, startIndex, stringComparison);
         if(endIndex != -1) {
           return input.Substring(startIndex, endIndex - startIndex);
         }
